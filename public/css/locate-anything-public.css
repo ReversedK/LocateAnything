@@ -1,0 +1,146 @@
+.locate-anything-page-nav {
+	width: 2em;
+	float:left;
+	cursor: pointer;	
+}
+
+#map-filters ul {
+	list-style: none;
+}
+
+#locate-anything-loader {
+	background: #fff url(../../assets/loaders/loader1.gif) no-repeat;
+	width:100%;
+	height:100%;
+	z-index:100;
+	position: absolute;
+	opacity: 0.65;
+	background-position: center center;
+}
+
+
+
+/* Tokenze fix*/
+div.Tokenize ul.Dropdown li {
+width: 100%;
+}
+
+
+/* Tooltip styles */
+
+.leaflet-popup-content {
+     width:auto ;
+    height:auto ;
+     min-width:270px;
+}
+/*.leaflet-popup-content img:first-child  {width: 100%;max-width: 100%}*/
+.leaflet-popup-content {
+	overflow: hidden;
+	}
+.leaflet-popup-content h3 {
+padding-left: 1em;
+}
+.leaflet-popup-content p {padding:17px;font-size: 15px;}
+/* Nice Tooltips Style */
+.nice-tooltips .leaflet-popup-content {
+margin:0 !important;
+border-radius: 11px;
+width:400px !important;
+}
+
+
+.nice-tooltips .leaflet-popup-content img:first-child {width:100%;}
+.nice-tooltips .leaflet-popup-content p,.nice-tooltips .leaflet-popup-content ul li {font-size: 15px;}
+.nice-tooltips .leaflet-popup-content p:first-letter {
+	text-transform: uppercase;
+font-size: 32px;
+line-height: 1em;
+font-family: serif;
+vertical-align: sub;
+color: #ccc;
+letter-spacing: 1px;
+}
+
+.nice-tooltips .leaflet-popup-content div#mask {  
+   width: 100%;
+   height:100%;  
+   overflow: hidden;
+}
+
+/* Image mask*/
+.map-nav-item-wrapper div#mask {  
+   width: 200px;
+   height:150px;  
+   overflow: hidden;  
+}
+.map-nav-item-wrapper div#mask img {max-width:100% !important;}
+
+.displaynone {display: none !important;}
+
+/* TOOLTIP GRID */
+.float-right {float:right;}
+.float-left {float:left;}
+pane {   
+    height: 100%;
+    float: left;
+     width: 100%;
+}
+pane.two-third {
+    width: 60%;   
+}
+pane.one-third {
+    width: 30%;    
+}
+pane.1-fourth {
+    width: 25%;    
+}
+pane.half,pane.2-fourth {
+    width: 50%;    
+}
+pane.3-fourth {
+    width: 75%;    
+}
+
+@media (max-width: 1000px) {
+pane {
+ //   width: 100% !important;
+    padding:10px;  
+    float: left;
+}
+}
+
+/* Range slider */
+span.ui-slider-handle.ui-state-default.ui-corner-all b {
+font-size: 10px!important;
+float: left !important;
+text-align: center !important;
+}
+
+.ui-slider .ui-slider-handle {
+width: auto !important;
+min-width: 1.2em;
+top: -0.4em !important;
+}
+
+.map-types {padding-top:2em;border-radius: 25px}
+.map-types .content-wrapper-background{border-radius: 25px;border:1px solid #eee;}
+.map-types .content-container {padding:1em;}
+.map-types .image img {
+  padding-top:10px;
+border-radius: 100%!important;
+}
+
+.feature-list h3  {
+  padding-top:5px;
+}
+.feature-list p {
+font-size: 16px;
+line-height: 24px;
+}
+
+#filters label,#locate-anything-template-wrapper label
+{
+width: 100%;
+float: left;
+font-weight: bold;
+}

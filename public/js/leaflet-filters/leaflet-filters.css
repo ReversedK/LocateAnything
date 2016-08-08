@@ -1,0 +1,72 @@
+
+#progress-wrapper {
+    position: absolute;
+    z-index: 1000;
+    left: 50%;
+    top: 65%;
+    width: 100%;
+    height: 100%;    
+}
+
+.progress {
+    width: 200px;
+    height: 20px;
+    margin-top: -20px;
+    margin-left: -100px;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background-color: #76A6FC;
+    border-radius: 4px;
+}
+
+
+
+.map-nav-item {
+    width:100%;
+    font-size: 10px ;
+    border:1px solid #ddd;   
+    float:left;
+    text-decoration: none;
+    color: #111;
+    background: #fff;
+    margin-bottom:5px;
+    cursor:pointer;
+;
+}
+.map-nav-item b {
+    font-size:14px ;
+    font-weight:bold;
+
+}
+
+.map-nav-item.focus {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+}
+
+.map-nav-item-wrapper {
+    padding:5px;
+}
+
+div.Tokenize {
+    display: inline-block;
+    position: relative;   
+}
+
+.LA_filters ul {list-style: none;}
+.TokensContainer {
+    height: 50px;
+    width: 100%;
+}
+
+a.leaflet-control-zoom-out,a.leaflet-control-zoom-in {text-decoration: none !important;}

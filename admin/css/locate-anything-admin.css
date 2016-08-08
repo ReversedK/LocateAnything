@@ -1,0 +1,226 @@
+#locate-anything-class {
+    width:100%;   
+    position: none !important;
+}
+#locate-anything-class input[type="color"]{
+    height: 2.5em;
+border: none;
+}
+#locate-anything-class input, #locate-anything-class select {
+margin-bottom: 3px ;
+margin-top: 3px;
+}
+
+strong,b {font-weight:bold;}
+.LA_additional_fields_notice > div {
+    float: left;
+}
+
+#locate-anything-additional_fields {
+    clear: both; 
+    width: 50%;
+}
+.locate-anything-map-settings-list-ul{  padding:20px;
+    width: 100%;
+    margin-top:0;  
+    background:#fff;
+    padding-top: 1em;    
+    margin-right: 2em;
+margin-left: 2em;
+float: right;
+}
+
+#locate-anything-wrapper iframe{      
+    height: 100%;
+    width: 90%;
+    float: left;
+    min-height: 700px;
+}
+
+#locate-anything-wrapper-post .locate-anything-map-settings-list-ul{
+     min-width:50%;
+     float: none;
+     margin:0;
+     width:100%;
+ }
+
+.locate-anything-map-settings-list-ul tr {
+    padding:7px;
+}
+.locate-anything-map-settings-list-ul td{
+    vertical-align: middle;
+    padding: 0;
+    font-size: 14px;
+}
+.locate-anything-map-settings-list-ul td input,.locate-anything-map-settings-list-ul td select{
+     vertical-align: middle;
+     padding: 5px; font-size: 14px;
+    }
+.locate-anything-map-settings-list-ul td input[type="text"]{   
+    max-width:230px;
+}
+
+.locate-anything-map-settings-list-ul td select{
+   min-height: 32px
+    }
+
+.locate-anything-option-list-ul li {
+    clear: both;    
+    padding: 2em;
+   
+}
+.locate-anything-option-list-ul li textarea {
+    width: 90%;
+    height:10em;
+     clear: both;
+}
+
+.locate-anything-tooltip{
+            display: inline;
+            position: relative;
+        }
+        
+.locate-anything-tooltip:hover:after{
+            background: #333;
+            background: rgba(0,0,0,.8);
+            border-radius: 5px;
+            bottom: 26px;
+            color: #fff;
+            content: attr(title);
+            left: 20%;
+            padding: 5px 15px;
+            position: absolute;
+            z-index: 98;
+            width: 220px;
+        }
+        
+.locate-anything-tooltip:hover:before{
+            border: solid;
+            border-color: #333 transparent;
+            border-width: 6px 6px 0 6px;
+            bottom: 20px;
+            content: "";
+            left: 50%;
+            position: absolute;
+            z-index: 99;
+        }
+
+.locate-anything-map-settings-list-ul textarea{ 
+    width: 90%;
+    height:10em;
+     clear: both;
+    }
+
+li.half_li {width:50%;float:left;}
+
+#locate-anything-class div.inside { }
+a.nav-tab {
+   padding: 4px 14px 6px !important;
+font-weight: normal;
+font-weight: bold;
+ background: #fff   ;
+border: none;
+margin-right: 0;
+ color: #000;
+ border:1px solid #ddd;
+}
+a.nav-tab:hover {border:1px solid #ccc;}
+
+
+
+h2.nav-tab-wrapper{
+    margin-bottom: 0 !important; 
+    cursor: pointer;    
+    padding:0 !important;     
+}
+
+h2.nav-tab-wrapper .active{
+    color: white !important;
+background-color: #00ACF0 !important;
+border:1px solid #fff !important;
+border-bottom:1px solid #ccc !important;   
+font-weight: bold;  
+   
+}
+.select2-container {min-width: 60px !important;}
+
+#locate-anything-wrapper{
+    width:100%;
+    margin:auto;   
+    border:1px solid #ccc;
+    border-top:none;
+    padding: 0;  
+}
+
+.locate-anything-help,.locate-anything-help:focus {
+    background:url("../../assets/help.png");
+    width:20px;
+    height: 20px;
+    background-size: 100% ;
+    border:none;
+    outline: none;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+
+.button-admin {
+-webkit-box-shadow: rgb(240, 247, 250) 0px 1px 0px 0px !important;
+box-shadow: rgb(240, 247, 250) 0px 1px 0px 0px !important;
+background-image: linear-gradient(rgb(51, 189, 239) 5%, rgb(1, 154, 210) 100%) !important;
+background-color: rgb(51, 189, 239) !important;
+border-top-left-radius: 6px !important;
+border-top-right-radius: 6px !important;
+border-bottom-right-radius: 6px !important;
+border-bottom-left-radius: 6px !important;
+border: 1px solid rgb(5, 127, 208) !important;
+display: inline-block !important;
+cursor: pointer !important;
+color: rgb(255, 255, 255) !important;
+font-family: Arial !important;
+font-size: 15px !important;
+font-weight: bold !important;
+padding: 6px 24px !important;
+text-decoration: none !important;
+text-shadow: rgb(91, 97, 120) 0px -1px 0px !important;
+text-align: center !important;
+}
+.button-admin:hover {
+    background-color:#019ad2;
+}
+.button-admin:active {
+    position:relative;
+    top:1px;
+}
+
+#locate-anything-marker-type_button{width:80px}
+
+#form-options {
+    background: #fff;
+padding: 25px;
+//margin-top: 10px;
+width: 75%;
+}
+
+
+#basic_fields_notice div {
+float: left;
+ width:50%;
+}
+
+
+.locate-anything-allowed-filters {
+    clear:both;
+    width:30%;
+    
+}
+
+td#templates {
+width: 50%;
+}
+.locate-anything-display-filter- {margin-left: 5px}
+#locate-anything-additional_fields h3 {
+   margin-top: 1em;
+}
+div#addi_fields_locateanythingmarker {
+   margin-bottom: 1em;
+}

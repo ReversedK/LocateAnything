@@ -1,0 +1,569 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: LocateAnything\n"
+"POT-Creation-Date: 2016-08-08 17:54-0300\n"
+"PO-Revision-Date: 2016-08-08 17:54-0300\n"
+"Last-Translator: LocateAnything <contact@locate-anything.com>\n"
+"Language-Team: 4GOA\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../admin/partials/locate-anything-help.php:8
+msgid ""
+"This setting will determine the overlay of the map. .<br/><br/>Each Map "
+"overlay will have a different \"look & feel\". Try them in the preview if "
+"unsure.<br><br>If you want to use a  map overlay that is not in the list, "
+"select \"Custom map overlay\" and enter its URL in the field just below."
+msgstr ""
+
+#: ../admin/partials/locate-anything-help.php:12
+msgid ""
+"This setting controls which post type is used to create the markers for this "
+"map.<br/><br/> Please note that only the post types you selected in the "
+"options page are presented here."
+msgstr ""
+
+#: ../admin/partials/locate-anything-help.php:16
+msgid ""
+"<b>Filter the markers</b><br><br><p>This setting lets you filter the markers "
+"received from the post type by choosing which taxonomy terms are allowed. "
+"<br><br> It permits you to display only markers of a specific category, or "
+"tagged with a specific term.<br><br> The effect on the markers displayed is "
+"cumulative meaning that if you select Category \"Night bars\" and post_tag "
+"\"Beer\" (category and post_tag being 2 different taxonomies) your map will "
+"show all the \"Night bars\" (even those that don\\'t serve beer) AND all the "
+"places tagged as \"Beer\" (even those not open at night), along with the "
+"search options to filter them. <br><br> You can preview the result in real "
+"time on the preview map.</p>"
+msgstr ""
+
+#: ../admin/partials/locate-anything-help.php:20
+msgid ""
+"<b>Define the filters that will be available for this map</"
+"b><br><br><p><b>Types of filter</b> :<br>Filters using <b>checkboxes</b> are "
+"cumulative (OR operator), this means they will show markers tied to ANY of "
+"the checked terms.<br><br>Filters using <b>Tokenize</b> are \"mutually-"
+"exclusive\"  (AND operator), which means only markers that fit ALL the given "
+"terms will show.<br><br> <b>Range filters</b> will only work with simple "
+"numeric values. If the value is not numeric the markers will be unselected "
+"each time the range is updated.</p>"
+msgstr ""
+
+#: ../admin/partials/locate-anything-help.php:24
+msgid ""
+"This setting will determine the tone/color of the map. <br/><br/> Set the "
+"value to black (#000) to disable. <br/><br/>Works only with GoogleMaps"
+msgstr ""
+
+#: ../admin/partials/locate-anything-help.php:29
+#, php-format
+msgid ""
+"This setting will determine the width of the map if no predefined layout is "
+"used.<b>Please note</b> that this setting doesn\\'t apply to maps generated "
+"using the [LocateAnything map_id=...] shortcode<br/><br/> Pixels and "
+"% supported."
+msgstr ""
+
+#: ../admin/partials/locate-anything-help.php:33
+msgid ""
+"This setting will determine the height of the map if no predefined layout is "
+"used. <b>Please note</b> that this setting doesn\\'t apply to maps generated "
+"using the [LocateAnything map_id=...] shortcode<br/><br/> Pixel is the only "
+"unit supported"
+msgstr ""
+
+#: ../admin/partials/locate-anything-help.php:37
+msgid ""
+"This setting will determine the center of the map when it is first "
+"displayed. <br/><br/> You can set it manually (Format : <i>latitude</i>,"
+"<i>longitude</i>), or just drag the preview map to the desired point"
+msgstr ""
+
+#: ../admin/partials/locate-anything-help.php:41
+msgid "This setting will determine the maximum zoom allowed for this map."
+msgstr ""
+
+#: ../admin/partials/locate-anything-help.php:45
+msgid "This setting will determine the minimum zoom allowed for this map."
+msgstr ""
+
+#: ../admin/partials/locate-anything-help.php:49
+msgid ""
+"This setting will determine the initial zoom for this map. <br/><br/> You "
+"can set it manually or just zoom the preview map to the desired zoom level"
+msgstr ""
+
+#: ../admin/partials/locate-anything-help.php:53
+msgid ""
+"If this parameter is set to \"yes\" the plugin will try to locate the user "
+"and center the map on his current location"
+msgstr ""
+
+#: ../admin/partials/locate-anything-help.php:57
+msgid ""
+"Set this parameter to \"yes\" to add a a Google Places searchbox to this map"
+msgstr ""
+
+#: ../admin/partials/locate-anything-help.php:61
+msgid ""
+"This setting will determine the maximum number of items in the navigation "
+"list of this map"
+msgstr ""
+
+#: ../admin/partials/locate-anything-help.php:65
+msgid ""
+"Here is a list of the fields available for display in the templates. To use "
+"them just copy/paste the corresponding tag in the template editor. <br/><br/"
+"><strong>Please note that those are the global values for this map</strong>. "
+"if you don\\'t see any change after modifying a tooltip template check that "
+"you haven\\'t defined a custom tooltip template on the post, page or user "
+"associated with the marker."
+msgstr ""
+
+#: ../admin/partials/locate-anything-help.php:69
+msgid ""
+"Templates are used to define the appearance of the navigation list items and "
+"the tooltips associated with each marker.Templates support simple HTML and "
+"additional field tags<br/><br/>For example, to display the title, content "
+"and thumbnail of a marker in the tooltips :<br/><code>&lt;b&gt;|title|&lt;/"
+"b&gt;<br/>|small_thumbnail|<br/>|content| </code> "
+msgstr ""
+
+#: ../admin/partials/locate-anything-help.php:73
+msgid ""
+"Create a custom tooltip template if you want the appearance of the tooltip "
+"associated with this marker to be different from the default tooltip "
+"selected for this map.<br> Supports simple HTML and additional field tags<br/"
+"><br/>For example, to display the title, content and thumbnail of a marker "
+"in the tooltips :<br/><code>&lt;b&gt;|title|&lt;/b&gt;<br/>|small_thumbnail|"
+"<br/>|content| </code> "
+msgstr ""
+
+#: ../admin/partials/locate-anything-help.php:77
+msgid ""
+"A predefined layout is only displayed  when the shortcode [LocateAnything "
+"map_id=...] is used. The layout determines the organization of the different "
+"elements : map, navlist and filters.<br/><br/> LocateAnything proposes "
+"several predefined layouts for your maps. You can use them as-is or modify "
+"them to fit your needs."
+msgstr ""
+
+#: ../admin/partials/locate-anything-help.php:81
+msgid ""
+"You can use an image from Wordpress media library as a marker icon. "
+"<br><b>Warning</b> : The image will NOT be resized. Please make sure its "
+"size is adequate."
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:7
+#: ../admin/partials/locate-anything-metabox-post.php:15
+msgid "Geo settings"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:8
+msgid "Marker"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:9
+msgid "Tooltip"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:10
+#: ../admin/partials/locate-anything-settings-admin.php:52
+msgid "Additional Fields"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:18
+msgid "Street name"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:23
+msgid "Number"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:27
+msgid "City"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:31
+msgid "Zip code"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:35
+msgid "State / Province"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:39
+msgid "Country"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:45
+msgid "Latitude"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:46
+msgid "Longitude"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:54
+msgid "Customize Tooltip template"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:56
+#: ../admin/partials/locate-anything-metabox-admin.php:236
+msgid "Tooltip Preset"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:73
+#: ../admin/partials/locate-anything-metabox-admin.php:274
+msgid "Nice Tooltips settings"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:73
+#: ../admin/partials/locate-anything-metabox-admin.php:274
+msgid "Main image max-height"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:78
+msgid "Custom HTML template"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:86
+#: ../admin/partials/locate-anything-metabox-admin.php:279
+msgid "Available fields"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:87
+msgid ""
+"Here is a list of the additional fields available for display in the "
+"template. To use them just copy/paste the corresponding tag in the template "
+"editor"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:97
+msgid "Choose a marker icon"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:100
+#: ../admin/partials/locate-anything-metabox-admin.php:155
+msgid "Choose an icon"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:104
+msgid "Use default marker"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:113
+#: ../admin/partials/locate-anything-metabox-admin.php:169
+msgid "Add an icon from the media library"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:116
+#: ../admin/partials/locate-anything-metabox-admin.php:172
+msgid "Add"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:124
+#: ../admin/partials/locate-anything-metabox-admin.php:180
+msgid "Create an icon"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:128
+#: ../admin/partials/locate-anything-metabox-admin.php:185
+msgid "Symbol"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:134
+#: ../admin/partials/locate-anything-metabox-admin.php:191
+msgid "Symbol color"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:136
+#: ../admin/partials/locate-anything-metabox-admin.php:193
+msgid "Marker color"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:151
+msgid "Additional fields"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-post.php:174
+#: ../admin/partials/locate-anything-metabox-admin.php:430
+msgid "Do you want to overwrite the current tooltip template?"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:3
+msgid "Map settings"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:4
+msgid "Filters"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:5
+msgid "Markers settings"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:6
+msgid "Tooltip & Nav List"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:7
+msgid "Map Layouts"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:8
+msgid "Tools"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:19
+msgid "General settings"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:23
+msgid "Map Overlay"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:29
+msgid "Custom map overlay"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:39
+msgid "Map hue (GoogleMaps only)"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:46
+msgid "Map width"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:50
+msgid "Map height"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:54
+msgid "Default start position"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:58
+msgid "Max zoom"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:65
+msgid "Min zoom"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:70
+msgid "Initial zoom"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:77
+msgid "Zoom using mousewheel"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:79
+#: ../admin/partials/locate-anything-metabox-admin.php:88
+#: ../admin/partials/locate-anything-metabox-admin.php:97
+#: ../admin/partials/locate-anything-settings-admin.php:81
+msgid "yes"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:80
+#: ../admin/partials/locate-anything-metabox-admin.php:89
+#: ../admin/partials/locate-anything-metabox-admin.php:98
+#: ../admin/partials/locate-anything-settings-admin.php:81
+msgid "no"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:86
+msgid "Enable user geolocation"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:95
+msgid "Enable Google Places searchbox"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:102
+msgid "Max number of results displayed in the list"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:110
+msgid "Choose a post type"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:113
+msgid "Post Type"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:135
+msgid "Filter the markers (optional)"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:137
+msgid "Filter the markers "
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:143
+msgid "How is this map filterable ?"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:147
+msgid "Make this map filterable by"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:153
+msgid "Choose the default marker icon"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:203
+msgid "Choose the global icon size for AwesomeMarkers"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:204
+msgid "Icon size"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:208
+msgid "Shortcodes"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:211
+msgid "Display the map with a predefined layout"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:212
+msgid "Display the map separately"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:213
+msgid "Display the filters separately"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:214
+msgid "Display the navigation list separately"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:218
+msgid "Cache"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:220
+msgid ""
+"The cache is currently disabled. You can activate it in the options page"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:221
+msgid "Refresh cache for this map"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:221
+msgid "Status"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:221
+msgid "ready"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:228
+msgid "Navlist Settings"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:229
+msgid "Event"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:230
+msgid "Tooltips Settings"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:232
+msgid "Tooltip style"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:233
+msgid "Rounded corners"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:233
+msgid "Squared corners"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:256
+msgid "Navlist Preset"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:276
+msgid "Templates"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:285
+msgid "Default navigation list template"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:287
+msgid "Default Tooltip template"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:297
+#: ../admin/partials/locate-anything-metabox-admin.php:300
+msgid "Map Layout"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:426
+msgid "Do you want to overwrite the current navlist template?"
+msgstr ""
+
+#: ../admin/partials/locate-anything-settings-admin.php:18
+msgid "Default settings"
+msgstr ""
+
+#: ../admin/partials/locate-anything-settings-admin.php:19
+msgid "Map Language"
+msgstr ""
+
+#: ../admin/partials/locate-anything-settings-admin.php:22
+msgid "Map Language (GoogleMaps only)"
+msgstr ""
+
+#: ../admin/partials/locate-anything-settings-admin.php:32
+msgid "What do you want to localize?"
+msgstr ""
+
+#: ../admin/partials/locate-anything-settings-admin.php:53
+msgid ""
+"Additional fields are useful when you need to display a specific information "
+"that will vary from marker to marker. For example, if your map is about "
+"Restaurants, you could create an additional field \"opening hours\" to store "
+"the opening hours of the place. <br/> You can add as many additional field "
+"as you want. They will appear in the marker's page."
+msgstr ""
+
+#: ../admin/partials/locate-anything-settings-admin.php:62
+msgid "Additional fields for"
+msgstr ""
+
+#: ../admin/partials/locate-anything-settings-admin.php:70
+msgid "Add a field"
+msgstr ""
+
+#: ../admin/partials/locate-anything-settings-admin.php:78
+msgid "Cache settings"
+msgstr ""
+
+#: ../admin/partials/locate-anything-settings-admin.php:80
+msgid "Cache timeout (minutes)"
+msgstr ""
+
+#: ../admin/partials/locate-anything-settings-admin.php:81
+msgid "Enable cache"
+msgstr ""
+
+#: ../public/class-locate-anything-public.php:716
+msgid "Preview not available yet."
+msgstr ""
