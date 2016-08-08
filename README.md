@@ -1,6 +1,4 @@
-=== LocateAnything ===
-
-
+# LocateAnything
 
 Website URL: http://www.locate-anything.com/
 
@@ -9,8 +7,6 @@ Tested up to: 4.5.6
 Stable tag: 4.5.6
 License: GPLv2 or later
 
-
-== Description ==
 
 LocateAnything is a Wordpress plugin aimed at creating all sorts of maps and map-related applications : simple map,  filterable map,event map, festivals, geodirectories, community maps (user maps),store locators, you name it...
 
@@ -134,7 +130,7 @@ And much much more!
 
 = A question that someone might have =
 
-Go to the website for more infos : http://www.locate-anything.com/documentation
+
 
 == Changelog ==
 
@@ -144,5 +140,5 @@ Go to the website for more infos : http://www.locate-anything.com/documentation
 
 
 
-Tags: address book, addressbook, addresses, bio, biographies, bios, business, business directory plugin, business-directory, businesses, church, directories, directory, directory plugin, directory widget, geodirectory, google maps, googlemap, googlemaps, list, listings, lists, member directory, members directories, members directory, microformat, microformats, multisite, profile, profiles, staff, tripadvisor clone, user, users, vcard, wordpress business directory, wordpress business directory plugin, wordpress business directory theme, wordpress city directory plugin, wordpress directory, wordpress directory plugin, wordpress directory theme, wordpress local directory plugin, yellow pages clone, yelp clone, store locator, locator, filterable, map, filterable map, custom type filters, custom type, map layout
+*Tags*:  business, business directory plugin, business-directory, businesses, church, directories, directory, directory plugin, directory widget, geodirectory, google maps, googlemap, googlemaps, list, listings, lists, member directory, members directories, members directory, microformat, microformats, multisite, profile, profiles, staff, tripadvisor clone, user, users, vcard, wordpress business directory, wordpress business directory plugin, wordpress business directory theme, wordpress city directory plugin, wordpress directory, wordpress directory plugin, wordpress directory theme, wordpress local directory plugin, yellow pages clone, yelp clone, store locator, locator, filterable, map, filterable map, custom type filters, custom type, map layout
 
