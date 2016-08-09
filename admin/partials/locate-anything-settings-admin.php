@@ -19,6 +19,10 @@
 <h2><?php _e("Map Language","locate-anything")?></h2>
 <table>
 	<tr>
+<td><?php _e("GoogleMaps Key (only if you use GoogleMaps)","locate-anything");?>:</td>	<td><input type="text" name="locate-anything-option-cache-timeout" value="<?php echo unserialize(get_option("locate-anything-option-googlemaps-key"));?>"></td>
+</tr>
+
+<tr>
 <td><?php _e("Map Language (GoogleMaps only)","locate-anything");?>:</td>
 <td><select name="locate-anything-option-map-language">
 <?php foreach (Locate_Anything_Tools::getLocaleList() as $locale => $language) {?>

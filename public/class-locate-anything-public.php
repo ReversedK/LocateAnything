@@ -81,7 +81,7 @@ class Locate_Anything_Public {
 				'jquery' 
 		), $this->version, false );
 		// Google API, localized according to general settings
-		wp_enqueue_script ( $this->plugin_name . "-googleAPI", "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places&language=" . unserialize ( get_option ( "locate-anything-option-map-language" ) ), array (
+		wp_enqueue_script ( $this->plugin_name . "-googleAPI", "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=".unserialize(get_option("locate-anything-option-googlemaps-key"))."&libraries=places&language=" . unserialize ( get_option ( "locate-anything-option-map-language" ) ), array (
 				$this->plugin_name . "-leaflet-filters" 
 		), $this->version, false );
 		// Google Tiles
@@ -128,6 +128,16 @@ class Locate_Anything_Public {
 		add_shortcode ( "LocateAnything_map", "Locate_Anything_Public::outputMapMarkup" );
 		add_shortcode ( "LocateAnything_navlist", "Locate_Anything_Public::outputNavlistMarkup" );
 		add_shortcode ( "LocateAnything_filters", "Locate_Anything_Public::outputFilters" );
+	}
+
+	/**
+	 * Removes the shortcodes
+	 */
+	public function remove_shortcodes(){
+				remove_shortcode ( "LocateAnything" );
+				remove_shortcode ( "LocateAnything_map");
+				remove_shortcode ( "LocateAnything_navlist");
+			 	remove_shortcode ( "LocateAnything_filters" );
 	}
 	
 	/**
@@ -799,6 +809,10 @@ public static function defineDefaultMarker($params){
 				if($post_type!=="user") {
 					/* apply WP filters on the content, then remove javascript script tags and inline styles */				
 				remove_filter( 'the_content', 'wpautop' );
+				
+				// Removes temporarily the shortcodes
+				Locate_Anything_Public::remove_shortcodes();
+
 				$marker_content = apply_filters ( 'the_content', $post->post_content,7 );
 				$marker_content = preg_replace ( '/(<[^>]*) style=("[^"]+"|\'[^\']+\')([^>]*>)/i', '$1$3', $marker_content );
 				$marker_content = preg_replace ( '/<script\b[^>]*>(.*?)<\/script>/is', "", $marker_content );
