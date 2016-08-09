@@ -29,7 +29,9 @@ class Locate_Anything_Activator {
 	 *
 	 * @since    1.0.0
 	 */
-	public static function activate() {
+	public static function activate() {	
+		// pre-selecting default sources
+		if(!get_option("locate-anything-option-sources",'')) update_option("locate-anything-option-sources",serialize(array('post','locateanythingmarker')), '', 'yes');
 
 	}
 
