@@ -485,7 +485,7 @@ class Locate_Anything_Public {
 	 * 
 	 * @return array basic markup list and their template value
 	 */
-	public static function getBasicMarkupList($post_type) {
+	public static function getBasicMarkupList($post_type=false) {
 		$basic_markup= array (
 				"title","post_link","street",
 				"streetnum",
@@ -810,13 +810,17 @@ public static function defineDefaultMarker($params){
 					/* apply WP filters on the content, then remove javascript script tags and inline styles */				
 				remove_filter( 'the_content', 'wpautop' );
 				
-				// Removes temporarily the shortcodes
+				// Removes temporarily the LocateAnything shortcodes
 				Locate_Anything_Public::remove_shortcodes();
 
 				$marker_content = apply_filters ( 'the_content', $post->post_content,7 );
 				$marker_content = preg_replace ( '/(<[^>]*) style=("[^"]+"|\'[^\']+\')([^>]*>)/i', '$1$3', $marker_content );
 				$marker_content = preg_replace ( '/<script\b[^>]*>(.*?)<\/script>/is', "", $marker_content );
 			
+				//Restores the shortcodes
+				Locate_Anything_Public::setup_shortcodes();
+
+
 				#prepare stripped content
 				$stripped_content=strip_shortcodes(strip_tags($post->post_content,"<input><a></a><br><br/><p></p><b></b><em></em><i></i><span></span><ul><li></li></ul>"));
 				$stripped_content=wp_trim_words($stripped_content,20, "..." );
