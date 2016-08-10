@@ -402,7 +402,7 @@ class Locate_Anything_Admin
 				<div id="basic_fields_notice">				
 									
 				<?php
-		foreach (Locate_Anything_Public::getBasicMarkupList() as $tag => $nothing) {?>
+		foreach (Locate_Anything_Public::getBasicMarkupList($post_type) as $tag => $nothing) {?>
 					<div><b><?php echo ucfirst(str_replace(array("|","_") , array(""," ") , $tag)) ?></b> : <?php echo $tag ?></div>
 				<?php } ?>
 				

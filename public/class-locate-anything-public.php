@@ -485,7 +485,7 @@ class Locate_Anything_Public {
 	 * 
 	 * @return array basic markup list and their template value
 	 */
-	public static function getBasicMarkupList() {
+	public static function getBasicMarkupList($post_type) {
 		$basic_markup= array (
 				"title","post_link","street",
 				"streetnum",
@@ -506,7 +506,7 @@ class Locate_Anything_Public {
 	          "user_firstname","user_lastname","author_avatar"
 		);
 		/* Apply locate_anything_basic_markup hook */		
-		$basic_markup=apply_filters("locate_anything_basic_markup",$basic_markup);
+		$basic_markup=apply_filters("locate_anything_basic_markup",$basic_markup,$post_type);
 		foreach ($basic_markup as $k=>$markup) {
 			$markup=esc_attr($markup);
 			$b["|".$markup."|"]="(marker.$markup?marker.$markup:'')" ;
