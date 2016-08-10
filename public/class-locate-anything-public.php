@@ -134,10 +134,10 @@ class Locate_Anything_Public {
 	 * Removes the shortcodes
 	 */
 	public function remove_shortcodes(){
-				remove_shortcode ( "LocateAnything" );
-				remove_shortcode ( "LocateAnything_map");
-				remove_shortcode ( "LocateAnything_navlist");
-			 	remove_shortcode ( "LocateAnything_filters" );
+		remove_shortcode ( "LocateAnything" );
+		remove_shortcode ( "LocateAnything_map");
+		remove_shortcode ( "LocateAnything_navlist");
+		remove_shortcode ( "LocateAnything_filters" );
 	}
 	
 	/**
