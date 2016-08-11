@@ -37,6 +37,16 @@ class Locate_Anything_Admin
 	 */
 	private $version;
 	/**
+	 * The Gmaps key for this app, used for geocoding in the admin
+	 *
+	 * @since 1.0.1
+	 * @access private
+	 * @var string $app_Gmaps_key
+	 		 The GoogleMaps key.
+	 */
+	private $Gmaps_API_key = 'AIzaSyC0lZ7MbGfowxNTZva7fAyeTJ18dAWMUp0';
+
+	/**
 	 * Initialize the class and set its properties.
 	 *
 	 * @since 1.0.0
@@ -47,7 +57,7 @@ class Locate_Anything_Admin
 	 */
 	public function __construct($plugin_name, $version) {
 		$this->plugin_name = $plugin_name;
-		$this->version = $version;
+		$this->version = $version;		
 	}
 	/**
 	 * Register the JavaScript for the dashboard.
@@ -65,7 +75,7 @@ class Locate_Anything_Admin
 		wp_enqueue_script($this->plugin_name . "-leaflet-filters", plugin_dir_url(__FILE__) . '../public/js/leaflet-filters/leaflet-filters.js', array(
 			$this->plugin_name . "-leaflet"
 		) , $this->version, false);
-		wp_enqueue_script($this->plugin_name . "-googleAPI", "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places&language=en" . unserialize(get_option("locate-anything-option-map-language")) , array(
+		wp_enqueue_script($this->plugin_name . "-googleAPI", "https://maps.googleapis.com/maps/api/js?key=".$this->Gmaps_API_key."&v=3.exp&libraries=places&language=en" . unserialize(get_option("locate-anything-option-map-language")) , array(
 			$this->plugin_name . "-leaflet-filters"
 		) , $this->version, false);
 		wp_enqueue_script($this->plugin_name . "-select2", '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js');

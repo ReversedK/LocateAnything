@@ -865,6 +865,8 @@ public static function defineDefaultMarker($params){
 						"custom_marker" => $custom_marker_id,						
 						"css_class"=> $css_preset
 				);
+				
+
 				/* Type related marker infos */
 				if($post_type!=="user") {
 						$add["post_link"]=$post_params["post_link"];
