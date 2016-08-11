@@ -44,7 +44,7 @@ class Locate_Anything_Admin
 	 * @var string $app_Gmaps_key
 	 		 The GoogleMaps key.
 	 */
-	private $Gmaps_API_key = 'AIzaSyC0lZ7MbGfowxNTZva7fAyeTJ18dAWMUp0';
+	 static $Gmaps_API_key = 'AIzaSyC0lZ7MbGfowxNTZva7fAyeTJ18dAWMUp0';
 
 	/**
 	 * Initialize the class and set its properties.
@@ -59,6 +59,18 @@ class Locate_Anything_Admin
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;		
 	}
+
+	/**
+	 * serves the Gmaps Key
+	 *
+	 * @since 1.0.0
+	 */
+	public static function getGmapsAPIKey() {
+		$key = get_option("locate-anything-option-googlemaps-key");
+		if($key===false) $key = Locate_Anything_Admin::$Gmaps_API_key;
+		return $key;
+	}
+
 	/**
 	 * Register the JavaScript for the dashboard.
 	 *
@@ -290,6 +302,7 @@ class Locate_Anything_Admin
 			'publicly_queryable' => true,
 			'show_ui' => true,
 			'show_in_menu' => true,
+			'menu_icon' => 'dashicons-admin-site',
 			'query_var' => true,
 			'rewrite' => array(
 				'slug' => $slug

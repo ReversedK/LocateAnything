@@ -1,4 +1,4 @@
-<?php //include "../../../../../wp-load.php"; 
+<?php
 wp_head(); 
 $_POST["map_id"]="preview";
 foreach ($_POST as $key => $value) if(is_string($value)) $_POST[$key]= urldecode($value);	

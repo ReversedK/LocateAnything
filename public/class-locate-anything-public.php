@@ -82,7 +82,8 @@ class Locate_Anything_Public {
 				'jquery' 
 		), $this->version, false );
 		// Google API, localized according to general settings
-		wp_enqueue_script ( $this->plugin_name . "-googleAPI", "https://maps.googleapis.com/maps/api/js?v=3.exp&key=".unserialize(get_option("locate-anything-option-googlemaps-key"))."&libraries=places&language=" . unserialize ( get_option ( "locate-anything-option-map-language" ) ), array (
+		$gmaps_key = Locate_Anything_Admin::getGmapsAPIKey();		
+		wp_enqueue_script ( $this->plugin_name . "-googleAPI", "https://maps.googleapis.com/maps/api/js?v=3.exp&key=".$gmaps_key."&libraries=places&language=" . unserialize ( get_option ( "locate-anything-option-map-language" ) ), array (
 				$this->plugin_name . "-leaflet-filters" 
 		), $this->version, false );
 		// Google Tiles
