@@ -137,6 +137,17 @@ class Locate_Anything_Admin
 			
 		}
 	}
+
+	/**
+	 * Loads the preview pane
+	 */
+	public function load_preview() {	
+		if(isset($_GET["locateAnything_preview"])){	
+			include(plugin_dir_path(dirname(__FILE__)).'/admin/partials/locate-anything-preview.php');	
+			die();
+		}	
+	}
+
 	/**
 	 * Adds metaboxes to the post types selected in the options page
 	 */

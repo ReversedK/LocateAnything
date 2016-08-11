@@ -15,7 +15,7 @@ LocateAnything is a Wordpress plugin aimed at creating all sorts of maps and map
 
 LocateAnything has
 been built with extensibility in mind : addons using LocateAnything
-in conjunction with another WP plugin  typically are less than 200
+in conjunction with another WP plugin  typically are less than 300
 lines of code.  
 
 **Use just any

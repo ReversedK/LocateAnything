@@ -1,7 +1,7 @@
 === LocateAnything ===
 Contributors: locateanything
 Donate link: http://www.locate-anything.com/
-Tags: address book, addressbook, addresses, bio, biographies, bios, business, business directory plugin, business-directory, businesses, church, directories, directory, directory plugin, directory widget, geodirectory, google maps, googlemap, googlemaps, list, listings, lists, member directory, members directories, members directory, microformat, microformats, multisite, profile, profiles, staff, tripadvisor clone, user, users, vcard, wordpress business directory, wordpress business directory plugin, wordpress business directory theme, wordpress city directory plugin, wordpress directory, wordpress directory plugin, wordpress directory theme, wordpress local directory plugin, yellow pages clone, yelp clone, store locator, locator, filterable, map, filterable map, custom post type filters, custom post type, map layout
+Tags:   directory plugin,  geodirectory, google maps, , member directory, buddypress directory, wordpress city directory plugin, store locator, filterable map, custom post type filters, custom post type map, map layout
 
 Requires at least: 4.0.0
 Tested up to: 4.5.6
@@ -12,6 +12,31 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Create Maps exactly the way you want using LocateAnything. 
 
 == Description ==
+
+
+LocateAnything is a Wordpress plugin aimed at creating all sorts of maps and map-related applications : simple map,  filterable map,event map, festivals, geodirectories, community maps (user maps),store locators, you name it...
+
+**Versatile**
+
+Perfectly adapted to
+any use case where a map is needed : simple map,  filterable map,
+event map, festivals, geodirectories, community maps (user maps),
+store locators, you name it...
+
+**Universal**
+
+LocateAnything was
+built to work with any theme. If you need extra help getting your
+theme to work smoothly with LocateAnything, just hit us up for
+support in our support page - we'll be right on it.
+
+
+**Developer-friendly**
+
+LocateAnything has
+been built with extensibility in mind : addons using LocateAnything
+in conjunction with another WP plugin  typically are less than 300
+lines of code.  
 
 **Use just any
 taxonomy as a filter**
@@ -119,29 +144,6 @@ Buddypress, Advanced filters, new marker icons, new map layouts
 
 And much much more!
 
-**Versatile**
-
-Perfectly adapted to
-any use case where a map is needed : simple map,  filterable map,
-event map, festivals, geodirectories, community maps (user maps),
-store locators, you name it...
-
-**Universal**
-
-LocateAnything was
-built to work with any theme. If you need extra help getting your
-theme to work smoothly with LocateAnything, just hit us up for
-support in our support page - we'll be right on it.
-
-**Developer-friendly**
-
-WordPress developers
-can extend LocateAnything by the mean of hooks (actions and filters).
-
-LocateAnything has
-been built with extensibility in mind : addons using LocateAnything
-in conjunction with another WP plugin  typically are less than 200
-lines of code.  
 
 
 
@@ -153,7 +155,7 @@ This section describes how to install the plugin and get it working.
 
 e.g.
 
-1. Upload the plugin files to the `/wp-content/plugins/locateanything-src` directory, or install the plugin through the WordPress plugins screen directly.
+1. Upload the plugin files to the `/wp-content/plugins/locateanything` directory, or install the plugin through the WordPress plugins screen directly.
 1. Activate the plugin through the 'Plugins' screen in WordPress
 1. Use the Settings in LocateAnything > Options to configure the plugin
 

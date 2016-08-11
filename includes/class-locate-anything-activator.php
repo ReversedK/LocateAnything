@@ -32,7 +32,9 @@ class Locate_Anything_Activator {
 	public static function activate() {	
 		// pre-selecting default sources
 		if(!get_option("locate-anything-option-sources",'')) update_option("locate-anything-option-sources",serialize(array('post','locateanythingmarker')), '', 'yes');
-
+		// preselecting default language
+		$curLang = substr(get_bloginfo( 'language' ), 0, 2);
+		if(!get_option("locate-anything-option-map-language",''))  update_option("locate-anything-option-map-language",serialize($curLang), '', 'yes');
 	}
 
 }

@@ -48,6 +48,9 @@ border-radius: 11px;
 width:400px !important;
 }
 
+.nice-tooltips .leaflet-popup-content-wrapper {
+     padding: 0
+   }
 
 .nice-tooltips .leaflet-popup-content img:first-child {width:100%;}
 .nice-tooltips .leaflet-popup-content p,.nice-tooltips .leaflet-popup-content ul li {font-size: 15px;}

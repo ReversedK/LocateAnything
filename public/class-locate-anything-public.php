@@ -1,5 +1,5 @@
 <?php
-
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 /**
  * The public-facing functionality of the plugin.
  *
@@ -75,13 +75,14 @@ class Locate_Anything_Public {
 	 * @since 1.0.0
 	 */
 	public function enqueue_scripts() {
+		wp_enqueue_script('jquery');
 		wp_enqueue_script('jquery-ui-core');
 		wp_enqueue_script('jquery-ui-slider');
 		wp_enqueue_script ( $this->plugin_name . "-all", plugin_dir_url ( __FILE__ ) . 'js/locate-anything-public.js', array (
 				'jquery' 
 		), $this->version, false );
 		// Google API, localized according to general settings
-		wp_enqueue_script ( $this->plugin_name . "-googleAPI", "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=".unserialize(get_option("locate-anything-option-googlemaps-key"))."&libraries=places&language=" . unserialize ( get_option ( "locate-anything-option-map-language" ) ), array (
+		wp_enqueue_script ( $this->plugin_name . "-googleAPI", "https://maps.googleapis.com/maps/api/js?v=3.exp&key=".unserialize(get_option("locate-anything-option-googlemaps-key"))."&libraries=places&language=" . unserialize ( get_option ( "locate-anything-option-map-language" ) ), array (
 				$this->plugin_name . "-leaflet-filters" 
 		), $this->version, false );
 		// Google Tiles
@@ -505,7 +506,8 @@ class Locate_Anything_Public {
 	          	"user_login","user_ID",
 	          "user_firstname","user_lastname","author_avatar"
 		);
-		/* Apply locate_anything_basic_markup hook */		
+		/* Apply locate_anything_basic_markup hook */	
+		if(!$post_type) $post_type = 'all';	
 		$basic_markup=apply_filters("locate_anything_basic_markup",$basic_markup,$post_type);
 		foreach ($basic_markup as $k=>$markup) {
 			$markup=esc_attr($markup);
@@ -837,7 +839,7 @@ public static function defineDefaultMarker($params){
 				$maxheight=$params["locate-anything-nice-tooltips-img-height"];
 				$maxheight2=$post_params["locate-anything-nice-tooltips-img-height"];
 				if(strlen($maxheight2)>2) $css_maxheight=$maxheight2;else $css_maxheight=$maxheight;
-				$small_thumbnail="<div id='mask' style='max-height:$css_maxheight'>".get_the_post_thumbnail ( $id, 'post-thumbnail' )."</div>";
+				$small_thumbnail="<div id='mask' style='max-height:".$css_maxheight."'>".get_the_post_thumbnail ( $id, 'post-thumbnail' )."</div>";
 				} else $small_thumbnail=get_the_post_thumbnail ( $id, 'post-thumbnail' );
 				
 				

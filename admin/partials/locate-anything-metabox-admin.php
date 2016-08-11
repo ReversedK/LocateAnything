@@ -12,7 +12,7 @@
 <table id='locate-anything-main-table' style="width: 100%">
 <tr><td id="map-preview" style="width: 50%">
 <!-- Map preview -->
-<iframe scrolling="no" seamless="seamless" name="map_preview" src="<?php echo plugin_dir_url(__FILE__)?>locate-anything-preview.php?id=preview"></iframe>			 	 
+<iframe scrolling="no" seamless="seamless" name="map_preview" src="<?php echo admin_url()?>?locateAnything_preview&id=preview"></iframe>			 	 
 </td>
 <td style="width: 50%">
 <table  id="locate-anything-map-settings-page-1" class="locate-anything-map-option-pane locate-anything-map-settings-list-ul">
@@ -311,6 +311,7 @@ $navlist_presets=array(
 <script type="text/javascript">
 	var AJAX_URL= "<?php echo admin_url( 'admin-ajax.php'); ?>";
 	var PARTIAL_DIR= "<?php echo  plugin_dir_url(__FILE__); ?>";
+	var ADMIN_URL= "<?php echo  admin_url() ?>";
 	var OBJECT_ID='<?php echo $object->ID?>';
 jQuery(document).ready(function(){
 

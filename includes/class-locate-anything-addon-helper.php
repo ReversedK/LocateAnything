@@ -140,18 +140,20 @@ class Locate_Anything_Addon_Helper
         return $f;
     }
     
-    public static function add_option_pane($addon_name, $html) {
+    public static function add_option_pane($fn,$addon_name, $html) {
         add_filter("locate_anything_add_option_tab", function ($tabs) use ($addon_name) {
             $tabs[] = $addon_name;
             return $tabs;
         }
-        , 100, 1);
-        add_filter("locate_anything_add_option_pane", function ($h) use ($html, $addon_name) {
+        , 1000, 1);
+
+        add_filter("locate_anything_add_option_pane", function ($h) use ($html, $addon_name,$fn) {
+            eval("\$html = $fn();");            
             $h.= "<div id='locate-anything-map-settings-page-" . md5($addon_name) . "' class='locate-anything-map-option-pane' style='display:none'>
-		           	<h1>$addon_name Settings</h1>" . $html . "</div>";
+                    <h1>$addon_name Settings</h1>" . $html . "</div>";
             return $h;
         }
-        , 100, 1);
+        , 1000, 1);
     }
 }
 ?>
