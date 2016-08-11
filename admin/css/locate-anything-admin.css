@@ -224,3 +224,11 @@ width: 50%;
 div#addi_fields_locateanythingmarker {
    margin-bottom: 1em;
 }
+
+#locate-anything-wrapper h2 {
+   margin-top: 20px;
+   font-size: 1.5em;
+   margin-bottom: 15px;
+   padding: 0 0 3px;
+   clear: left;
+}

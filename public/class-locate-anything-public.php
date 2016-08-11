@@ -164,7 +164,7 @@ class Locate_Anything_Public {
 						<div id="map-container-'.$atts ["map_id"].'" >
 							<!-- Progress bar-->	
 						<div id="progress-wrapper">					
-						<div class="progress" id="progress-'.$atts ["map_id"].'"><div class="progress-bar" id="progress-bar-'.$atts ["map_id"].'"></div></div>
+						<div class="progress"  style="background-color:transparent" id="progress-'.$atts ["map_id"].'"><div class="progress-bar" id="progress-bar-'.$atts ["map_id"].'"></div></div>
 						</div></div>' . Locate_Anything_Public::generateMapJS ( $atts ["map_id"], "map-container-".$atts ["map_id"] );
 		return $content;
 	}

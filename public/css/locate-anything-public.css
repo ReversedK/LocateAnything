@@ -144,3 +144,8 @@ width: 100%;
 float: left;
 font-weight: bold;
 }
+
+.leaflet-container a.leaflet-popup-close-button {   
+    top: 3px;
+    right: 2px;
+  }
