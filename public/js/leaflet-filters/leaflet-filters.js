@@ -190,9 +190,10 @@ var leaflet_filters_class= function (params){
 		/* copies the extra properties in the leaflet object*/
 		for(var i in properties) marker[i]=properties[i];
 		/** bind html popup */	
-	var h=parseInt(Math.floor(jQuery("#map-container-"+self.params["map-id"]).height()*9/10));
+		
+		//var h=parseInt(Math.floor(jQuery("#map-container-"+self.params["map-id"]).height()*9/10));
 
-		var popup = new L.Popup({'autoPan':false,'maxHeight':h,className:marker.css_class});
+		var popup = new L.Popup({'autoPan':false,'maxHeight':0,className:marker.css_class});
 		popup.setContent(html);
 		marker.bindPopup(popup);
 

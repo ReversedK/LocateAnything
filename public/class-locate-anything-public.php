@@ -502,14 +502,17 @@ class Locate_Anything_Public {
 				"medium_thumbnail",
 				"full_thumbnail",
 				"author_name",
-				"user_name",
+				/*"user_name",
 				"user_email",
 	          	"user_login","user_ID",
-	          "user_firstname","user_lastname","author_avatar"
+	          	"user_firstname","user_lastname","author_avatar"*/
 		);
 		/* Apply locate_anything_basic_markup hook */	
 		if(!$post_type) $post_type = 'all';	
-		$basic_markup=apply_filters("locate_anything_basic_markup",$basic_markup,$post_type);
+		
+		/* If post type == basic return only the basic_markup array without applying filter */
+		if($post_type!=="basic") $basic_markup=apply_filters("locate_anything_basic_markup",$basic_markup,$post_type);
+		
 		foreach ($basic_markup as $k=>$markup) {
 			$markup=esc_attr($markup);
 			$b["|".$markup."|"]="(marker.$markup?marker.$markup:'')" ;

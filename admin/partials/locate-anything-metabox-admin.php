@@ -1,4 +1,12 @@
  <?php wp_nonce_field( "I961JpJQTj0crLKH0mGB" , 'locate_anything_class_nonce' ); ?>
+
+
+<table id='locate-anything-main-table' style="width: 100%">
+<tr><td id="map-preview" style="width: 100%">
+<!-- Map preview -->
+<iframe scrolling="no" seamless="seamless" name="map_preview" src="<?php echo admin_url()?>?locateAnything_preview&id=preview"></iframe>			 	 
+</td></tr></table>
+
 <h2 class="nav-tab-wrapper">
     <a  data-pane="1"  data-animation="50%" class="active nav-tab"><?php _e("Map settings","locate-anything");?></a>
     <a class="nav-tab" data-pane="6" data-animation="50%"><?php _e("Filters","locate-anything");?></a>
@@ -10,11 +18,8 @@
 
 <div id="locate-anything-wrapper">
 <table id='locate-anything-main-table' style="width: 100%">
-<tr><td id="map-preview" style="width: 50%">
-<!-- Map preview -->
-<iframe scrolling="no" seamless="seamless" name="map_preview" src="<?php echo admin_url()?>?locateAnything_preview&id=preview"></iframe>			 	 
-</td>
-<td style="width: 50%">
+<tr>
+<td style="width: 100%">
 <table  id="locate-anything-map-settings-page-1" class="locate-anything-map-option-pane locate-anything-map-settings-list-ul">
 <tr><td><h2><?php _e("General settings","locate-anything")?></h2></td></tr>  
 
@@ -27,7 +32,7 @@
 	<option value="<?php echo $overlay->id;?>" data-url="<?php echo $overlay->url;?>" data-attribution="<?php echo $overlay->attribution;?>" <?php if(get_post_meta($object->ID,'locate-anything-map-provider',true)==$overlay->id) echo "selected";?> ><?php echo $overlay->name?></option>
 <?php }?>
 <!--<option value='custom'><?php _e("Custom map overlay","locate-anything")?></option>-->
-</select><br>
+</select><br><small><?php _e("<b>Important : </b> if you choose GoogleMaps you MUST enter a GoogleMaps API key in the <a href='".admin_url()."edit.php?post_type=locateanythingmap&page=locate-anything-settings'>options page</a>","locate-anything");?> </small>
 </td></tr>	
 
 <?php echo do_action("LocateAnything-general-settings-form",$object->ID)?>
@@ -182,14 +187,14 @@
 <td >
 <!-- Awesome marker creator -->
 			<div id="locate-anything-marker-creator">		
-					<?php _e("Symbol","locate-anything")?> : <select name="locate-anything-marker-symbol" id="locate-anything-marker-symbol">
+					<?php _e("Symbol","locate-anything")?> : <select style='width:80px !important'  name="locate-anything-marker-symbol" id="locate-anything-marker-symbol">
 					<?php 
 					$selected_awesome=get_post_meta($object->ID,"locate-anything-marker-symbol",true);
 					include plugin_dir_path ( __FILE__ ) . "../../includes/ionicon-options.php"?>
 					</select>
-					<br><br>
+					<br>
 					<?php _e("Symbol color","locate-anything")?> : <input type="color" value="<?php echo get_post_meta($object->ID,"locate-anything-marker-symbol-color",true)?>"  name="locate-anything-marker-symbol-color">
-					<br><br>
+					<br>
 					<?php _e("Marker color","locate-anything")?> : 
 					<select name="locate-anything-marker-color">
 					<?php foreach(array('red', 'darkred', 'orange', 'green', 'darkgreen', 'blue', 'purple', 'darkpurple', 'cadetblue') as $color){

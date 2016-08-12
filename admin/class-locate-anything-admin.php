@@ -67,7 +67,7 @@ class Locate_Anything_Admin
 	 */
 	public static function getGmapsAPIKey() {
 		$key = get_option("locate-anything-option-googlemaps-key");
-		if($key===false) $key = Locate_Anything_Admin::$Gmaps_API_key;
+		if($key===false || empty($key)) $key = Locate_Anything_Admin::$Gmaps_API_key;		
 		return $key;
 	}
 
@@ -87,7 +87,7 @@ class Locate_Anything_Admin
 		wp_enqueue_script($this->plugin_name . "-leaflet-filters", plugin_dir_url(__FILE__) . '../public/js/leaflet-filters/leaflet-filters.js', array(
 			$this->plugin_name . "-leaflet"
 		) , $this->version, false);
-		wp_enqueue_script($this->plugin_name . "-googleAPI", "https://maps.googleapis.com/maps/api/js?key=".$this->Gmaps_API_key."&v=3.exp&libraries=places&language=en" . unserialize(get_option("locate-anything-option-map-language")) , array(
+		wp_enqueue_script($this->plugin_name . "-googleAPI", "https://maps.googleapis.com/maps/api/js?key=".$this->getGmapsAPIKey()."&v=3.exp&libraries=places&language=en" . unserialize(get_option("locate-anything-option-map-language")) , array(
 			$this->plugin_name . "-leaflet-filters"
 		) , $this->version, false);
 		wp_enqueue_script($this->plugin_name . "-select2", '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js');
@@ -175,7 +175,7 @@ class Locate_Anything_Admin
 	 */
 	public function add_admin_meta_boxes() {
 		add_meta_box('locate-anything-class', // Unique ID
-		esc_html__('LocateAnything', 'locate-anything') , // Title
+		esc_html__('LocateAnything - Wordpress Geo Plugin', 'locate-anything') , // Title
 		'Locate_Anything_Admin::admin_class_meta_box', // Callback function
 		'locateanythingmap', // Admin page (or post type)
 		'normal', // Context
@@ -426,6 +426,7 @@ class Locate_Anything_Admin
 		}
 		return $additional_field_list;
 	}
+	
 	/**
 	 * displays additional fields and their tags
 	 *
@@ -433,12 +434,23 @@ class Locate_Anything_Admin
 	public static function displayAdditionalFieldNotice($post_type) {
 		$additional_field_list_json = stripslashes(unserialize(get_option('locate-anything-option-additional-field-list', '')));
 		if ($additional_field_list_json) $additional_field_list = json_decode($additional_field_list_json, true); ?>
-				<div id="basic_fields_notice">				
-									
-				<?php
-		foreach (Locate_Anything_Public::getBasicMarkupList($post_type) as $tag => $nothing) {?>
-					<div><b><?php echo ucfirst(str_replace(array("|","_") , array(""," ") , $tag)) ?></b> : <?php echo $tag ?></div>
-				<?php } ?>
+				<div id="basic_fields_notice">									
+	<?php	  
+			$post_types = array("basic");
+			$post_types += unserialize (get_option ( 'locate-anything-option-sources' ));
+			$post_types = apply_filters("locate_anything_add_sources",$post_types);			
+			$already_displayed_tags =array();
+			  			  
+			 foreach ( $post_types as $posttype ) {
+			 	if($posttype=="Users") $posttype = 'user';
+			 	$markups = Locate_Anything_Public::getBasicMarkupList($posttype);
+			 	foreach ($markups as $tag => $nothing) {	
+			 			if(in_array($tag,$already_displayed_tags))	continue;
+			 			array_push($already_displayed_tags,$tag);
+			 		?>
+					<div class='basic-markup basic-markup-<?php echo $posttype?>'><b><?php echo ucfirst(str_replace(array("|","_") , array(""," ") , $tag)) ?></b> : <?php echo $tag ?></div>
+				<?php }
+				} ?>
 				
 				</div>
 				<div id="additional_fields_notice">				

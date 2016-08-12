@@ -20,21 +20,23 @@ strong,b {font-weight:bold;}
     clear: both; 
     width: 50%;
 }
-.locate-anything-map-settings-list-ul{  padding:20px;
-    width: 100%;
+.locate-anything-map-settings-list-ul{  
+    padding:20px;
+    min-width: 70%;
     margin-top:0;  
     background:#fff;
     padding-top: 1em;    
     margin-right: 2em;
-margin-left: 2em;
-float: right;
+    margin-left: 2em;
+    float: left;
 }
 
-#locate-anything-wrapper iframe{      
-    height: 100%;
-    width: 90%;
+#map-preview iframe{      
+    height: 400px;
+    width: 100%;
     float: left;
-    min-height: 700px;
+    min-height: 400px;
+    border: 1px solid #ccc;
 }
 
 #locate-anything-wrapper-post .locate-anything-map-settings-list-ul{
@@ -115,7 +117,7 @@ li.half_li {width:50%;float:left;}
 
 #locate-anything-class div.inside { }
 a.nav-tab {
-   padding: 4px 14px 6px !important;
+  // padding: 4px 14px 6px !important;
 font-weight: normal;
 font-weight: bold;
  background: #fff   ;
@@ -131,7 +133,9 @@ a.nav-tab:hover {border:1px solid #ccc;}
 h2.nav-tab-wrapper{
     margin-bottom: 0 !important; 
     cursor: pointer;    
-    padding:0 !important;     
+    padding:0 !important;  
+    text-align: center;  
+    margin-top: 2em!important;
 }
 
 h2.nav-tab-wrapper .active{
@@ -142,12 +146,34 @@ border-bottom:1px solid #ccc !important;
 font-weight: bold;  
    
 }
-.select2-container {min-width: 60px !important;}
+.select2-container {
+  //  min-width: 60px !important;
 
+}
+#locate-anything-marker-symbol .select2-container--default .select2-selection--single .select2-selection__rendered,#select2-locate-anything-marker-symbol-container{
+    color: #444 !important;
+    line-height: 29px !important;   
+    padding-top: 6px !important;
+    padding-left: 9px !important;
+}
+
+#locate-anything-marker-selector .select2-container--default .select2-selection--single .select2-selection__rendered {
+    padding : 0 !important;
+}
+
+.select2-selection .select2-selection--single {
+     padding-top: 1px !important;
+    padding-left: 0 !important;
+}
+
+.select2-container .select2-selection--single {
+    height: 50px !important;
+    width:50px !important;
+}
 #locate-anything-wrapper{
     width:100%;
     margin:auto;   
-    border:1px solid #ccc;
+   // border:1px solid #ccc;
     border-top:none;
     padding: 0;  
 }

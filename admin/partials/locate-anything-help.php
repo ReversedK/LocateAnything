@@ -76,6 +76,11 @@ var annotations=
   target : '#maplayout',
   content: '<?php _e("A predefined layout is only displayed  when the shortcode [LocateAnything map_id=...] is used. The layout determines the organization of the different elements : map, navlist and filters.<br/><br/> LocateAnything proposes several predefined layouts for your maps. You can use them as-is or modify them to fit your needs.","locate-anything")?>'
 }),
+"nice-tooltips-settings": new Anno({ 
+  target : '#nice-tooltips-settings',
+  content: '<?php _e("Select the \"Nice Tooltips\" setting in the dropdown menu. You can set the maximum image height or just leave it blank.","locate-anything")?>'
+}),
+
 "medialibrary": new Anno({ 
   target : '#medialibrary',
   content: '<?php _e("You can use an image from Wordpress media library as a marker icon. <br><b>Warning</b> : The image will NOT be resized. Please make sure its size is adequate.","locate-anything")?>'

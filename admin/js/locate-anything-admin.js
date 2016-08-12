@@ -14,19 +14,35 @@ jQuery(document).ready(function(){
           //  jQuery('#map-preview').animate({'height':'100%','width':jQuery(e.target).attr("data-animation")},700)
         }   
     });
+
+/* Refreshing the tags according to the selected source */
+  jQuery("#locate-anything-source").change(function(){manage_tag_visibility()});
+  manage_tag_visibility();  
+
 /* option page events */
   jQuery("#locate-anything-option-sources").change(function(){manage_addi_field_visibility()});
   manage_addi_field_visibility();
 });
 
+/* OPTION PAGE : shows/hide additional fields according to the selected source */
 function manage_addi_field_visibility(){
-      jQuery(".additional_fields").hide();
-  jQuery("#locate-anything-option-sources option:selected").each(function(i,o){
+    jQuery(".additional_fields").hide();
+    jQuery("#locate-anything-option-sources option:selected").each(function(i,o){
     jQuery("#addi_fields_"+jQuery(o).val()).show();
   });
 }
 
-/* Option page : Appends a row to the additional field list passed in arg, generates a fieldname and refreshes the list in options*/ 
+/* shows/hide tags according to the selected source */
+function manage_tag_visibility(){
+    jQuery(".basic-markup").hide();
+    jQuery(".basic-markup-basic").show();
+    jQuery("#locate-anything-source option:selected").each(function(i,o){
+    jQuery(".basic-markup-"+jQuery(o).val()).show();
+    
+  });
+}
+
+/*  OPTION PAGE : Appends a row to the additional field list passed in arg, generates a fieldname and refreshes the list in options*/ 
 function LA_appendRow(container_id,post_type){
 	var id='locate-anything-additional-field-'+ (new Date).getTime()
 jQuery(container_id).append("<li><input type='text' data-post-type='"+post_type+"' name='"+id+"'  id='"+id+"' class='locate-anything-additional-field' placeholder='enter the field  human-readable name'> <input type='button' class='button-admin' id='del-"+id+"' value='delete' onclick='LA_removeRow(\"#"+id+"\")'></li>");
@@ -86,14 +102,14 @@ function formatSelect (item) {
 
 function formatSelect2 (item) {  
   var $item = jQuery(
-    '<span style="font-size:25px" class="'+ item.id +'"></span>'
+    '<span style="font-size:37px" class="'+ item.id +'"></span>'
   );
   return $item;
 };
 
 function formatSelected2 (item) {  
   var $item = jQuery(
-    '<span  style="font-size:25px" class="'+ item.id + '" ></span>'
+    '<span  style="font-size:37px" class="'+ item.id + '" ></span>'
   );
   return $item;
 };
@@ -101,7 +117,7 @@ function formatSelected2 (item) {
 function formatSelected (item) {
   if (!item.id) { return item.text; }
   var $item = jQuery(
-    '<span><img src="'+ item.text + '" style="height:23px;"  /></span>'
+    '<span><img src="'+ item.text + '"   /></span>'
   );
   return $item;
 };
@@ -153,7 +169,7 @@ function locate_anything_refresh_template_tags(itemT){
         jQuery(".refine-hide-if-"+item.value).fadeIn();
         str+="<tr id='"+item.value+"'><td><b>"+item.value+"</b></td><td>|"+item.value+"|</td></tr>";
       });
-      jQuery("#filter_fields_notice").html(str)     
+      jQuery("#filter_fields_notice").html(str);    
       };
 
 
