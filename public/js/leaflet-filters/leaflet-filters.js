@@ -374,8 +374,7 @@ var leaflet_filters_class= function (params){
 				  				
 						/* apply filter */	
 
-							if(jQuery(filter_id).hasClass("rangeslider")){
-								console.log(filter_value);
+							if(jQuery(filter_id).hasClass("rangeslider")){								
 								if(m[property_name]<filter_value[0] || m[property_name]>filter_value[1]) return false;	
 							} else if(jQuery.isArray(filter_value) && filter_value.length>0) {		
 								/* value is an array*/

@@ -119,11 +119,25 @@ float: left !important;
 text-align: center !important;
 }
 
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { 
+    min-height: 1.2em;
+    line-height: 1.2em;
+    padding: 0 5px;
+}
+
 .ui-slider .ui-slider-handle {
 width: auto !important;
 min-width: 1.2em;
 top: -0.4em !important;
 }
+
+/* Css fix for range slider when Woocommerce is activated */
+.ui-slider .ui-slider-handle:before, .ui-slider .ui-slider-handle:after {
+   display: none !important;
+}
+/* End Range slider */
+
 
 .map-types {padding-top:2em;border-radius: 25px}
 .map-types .content-wrapper-background{border-radius: 25px;border:1px solid #eee;}

@@ -3,20 +3,14 @@
 Website URL: http://www.locate-anything.com/
 
 Requires at least:WordPress 4.0.0
-Tested up to: 4.5.6
-Stable tag: 4.5.6
-License: GPLv2 or later
 
 
-LocateAnything is a Wordpress plugin aimed at creating all sorts of maps and map-related applications : simple map,  filterable map,event map, festivals, geodirectories, community maps (user maps),store locators, you name it...
+LocateAnything is a versatile and highly customizable Wordpress plugin aimed at creating nice searchable/filterable maps.  Easily let your users search your maps by tags, custom taxonomies,xprofile fields(with the BuddyPress addon) and much more... 
 
 
 **Developer-friendly**
 
-LocateAnything has
-been built with extensibility in mind : addons using LocateAnything
-in conjunction with another WP plugin  typically are less than 300
-lines of code.  
+LocateAnything has been built with extensibility in mind : addons using LocateAnything in conjunction with another WP plugin  typically are less than 300 lines of code.  
 
 **Use just any
 taxonomy as a filter**
@@ -128,7 +122,6 @@ And much much more!
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
 
 
 
@@ -138,7 +131,4 @@ And much much more!
 * Current version
 
 
-
-
-**Tags**:  *business, business directory plugin, business-directory, businesses, church, directories, directory, directory plugin, directory widget, geodirectory, google maps, googlemap, googlemaps, list, listings, lists, member directory, members directories, members directory, microformat, microformats, multisite, profile, profiles, staff, tripadvisor clone, user, users, vcard, wordpress business directory, wordpress business directory plugin, wordpress business directory theme, wordpress city directory plugin, wordpress directory, wordpress directory plugin, wordpress directory theme, wordpress local directory plugin, yellow pages clone, yelp clone, store locator, locator, filterable, map, filterable map, custom type filters, custom type, map layout*
 
