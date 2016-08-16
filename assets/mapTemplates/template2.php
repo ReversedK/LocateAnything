@@ -54,17 +54,18 @@ margin: 0;
 padding: 15px;
 float: left;
 width: 100%;
-background-color: #3498db;
+background-color: #db6a34;
 color: #eee;
 }
 
 /* filter container */
 .category-filters-container li {
-padding-bottom: 1em; 
-float:left;
-    width:100%;
-padding:10px;
-min-width: 150px;
+    padding-bottom: 1em;
+    float: left;
+    width: 38%;
+    padding: 10px;
+    min-width: 150px;
+    margin: 0 1em;
 }
 
 /* filter title*/
@@ -73,7 +74,7 @@ width: 100% !important;
 float: left;
 margin-bottom: 5px;
 font-family: sans-serif;
-font-size: 20px;
+font-size: 14px;
 }
 
 

@@ -368,7 +368,8 @@ var leaflet_filters_class= function (params){
 			}
 			var self=this;
 			this.filtered_markers=this.filtered_markers.filter(function(m){		
-						var found=0;					
+						var found=0;
+						if(m[property_name]===null)	m[property_name]='';				
 						var array_values_marker=m[property_name].split(",");
 						var values_marker=','+m[property_name]+',';	
 				  				

@@ -110,11 +110,9 @@ public static function findSomething($post_type,$taxonomies,$taxo_args=array(),$
 				'paged'=>$paged,
 				'numberposts'=>9999,
 				'posts_per_page' => -1,
-				'tax_query' => array(
-						'relation' => $relation
-							
-				),
+				'tax_query' => array('relation' => $relation)
 		);
+		
 		foreach($query_args as $k=>$v) $myquery [$k]=$v;
 		
 		if(is_array($taxonomies))foreach($taxonomies as $taxonomy){

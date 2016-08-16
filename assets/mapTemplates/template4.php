@@ -23,7 +23,7 @@
 }
 
 #bloc2 {
-    width:65%;
+    width:67%;
     float: right;
     clear: none;
 }
@@ -54,17 +54,18 @@ margin: 0;
 padding: 15px;
 float: left;
 width: 100%;
-background-color: #3498db;
+background-color: #db6a34;
 color: #eee;
 }
 
 /* filter container */
 .category-filters-container li {
-padding-bottom: 1em; 
-float:left;
-    width:100%;
-padding:10px;
-min-width: 150px;
+    padding-bottom: 1em;
+    float: left;
+    width: 38%;
+    padding: 10px;
+    min-width: 150px;
+    margin: 0 1em;
 }
 
 /* filter title*/
@@ -73,7 +74,7 @@ width: 100% !important;
 float: left;
 margin-bottom: 5px;
 font-family: sans-serif;
-font-size: 20px;
+font-size: 14px;
 }
 
 
@@ -90,8 +91,7 @@ width: 100%;
 .map-nav-item-wrapper div{
   text-align:justify;
   margin: 0;
-  float: left;
-  width:54%;
+  float: left; 
   font-size:13px;
 }
 
@@ -138,10 +138,28 @@ width: 100%;
 /* Mask for list img */
 .map-nav-item-wrapper div#mask {
 width: 100%;
-height: 200px;
+height: 100%;
 overflow: hidden;
 margin-left: 10px;
+float: right;
 }
+
+.map-nav-item-wrapper div#mask img{
+width: 100%
+}
+
+
+/*
+.map-nav-item-wrapper div#mask {
+width: 100%;
+height: 100%;
+overflow: hidden;
+margin-left: 10px;
+float: left;
+margin-bottom: 10px
+}*/
+
+
 
 .map-nav-pagination {
 margin-left: 10px
@@ -166,7 +184,6 @@ max-width:15em;
 }
 #locate-anything-template-wrapper {
     overflow: hidden;
-    width: 100%;
-    height: 1000px;
+    width: 100%;  
 }
 </style>
