@@ -1,32 +1,33 @@
 <?php
 /**
- * Tools
- *
  * @package Locate_Anything
  * @subpackage Locate_Anything/admin
- * @author 4GOA <locateanything@4goa.net>
+ * @author 4GOA <locateanything@4goa.net> 
  */
 class Locate_Anything_Addon_Helper
 {
-
+    /**
+     * Registers filters in relation with the Option page
+     * @param [string] Callback function name
+     * @param [string] Addon name
+     */ 
     public static function add_option_pane($fn,$addon_name) {
+        // adds a tab in the option page horizontal menu
         add_filter("locate_anything_add_option_tab", function ($tabs) use ($addon_name) {
             $tabs[] = $addon_name;
             return $tabs;
-        }
-        , 1000, 1);
-
+        } , 1000, 1);
+        // adds the actual option page content
         add_filter("locate_anything_add_option_pane", function ($h) use ($addon_name,$fn) {
             eval("\$html = $fn();");            
             $h.= "<div id='locate-anything-map-settings-page-" . md5($addon_name) . "' class='locate-anything-map-option-pane' style='display:none'>
                     <h1>$addon_name Settings</h1>" . $html . "</div>";
             return $h;
-        }
-        , 1000, 1);
+        } , 1000, 1);
     }
 
     /**
-     * Add overlays to the overlay list in BO
+     * Add overlays to the overlay list in BackOffice
      * @param [string] $addon_name
      * @param [array] $overlays   [array of overlay objects]
      */
@@ -39,17 +40,14 @@ class Locate_Anything_Addon_Helper
                 $all_overlays[$nid] = $ov;
             }
             return $all_overlays;
-        }
-        , 10, 1);
+        } , 10, 1);
     }
 
     /**
-     * Add Tooltips presets to the BO
+     * Add Tooltips presets to the BackOffice
      * @param [string] $addon_name
      * @param [array] $presets   [array of presets objects]
      */
-
-
     public static function add_tooltip_presets($addon_name, $presets) {
         add_filter("locate_anything_tooltip_presets", function ($all_presets) use ($addon_name, $presets) {
             $i = 0;
@@ -59,16 +57,14 @@ class Locate_Anything_Addon_Helper
                 $all_presets[$nid] = $ov;
             }
             return $all_presets;
-        }
-        , 10, 1);
+        } , 10, 1);
     }
 
     /**
-     * Add Navlist presets to the BO
+     * Add Navlist presets to the BackOffice
      * @param [string] $addon_name
      * @param [array] $presets   [array of presets objects]
      */
-
     public static function add_navlist_presets($addon_name, $presets) {
         add_filter("locate_anything_navlist_presets", function ($all_presets) use ($addon_name, $presets) {
             $i = 0;
@@ -78,12 +74,11 @@ class Locate_Anything_Addon_Helper
                 $all_presets[$nid] = $ov;
             }
             return $all_presets;
-        }
-        , 10, 1);
+        } , 10, 1);
     }
 
     /**
-     * Add marker icons to the list in BO
+     * Add marker icons to the list in BackOffice
      * @param [string] $addon_name
      * @param [array] $markers   [array of marker icons objects]
      */
@@ -100,7 +95,7 @@ class Locate_Anything_Addon_Helper
         , 10, 1);
     }
     /**
-     * Add map layouts to the list in BO
+     * Add map layouts to the list in BackOffice
      * @param [string] $addon_name
      * @param [array] $layouts   [array of map layouts objects]
      */
@@ -119,14 +114,14 @@ class Locate_Anything_Addon_Helper
 
 
      /**
-     * Sets up the filters passed inargument
+     * Sets up the filters passed in argument
      * @param [array] $arr_filters  array of filters.  Form : $arr_filters = array(  field_name => array( 'name'=> filter caption,'values'=>field values ));   
      * @param [string] $scope  The scope of the filters : post_type, user or all
      * @param [string] $getDataCallbackFn    callback function to call to get the datas for a definite field and marker ID
      * @param [string] $addon_name  Addon name
      */   
      public static function define_filters($arr_filters,$scope,$getDataCallbackFn,$addon_name){ 
-        // add filter refine options in BO  
+        // add filter refine options in BackOffice  
         Locate_Anything_Addon_Helper::add_filter_refine_options($arr_filters,$scope);
         // add filter html in FO
         Locate_Anything_Addon_Helper::add_frontoffice_filters($arr_filters);
@@ -143,17 +138,18 @@ class Locate_Anything_Addon_Helper
 
 
     /**
-     * Adds new options in the filters/Refine by tab of the BO
-     * @param  [string] $arr_filters      arrays of the filters to add  : array(field_name=>field_value,...)
+     * Adds new options in the filter's "Refine by" tab of the BackOffice
+     * @param  [string] $arr_filters      arrays of the filters to add. Form : $arr_filters = array(  field_name => array( 'name'=> filter caption,'values'=>field values ));  
      * @param  [string] $post_type    
      * @param  [int] $map_id       Map ID
      * @return string $filter_html
      */
     public static function add_filter_refine_options($arr_filters,$scope){
         add_filter("locate_anything_add_filter_choice", function ($filter_html,$map_id,$post_type) use ($arr_filters,$scope) {        
-            if($post_type!==$scope && $scope!=="all") return $filter_html;          
-            foreach ($arr_filters as $fname=>$filter) {
-                $filter_html.=Locate_Anything_Addon_Helper::create_filter_choice($fname,$filter['name'],$map_id);
+            if($post_type==$scope || $scope=="all") {      
+                foreach ($arr_filters as $fname=>$filter) {
+                    $filter_html.=Locate_Anything_Addon_Helper::create_filter_choice($fname,$filter['name'],$map_id);
+                }
             }
             return $filter_html;  
         }, 10 ,3);
@@ -196,7 +192,7 @@ class Locate_Anything_Addon_Helper
      * @param [int] $id     Marker ID
      * @param [string] $type  post_type or "user" or "all"
      */
-    public static function add_filter_vars($arr_filters,$scope,$callbackFn){
+    public static function add_filter_vars(&$arr_filters,$scope,$callbackFn){
         add_filter("locate_anything_filter_related_vars",function($arr,$map_id,$id,$type) use ($arr_filters,$scope,$callbackFn) {    
         if($scope==$type || $scope=="all") {   
         $filters=get_post_meta($map_id,"locate-anything-show-filters",true);
@@ -213,7 +209,6 @@ class Locate_Anything_Addon_Helper
        
         }, 10 ,4);
     }
-
 
     public static function whitelist_filter_tags($arr_filters){
         add_filter("locate_anything_whitelist_params",function($whitelisted_tags) use ($arr_filters) {
@@ -236,7 +231,7 @@ class Locate_Anything_Addon_Helper
     }
 
     /**
-     * Allows the creation of new choices in the filterS tab of the BO
+     * Allows the creation of new choices in the filters tab of the BackOffice
      * @param  [type] $filters      [description]
      * @param  [type] $filter_field [description]
      * @param  [type] $title        [description]
@@ -265,7 +260,7 @@ class Locate_Anything_Addon_Helper
     }
 
       /**
-     * Allows the creation of filters in FO
+     * Allows the creation of filters in FrontOffice
 
      */    
     public static function create_filter($filter, $name, $map_id, $values) {
@@ -288,10 +283,8 @@ class Locate_Anything_Addon_Helper
 
                 default:
                     break;
-            }
-            
+            }            
             foreach ($values as $value) {
-
                 switch ($selector) {
                     case 'checkbox':
                     if(!empty($value)) $f.= "<input type='checkbox' checked name='" . $filter . "-" . $map_id . "[]' id='" . $filter . "-" . $map_id . "' value='" . esc_attr(stripslashes($value)) . "'>" . stripslashes($value);
@@ -319,7 +312,4 @@ class Locate_Anything_Addon_Helper
         $f.= "</li>";
         return $f;
     }
-    
-
-}
-?>
+}?>
