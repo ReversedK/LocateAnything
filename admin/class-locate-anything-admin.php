@@ -457,7 +457,7 @@ class Locate_Anything_Admin
 				<table id="additional_fields_notice">							
 				<?php
 		if (is_array($additional_field_list)) foreach ($additional_field_list as $field) {
-			if (is_null($field["field_description"]) || is_null($field["field_name"]) || $field['post_type']!==$post_type) continue;
+			if (is_null(@$field["field_description"]) || is_null(@$field["field_name"]) || @$field['post_type']!==$post_type) continue;
 ?>
 					<tr><td><b><?php
 			echo $field["field_description"] . "(" . $field['post_type'] . ")" ?></b></td><td>|<?php

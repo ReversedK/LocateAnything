@@ -115,7 +115,7 @@ class Locate_Anything_Public {
 				$this->plugin_name . "-leaflet-filters" 
 		), $this->version, false );
 		// Awesome markers
-		wp_enqueue_script ( $this->plugin_name . "-awesomemarkersjs", plugin_dir_url ( __FILE__ ) . 'js/leaflet.awesome-markers-2.0/leaflet.awesome-markers.js', array (
+		wp_enqueue_script ( $this->plugin_name . "-awesomemarkersjs", plugin_dir_url ( __FILE__ ) . 'js/leaflet.awesome-markers-2.0/leaflet.awesome-markers.min.js', array (
 				$this->plugin_name . "-leaflet-filters" 
 		), $this->version, false );
 	}
@@ -318,6 +318,7 @@ class Locate_Anything_Public {
 						<?php if($params["style-hue"]) echo '"style-hue":"'.$params["style-hue"].'",'?>
 						"scrollWheelZoom" : <?php echo $params["scrollWheelZoom"]?>,
 						"navlist_event" : '<?php echo  $params["navlist_event"]?>',
+						
 					};
 
 						/* define instance name*/

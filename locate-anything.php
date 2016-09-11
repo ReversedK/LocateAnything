@@ -8,17 +8,17 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              http://www.4goa.net/
+ * @link              http://www.locate-anything.com
  * @since             1.0.0
  * @package           Locate_Anything
  *
  * @wordpress-plugin
  * Plugin Name:       LocateAnything
- * Plugin URI:        http://www.4goa.net/locate-anything
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Plugin URI:        http://www.locate-anything.com
+ * Description:       LocateAnything is a versatile and highly customizable Wordpress plugin aimed at creating nice searchable/filterable maps.  Easily let your users search your maps by tags, custom taxonomies,xprofile fields(with the BuddyPress addon) and much more...
  * Version:           1.0.0
  * Author:            4GOA
- * Author URI:        http://www.4goa.net/
+ * Author URI:        http://www.locate-anything.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       locate-anything

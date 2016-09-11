@@ -220,7 +220,8 @@ var leaflet_filters_class= function (params){
 			"center": new L.latLng(this.params["initial-lat"],this.params["initial-lon"]),
 			"maxZoom":this.params["overlay"]["maxZoom"],
 			"minZoom":this.params["overlay"]["minZoom"],
-			"scrollWheelZoom":this.params["scrollWheelZoom"],			
+			"scrollWheelZoom":this.params["scrollWheelZoom"],
+			"worldCopyJump"	: true		
 			};	
 
 		this.map=L.map(this.params["map-container"],options);	
