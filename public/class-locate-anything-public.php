@@ -252,6 +252,10 @@ class Locate_Anything_Public {
 		/* width & height*/
 		$params ["map-width"]=$settings['locate-anything-map-width'] ;
 		$params ["map-height"]=$settings['locate-anything-map-height'] ;
+		/* hide splashscreen*/
+		$params["hide-splashscreen"] = $settings["locate-anything-hide-splashscreen"] ;
+		/* refresh navlist as you go*/
+		$params ["display_only_inbound"]=$settings['locate-anything-display_only_inbound'] ;
 		/* autogeocode */
 		$params ["autogeocode"] = trim($settings['locate-anything-usergeolocation-zoom']);
 		/* mousewheel*/
@@ -312,12 +316,14 @@ class Locate_Anything_Public {
 						"initial-lon": <?php echo $params["initial-lon"]?>,
 						"initial-zoom": <?php echo $params["initial-zoom"]?>,
 						"autogeocode" :'<?php echo $params["autogeocode"]?>',
+						"display_only_inbound" : '<?php echo $params["display_only_inbound"]?>',
 						"overlay" : <?php echo $params["overlay"]?>,
 						"googleplaces" : <?php echo $params["googleplaces"]?>,
 						"max_nav_item_per_page" : <?php echo $params["max_nav_item_per_page"]?>,
 						<?php if($params["style-hue"]) echo '"style-hue":"'.$params["style-hue"].'",'?>
 						"scrollWheelZoom" : <?php echo $params["scrollWheelZoom"]?>,
 						"navlist_event" : '<?php echo  $params["navlist_event"]?>',
+						"hide-splashscreen" : '<?php echo $params["hide-splashscreen"]?>',
 						
 					};
 

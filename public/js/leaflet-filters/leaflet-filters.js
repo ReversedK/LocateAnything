@@ -13,7 +13,7 @@ var leaflet_filters_class= function (params){
 	 this.markerCluster=null;
 	 this.instance_id=null;
 	 this.max_nav_item_per_page=params["max_nav_item_per_page"];
-	 this.params=params;
+	 this.params=params;	 
 	 this.filtered_markers=new Array();
 	 this.markersData=new Array();
 
@@ -278,13 +278,17 @@ var leaflet_filters_class= function (params){
 	 * Fills inBounds array
 	 */
 	 this.getInboundMarkers=function(){
-	 			this.inBounds=[];			   
-			    	var bounds = this.map.getBounds(); 
-			    	for(var iz in this.filtered_markers){
-			    		var marker=this.filtered_markers[iz];
-			       		var isInBounds=bounds.contains(marker.getLatLng());
-			        	if (isInBounds) this.inBounds.push(marker);			        
-			    }	
+	 	if(this.params["display_only_inbound"] == false)  {
+	 		this.inBounds = this.filtered_markers;
+	 		return;
+	 	}
+	 	this.inBounds=[];			   
+		var bounds = this.map.getBounds(); 
+		for(var iz in this.filtered_markers){
+			var marker=this.filtered_markers[iz];
+			var isInBounds=bounds.contains(marker.getLatLng());
+			if (isInBounds) this.inBounds.push(marker);			        
+		}	
 	 }
 	/**
 	 * Adds Google Places search box
@@ -428,6 +432,7 @@ var leaflet_filters_class= function (params){
 	 * @return {void} 
 	 */
 	this.showLoader=function(show){
+		if(this.params["hide-splashscreen"] == true ) return;
 		if(show) {
 			jQuery("#"+this.params["map-container"]).append('<div id="locate-anything-loader"></div>');		
 		} else {	

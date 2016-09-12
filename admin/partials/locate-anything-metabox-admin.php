@@ -106,8 +106,24 @@
 <tr id="navnumbers">
 <td><?php _e("Max number of results displayed in the list","locate-anything")?> &nbsp;<input type="button" data-target="navnumbers" class="locate-anything-help"></td>
 <td><input type="text"  size="5" name="locate-anything-nav-number" value="<?php $v=get_post_meta($object->ID, 'locate-anything-nav-number', true );echo $v?$v:10;?>"></td>
-
 </tr>
+
+<tr id="display_only_inbound">
+<td><?php _e("Refresh list as you go","locate-anything")?> &nbsp;<input type="button" data-target="display_only_inbound" class="locate-anything-help"></td>
+<td>
+		  <input type="radio" name="locate-anything-display_only_inbound" value="1" <?php if (get_post_meta( $object->ID, 'locate-anything-display_only_inbound', true )=="1") echo "checked" ;?>> <?php _e("yes","locate-anything")?>
+			  <input type="radio" name="locate-anything-display_only_inbound" value="0" <?php if (get_post_meta( $object->ID, 'locate-anything-display_only_inbound', true )=="0" || get_post_meta( $object->ID, 'locate-anything-display_only_inbound', true )==false) echo "checked" ;?>> <?php _e("no","locate-anything")?>
+</td>
+</tr>
+
+<tr id="hide-splashscreen">
+<td><?php _e("Hide loader screen","locate-anything")?></td>
+<td>
+		  <input type="radio" name="locate-anything-hide-splashscreen" value="1" <?php if (get_post_meta( $object->ID, 'locate-anything-hide-splashscreen', true )=="1") echo "checked" ;?>> <?php _e("yes","locate-anything")?>
+			  <input type="radio" name="locate-anything-hide-splashscreen" value="0" <?php if (get_post_meta( $object->ID, 'locate-anything-hide-splashscreen', true )=="0" || get_post_meta( $object->ID, 'locate-anything-hide-splashscreen', true )==false) echo "checked" ;?>> <?php _e("no","locate-anything")?>
+</td>
+</tr>
+
 </table>
 			 
 <table id="locate-anything-map-settings-page-6" class="locate-anything-map-settings-list-ul locate-anything-map-option-pane" style="display:none" >	

@@ -85,6 +85,12 @@ var annotations=
   target : '#medialibrary',
   content: '<?php _e("You can use an image from Wordpress media library as a marker icon. <br><b>Warning</b> : The image will NOT be resized. Please make sure its size is adequate.","locate-anything")?>'
 }),
+
+"display_only_inbound": new Anno({ 
+  target : '#display_only_inbound',
+  content: '<?php _e("If this option is checked the navlist will only show the markers that are located in the bounds of the map. This means that for example if your map is zoomed and centered on NYC and your markers are in SF, the navlist will be empty")?>'
+}),
+
 }
 
 var target=jQuery(e.target).attr("data-target");

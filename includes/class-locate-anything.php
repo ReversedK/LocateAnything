@@ -227,7 +227,7 @@ class Locate_Anything
         
         $this->loader->add_action('admin_menu', $plugin_admin, "setup_admin_menu", 10, 0);
         $this->loader->add_action('init', $plugin_admin, 'createCustomType');
-        $this->loader->add_action('init', $plugin_admin, 'load_preview');
+        $this->loader->add_action('init', $plugin_admin, 'load_preview',1);
 
         $this->loader->add_action('add_meta_boxes', $plugin_admin, 'add_post_meta_boxes');
         $this->loader->add_action('add_meta_boxes', $plugin_admin, 'add_admin_meta_boxes',0);
