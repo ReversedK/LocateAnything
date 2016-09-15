@@ -5,7 +5,7 @@ Tags:   directory plugin,  geodirectory, google maps, , member directory, buddyp
 
 Requires at least: 4.0.0
 Tested up to: 4.5.6
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,4 +62,14 @@ See our website for more informations on how to configure the plugin : http://ww
 2. Use case 1 : Real estate locator
 3. Use case 2 : searchable Community map (with User or Buddypress addon)
 
+== Changelog ==
+
+= 1.0 =
+* First version
+= 1.1.0 =
+* heavily modified Addon_Helper class
+* css fixes
+* added hide splashscreen option
+= 1.1.1 =
+* added addon upgrader class
 
