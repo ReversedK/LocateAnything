@@ -90,6 +90,10 @@ var annotations=
   target : '#display_only_inbound',
   content: '<?php _e("If this option is checked the navlist will only show the markers that are located in the bounds of the map. This means that for example if your map is zoomed and centered on NYC and your markers are in SF, the navlist will be empty")?>'
 }),
+"custom-map-provider": new Anno({ 
+  target : '#custom-map-provider',
+  content: '<?php _e("You can specify here the URL for the custom map provider. A non-exhaustive list of compatible providers can be found  on  the excellent <a target=\'_blank\' href=\'http://leaflet-extras.github.io/leaflet-providers/preview/index.html\'>leaflet-providers</a> page.")?>'
+}),
 
 }
 

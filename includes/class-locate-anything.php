@@ -135,7 +135,10 @@ class Locate_Anything
      * @access   private
      */
     private function load_dependencies() {
-        
+         /**
+         * This class contains the Upgrader that addons will use
+         */
+        require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class.upgrademe.php';    
         /**
          * The class responsible for orchestrating the actions and filters of the
          * core plugin.
@@ -173,7 +176,7 @@ class Locate_Anything
          * This class contains the Addon helpers
          */
         require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-locate-anything-addon-helper.php';
-        
+           
         $this->loader = new Locate_Anything_Loader();
     }
     
