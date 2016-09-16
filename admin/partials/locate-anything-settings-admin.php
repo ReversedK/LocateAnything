@@ -18,6 +18,11 @@
 <h1><?php _e("Default settings","locate-anything")?></h1>
 <h2><?php _e("Map Language","locate-anything")?></h2>
 <table>
+<tr>
+<td><?php _e("License Key");?>:</td>	<td><input type="text" style="max-width:auto" size="50" name="locate-anything-option-license-key" value="<?php echo unserialize(get_option("locate-anything-option-license-key"));?>">
+	<?php _e(" &nbsp;<a href='http://www.locate-anything.com/license_key?ref=".get_site_url()."-license-lvl1'>Get a License Key for only $4.99!</a> (Removes the 'Powered by LocateAnything' label)","locate-anything")?>
+</td>
+</tr>
 	<tr>
 <td><?php _e("GoogleMaps Key (only if you use GoogleMaps)","locate-anything");?>:</td>	<td><input type="text" name="locate-anything-option-cache-timeout" value="<?php echo unserialize(get_option("locate-anything-option-googlemaps-key"));?>"></td>
 </tr>

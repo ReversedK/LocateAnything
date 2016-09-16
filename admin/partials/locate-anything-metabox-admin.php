@@ -31,9 +31,19 @@
 <?php foreach (Locate_Anything_Assets::getMapOverlays() as $overlay){?>
 	<option value="<?php echo $overlay->id;?>" data-url="<?php echo $overlay->url;?>" data-attribution="<?php echo $overlay->attribution;?>" <?php if(get_post_meta($object->ID,'locate-anything-map-provider',true)==$overlay->id) echo "selected";?> ><?php echo $overlay->name?></option>
 <?php }?>
-<!--<option value='custom'><?php _e("Custom map overlay","locate-anything")?></option>-->
+
 </select><br><small><?php _e("<b>Important : </b> if you choose GoogleMaps you MUST enter a GoogleMaps API key in the <a href='".admin_url()."edit.php?post_type=locateanythingmap&page=locate-anything-settings'>options page</a>","locate-anything");?> </small>
 </td></tr>	
+
+<tr >
+<td><?php _e("Show attribution label","locate-anything")?> &nbsp; </td>
+<td>	 
+			  <input type="radio" name="locate-anything-show-attribution-label" value="1" <?php if (get_post_meta( $object->ID, 'locate-anything-show-attribution-label', true )=="1") echo "checked" ;?>> <?php _e("yes","locate-anything")?>
+			  <input type="radio" name="locate-anything-show-attribution-label" value="0" <?php if (get_post_meta( $object->ID, 'locate-anything-show-attribution-label', true )=="0" ||  get_post_meta( $object->ID, 'locate-anything-show-attribution-label', true )==false) echo "checked" ;?>> <?php _e("no","locate-anything")?>
+
+<br><small><?php _e("The attribution label is displayed on the bottom right side of the map. It states the source of the overlay you are using, for example 'OpenStreetMap'","locate-anything");?> </small></td>
+</tr>
+
 
 <?php echo do_action("LocateAnything-general-settings-form",$object->ID)?>
 

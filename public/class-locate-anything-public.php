@@ -121,6 +121,13 @@ class Locate_Anything_Public {
 	}
 	
 
+	/**
+	 * Checks the license key
+	 */
+	public function check_license_key() {
+		$license_key  =unserialize(get_option("locate-anything-option-license-key"));
+		if( hash("sha256",site_url()."-license-lvl1") === $license_key ) return true; else return false;
+	}
 
 	/**
 	 * Sets up the shortcodes
@@ -282,8 +289,8 @@ class Locate_Anything_Public {
 					"minZoom"=>1,
 					"zoom"=>10);
 		} else {
-			$overlays = Locate_Anything_Assets::getMapOverlays ();
-			$params ["overlay"] = $overlays [$params ["overlay"]];
+			$overlays = Locate_Anything_Assets::getMapOverlays ();			
+			$params ["overlay"] = $overlays [$params ["overlay"]];			
 		}
 		$maxZoom = $settings['locate-anything-max-zoom'];
 		if (! $maxZoom)
@@ -306,7 +313,13 @@ class Locate_Anything_Public {
 		<script type="text/javascript">
 		var current_map;
 					jQuery(window).load(function(){ 
-						var map_id='<?php echo $map_id?>';	
+						var map_id='<?php echo $map_id?>';
+						<?php
+							if (Locate_Anything_Public::check_license_key()===false) {?>
+								jQuery("#<?php echo $map_container?>").append("<div style='background:grey;opacity:0.6;width:100%;height:1.5em;z-index:1500;position:absolute;bottom:0;text-align:left;padding-left:10px'><a style='cursor:pointer;text-decoration:none;color:#fff;' href='http://www.locate-anything.com' target='_blank'>Powered by LocateAnything</div>");
+						<?php	} ?>
+
+							
 						/* setting up the map */ 
 					var params = {
 						"instance_id":"locate_anything_map_<?php echo $map_id?>",
@@ -329,6 +342,7 @@ class Locate_Anything_Public {
 
 						/* define instance name*/
 						var map_instance="locate_anything_map_"+map_id;
+						
 						/* instanciate filter class */
 					eval("var "+map_instance+"=new leaflet_filters_class(params);");				 
 						/* loading ... */						
@@ -406,6 +420,8 @@ class Locate_Anything_Public {
 					var token=jQuery('#map-filters-'+map_id+' .tokenize').tokenize({maxElements:"9999",onRemoveToken:function(e,f){eval(map_instance).update_markers();},onAddToken:function(e,f){eval(map_instance).update_markers();}});
 						
 					} 
+					<?php if($settings['locate-anything-show-attribution-label']==0)  echo "/* Hide attribution */
+					jQuery('.leaflet-control-attribution').hide();"; ?>					
 			});
 			</script>
 <?php
