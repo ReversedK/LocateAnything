@@ -35,13 +35,11 @@
 </select><br><small><?php _e("<b>Important : </b> if you choose GoogleMaps you MUST enter a GoogleMaps API key in the <a href='".admin_url()."edit.php?post_type=locateanythingmap&page=locate-anything-settings'>options page</a>","locate-anything");?> </small>
 </td></tr>	
 
-<tr >
-<td><?php _e("Show attribution label","locate-anything")?> &nbsp; </td>
+<tr id='show-attr-label' >
+<td><?php _e("Show attribution label","locate-anything")?> &nbsp;<input type="button" data-target="show-attr-label" class="locate-anything-help"> </td>
 <td>	 
 			  <input type="radio" name="locate-anything-show-attribution-label" value="1" <?php if (get_post_meta( $object->ID, 'locate-anything-show-attribution-label', true )=="1") echo "checked" ;?>> <?php _e("yes","locate-anything")?>
-			  <input type="radio" name="locate-anything-show-attribution-label" value="0" <?php if (get_post_meta( $object->ID, 'locate-anything-show-attribution-label', true )=="0" ||  get_post_meta( $object->ID, 'locate-anything-show-attribution-label', true )==false) echo "checked" ;?>> <?php _e("no","locate-anything")?>
-
-<br><small><?php _e("The attribution label is displayed on the bottom right side of the map. It states the source of the overlay you are using, for example 'OpenStreetMap'","locate-anything");?> </small></td>
+			  <input type="radio" name="locate-anything-show-attribution-label" value="0" <?php if (get_post_meta( $object->ID, 'locate-anything-show-attribution-label', true )=="0" ||  get_post_meta( $object->ID, 'locate-anything-show-attribution-label', true )==false) echo "checked" ;?>> <?php _e("no","locate-anything")?></td>
 </tr>
 
 
@@ -133,6 +131,13 @@
 			  <input type="radio" name="locate-anything-hide-splashscreen" value="0" <?php if (get_post_meta( $object->ID, 'locate-anything-hide-splashscreen', true )=="0" || get_post_meta( $object->ID, 'locate-anything-hide-splashscreen', true )==false) echo "checked" ;?>> <?php _e("no","locate-anything")?>
 </td>
 </tr>
+
+
+<tr id="">
+<td><?php _e("Remove the 'Powered by LocateAnything' label","locate-anything")?></td>
+<td><?php _e(" &nbsp;<a target='_blank' href='http://www.locate-anything.com/addons/license/license-key/'>Get a License Key for only $4.99!</a>","locate-anything")?></td>
+</tr>
+
 
 </table>
 			 

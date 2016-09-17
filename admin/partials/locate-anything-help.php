@@ -94,7 +94,10 @@ var annotations=
   target : '#custom-map-provider',
   content: '<?php _e("You can specify here the URL for the custom map provider. A non-exhaustive list of compatible providers can be found  on  the excellent <a target=\'_blank\' href=\'http://leaflet-extras.github.io/leaflet-providers/preview/index.html\'>leaflet-providers</a> page.")?>'
 }),
-
+"show-attr-label": new Anno({ 
+  target : '#show-attr-label',
+  content: '<?php _e("The attribution label is displayed on the bottom right side of the map. It states the source of the overlay you are using, for example \'OpenStreetMap\'")?>'
+}),
 }
 
 var target=jQuery(e.target).attr("data-target");

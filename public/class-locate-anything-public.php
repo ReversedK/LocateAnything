@@ -161,8 +161,10 @@ class Locate_Anything_Public {
 		if(!isset($atts["map_id"])) return;		
 		$params ["map-width"]=get_post_meta ( $atts ["map_id"], 'locate-anything-map-width', true ) ;
 		$params ["map-height"]=get_post_meta ($atts ["map_id"] , 'locate-anything-map-height', true );
+		
+		if($atts["map_id"]!=="preview" && strpos(get_site_url(),'localhost')===false && strpos(get_site_url(),'127.0.0.1')===false)  $content .= '<img style="display:none" src="http://www.locate-anything.com/wp-content/uploads/2016/09/pixel.png"/>';
 
-		 $content .= "<!-- Map container -->	
+		$content .= "<!-- Map container -->	
 				<style>\n";
 				if(get_post_meta ( $atts ["map_id"], 'locate-anything-tooltip-style', true )=="squared") 
 				 $content .= ".leaflet-popup-content-wrapper {border-radius: 0 !important;}\n";				
