@@ -5,7 +5,7 @@ Tags:   directory plugin,  geodirectory, google maps, , member directory, buddyp
 
 Requires at least: 4.0.0
 Tested up to: 4.5.6
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -72,4 +72,7 @@ See our website for more informations on how to configure the plugin : http://ww
 * added hide splashscreen option
 = 1.1.1 =
 * added addon upgrader class
+= 1.1.2 =
+* added "Powered By" text
+ 
 

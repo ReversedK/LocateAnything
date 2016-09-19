@@ -70,7 +70,8 @@
 						<div id="addi_fields_<?php echo $post_type->name; ?>" class="additional_fields" style='display:none'>
 						<h3><?php _e("Additional fields for","locate-anything")?> : <?php echo $post_type->labels->name?></h3>
 							<ul id="LA_custom_field_box_<?php echo $post_type->name?>" class="LA_custom_field_box">
-									<?php foreach ($additional_field_list as $field) {
+									<?php 
+									foreach ($additional_field_list as $field) {										
 										if($field["post_type"]==$post_type->name) {?>
 											<li><input type="text" data-post-type="<?php echo $field["post_type"]?>" name="<?php echo $field["field_name"]?>" id="<?php echo $field["field_name"]?>" class="locate-anything-additional-field" value="<?php echo $field["field_description"]?>"> <input type="button"  class='button-admin' value="delete" onclick="LA_removeRow('#<?php echo $field["field_name"]?>')"></li>
 									<?php	}

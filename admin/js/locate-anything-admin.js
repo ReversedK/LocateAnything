@@ -54,13 +54,15 @@ jQuery(container_id+" li input").blur(function(){jQuery("#locate-anything-option
 function LA_serializeAdditionalFieldList(){	
 	var arr=new Array();	
 	jQuery ("input[class='locate-anything-additional-field']").each(function(index,item){
-		if(jQuery(item).val().length>0) arr.push({
-			"post_type":jQuery(item).attr("data-post-type"),
-			"field_name":""+ jQuery(item).attr("name"),
-			"field_description":jQuery(item).val()
-		});
-	});	
-	return JSON.stringify(jQuery(arr));
+  	if(jQuery(item).val().length>0) {
+        arr.push({
+  			"post_type":jQuery(item).attr("data-post-type"),
+  			"field_name":""+ jQuery(item).attr("name"),
+  			"field_description":jQuery(item).val()
+  		});	    
+    }
+  });
+	return JSON.stringify(arr);
 }
 
 /* Removes a row from he additional field list */ 
