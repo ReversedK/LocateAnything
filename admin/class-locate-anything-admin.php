@@ -436,13 +436,15 @@ class Locate_Anything_Admin
 		if ($additional_field_list_json) $additional_field_list = json_decode($additional_field_list_json, true); ?>
 				<div id="basic_fields_notice">									
 	<?php	  
-			$post_types = array("basic");
+			$post_types = array("basic"=>"basic");
 			$post_types += unserialize (get_option ( 'locate-anything-option-sources' ));
-			$post_types = apply_filters("locate_anything_add_sources",$post_types);			
+			$post_types = apply_filters("locate_anything_add_sources",$post_types);	
+
 			$already_displayed_tags =array();
-			  			  
+			  		
 			 foreach ( $post_types as $posttype ) {
 			 	if($posttype=="Users") $posttype = 'user';
+			 	var_dump($posttype);
 			 	$markups = Locate_Anything_Public::getBasicMarkupList($posttype);
 			 	foreach ($markups as $tag => $nothing) {	
 			 			if(in_array($tag,$already_displayed_tags))	continue;

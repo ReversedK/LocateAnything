@@ -131,7 +131,7 @@ class Locate_Anything_Addon_Helper
 
     public static function define_custom_tags($arr_tags,$scope,$getDataCallbackFn,$addon_name){ 
         // add markup tags
-        Locate_Anything_Addon_Helper::add_markup(array_values($arr_tags),$scope);
+        Locate_Anything_Addon_Helper::add_markup(array_values($arr_tags),$scope);       
         // define markers vars
         Locate_Anything_Addon_Helper::add_markup_vars($arr_tags,$scope,$getDataCallbackFn);
     }
