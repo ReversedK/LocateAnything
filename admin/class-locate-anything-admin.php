@@ -443,8 +443,7 @@ class Locate_Anything_Admin
 			$already_displayed_tags =array();
 			  		
 			 foreach ( $post_types as $posttype ) {
-			 	if($posttype=="Users") $posttype = 'user';
-			 	var_dump($posttype);
+			 	if($posttype=="Users") $posttype = 'user';			 	
 			 	$markups = Locate_Anything_Public::getBasicMarkupList($posttype);
 			 	foreach ($markups as $tag => $nothing) {	
 			 			if(in_array($tag,$already_displayed_tags))	continue;
