@@ -239,6 +239,8 @@ class Locate_Anything
         $this->loader->add_action('admin_init', $plugin_admin, 'save_options', 10, 2);
 
         $this->loader->add_action('admin_notices', $plugin_admin, 'check_cache_permissions', 10, 2);
+        /* filters */
+        $this->loader->add_filter('upload_mimes',$plugin_admin, 'add_mime_types', 1, 1);
     }
     
     /**
@@ -248,8 +250,7 @@ class Locate_Anything
      * @since    1.0.0
      * @access   private
      */
-    private function define_public_hooks() {
-        
+    private function define_public_hooks() {        
         $plugin_public = new Locate_Anything_Public($this->get_plugin_name(), $this->get_version());
         $plugin_public->setup_shortcodes();
         $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles');
@@ -259,6 +260,8 @@ class Locate_Anything
         $this->loader->add_action('wp_ajax_getMarkers', $plugin_public, 'getMarkers', 0);
         $this->loader->add_action('wp_ajax_nopriv_getMarkers', $plugin_public, 'getMarkers', 0);
     }
+
+
     
     /**
      * Run the loader to execute all of the hooks with WordPress.

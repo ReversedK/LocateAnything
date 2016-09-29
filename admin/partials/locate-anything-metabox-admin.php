@@ -1,4 +1,9 @@
- <?php wp_nonce_field( "I961JpJQTj0crLKH0mGB" , 'locate_anything_class_nonce' ); ?>
+ <?php wp_nonce_field( "I961JpJQTj0crLKH0mGB" , 'locate_anything_class_nonce' ); 
+
+function makeInput($type,$fieldname,$object_id,$default='') {?>
+ <input type="<?php echo $type?>" value="<?php echo get_post_meta($object_id,$fieldname,true)?get_post_meta($object_id,$fieldname,true):$default; ?>" name="<?php echo $fieldname;?>">
+<?php } ?>
+
 
 
 <table id='locate-anything-main-table' style="width: 100%">
@@ -13,7 +18,8 @@
      <a class="nav-tab" data-pane="4" data-animation="50%"><?php _e("Markers settings","locate-anything");?></a>   
     <a class="nav-tab" data-pane="2" data-animation="50%"><?php _e("Tooltip & Nav List","locate-anything");?></a>
    	<a class="nav-tab" data-pane="3" data-animation="50%"><?php _e("Map Layouts","locate-anything");?></a>
-<a class="nav-tab" data-pane="5" data-animation="50%"><?php _e("Tools","locate-anything");?></a>
+
+<a class="nav-tab" data-pane="5" data-animation="50%"><?php _e("Tools & Shortcodes","locate-anything");?></a>
 </h2>
 
 <div id="locate-anything-wrapper">
@@ -41,7 +47,6 @@
 			  <input type="radio" name="locate-anything-show-attribution-label" value="1" <?php if (get_post_meta( $object->ID, 'locate-anything-show-attribution-label', true )=="1") echo "checked" ;?>> <?php _e("yes","locate-anything")?>
 			  <input type="radio" name="locate-anything-show-attribution-label" value="0" <?php if (get_post_meta( $object->ID, 'locate-anything-show-attribution-label', true )=="0" ||  get_post_meta( $object->ID, 'locate-anything-show-attribution-label', true )==false) echo "checked" ;?>> <?php _e("no","locate-anything")?></td>
 </tr>
-
 
 <?php echo do_action("LocateAnything-general-settings-form",$object->ID)?>
 
@@ -241,6 +246,31 @@
 </table>
 
 <table id="locate-anything-map-settings-page-5" class="locate-anything-map-settings-list-ul locate-anything-map-option-pane" style='display:none' >	
+<tr><td><h2><?php _e("Load a KML file (beta)")?></h2></td></tr>
+<tr>
+<td id="kml"><b><?php _e("KML Style Options","locate-anything")?></b></td>
+<td>
+<ul>
+<li>Fill Color : <?php makeInput("color","locate-anything-kml_fillColor",$object->ID,'#cbbdfb') ?></li>
+<li>Opacity : <?php makeInput("text","locate-anything-kml_opacity",$object->ID,'1') ?></li>
+<li>Line width : <?php makeInput("number","locate-anything-kml_weight",$object->ID,'2') ?></li>
+<li>Color :  <?php makeInput("color","locate-anything-kml_color",$object->ID,'#000') ?></li>
+<li>Fill Opacity :  <?php makeInput("text","locate-anything-kml_fillOpacity",$object->ID,'0.5') ?></li>
+<li>Dash array :  <?php makeInput("number","locate-anything-kml_dashArray",$object->ID,'2') ?></li>
+</ul>
+
+
+
+
+	<div class="uploader">
+	<input id="locate-anything-kml-file" name="locate-anything-kml-file" type="text" value="<?php  echo esc_attr(get_post_meta($object->ID,"locate-anything-kml-file",true))?>" /> <input id="locate-anything-kml-file_button" class="button-admin"  name="locate-anything-kml-file_button" type="text" value="<?php _e("Select file","locate-anything")?>" />
+</div>
+
+</td>
+</tr>
+
+
+
 <tr><td><h2><?php _e("Shortcodes")?></h2></td></tr>
 <tr><td>	
 <ul>

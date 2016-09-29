@@ -61,6 +61,18 @@ class Locate_Anything_Admin
 	}
 
 	/**
+	 * Register new  mime types
+	 * 
+	 *
+	 * @since    1.1.4
+	 * @access   private
+	 */
+	public function add_mime_types($mime_types){
+	    $mime_types['kml'] = 'application/vnd.google-earth.kml+xml'; //Adding kml extension       
+	    return $mime_types;
+	}
+
+	/**
 	 * serves the Gmaps Key
 	 *
 	 * @since 1.0.0
@@ -298,7 +310,7 @@ class Locate_Anything_Admin
 		$slug = "locateanythingMap";
 		$args = array(
 			'labels' => $labels,
-			'public' => true,
+			'public' => false,
 			'publicly_queryable' => true,
 			'show_ui' => true,
 			'show_in_menu' => true,

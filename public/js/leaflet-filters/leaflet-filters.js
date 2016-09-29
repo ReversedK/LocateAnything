@@ -269,6 +269,22 @@ var leaflet_filters_class= function (params){
 		if(this.params["autogeocode"]=='1') this.map.locate({setView:true,maxZoom:this.params["initial-zoom"]});
 		/* Adds Google Places */
 		if (this.params.googleplaces) this.addGooglePlaces();
+		/* loads a KML and styles it*/		
+		if (this.params.kml_file) {
+			 var kml_handle = omnivore.kml(this.params.kml_file).addTo(this.map);
+			 
+			 kml_handle.on('ready', function() {
+	         this.setStyle({ 
+	        	fillColor: self.params.kml_fillColor,
+	        	weight: self.params.kml_weight,
+	    		opacity: self.params.kml_opacity,
+	    		color: self.params.kml_color,
+	    		dashArray: self.params.kml_dashArray,
+	    		fillOpacity: self.params.kml_fillOpacity
+	    		});
+        	});
+     	}                                                
+         
 		/* sets up a cluster for this map*/
 		this.setUpCluster();
 		this.map.setView([ this.params["initial-lat"], this.params["initial-lon"]],this.params["initial-zoom"]);
@@ -432,7 +448,7 @@ var leaflet_filters_class= function (params){
 	 * @return {void} 
 	 */
 	this.showLoader=function(show){
-		if(this.params["hide-splashscreen"] == true ) return;
+		if(this.params["hide-splashscreen"] == true ) {jQuery('#progress-wrapper').hide();return;}
 		if(show) {
 			jQuery("#"+this.params["map-container"]).append('<div id="locate-anything-loader"></div>');		
 		} else {	

@@ -5,7 +5,7 @@ Tags:   directory plugin,  geodirectory, google maps, , member directory, buddyp
 
 Requires at least: 4.0.0
 Tested up to: 4.5.6
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,6 +37,7 @@ admin!
 And many other features :
 
 * Google Places searchbox
+* import and style KML files
 * Detection of user’s location
 * Rounded corners / Squared corners tooltips
 * Map Localization :Choose your map language (beta)
@@ -74,5 +75,8 @@ See our website for more informations on how to configure the plugin : http://ww
 * added addon upgrader class
 = 1.1.2 =
 * added "Powered By" text
+= 1.1.4 =
+* added KML import function
+* fixed some minor bugs
  
 

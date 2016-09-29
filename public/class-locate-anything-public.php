@@ -118,6 +118,10 @@ class Locate_Anything_Public {
 		wp_enqueue_script ( $this->plugin_name . "-awesomemarkersjs", plugin_dir_url ( __FILE__ ) . 'js/leaflet.awesome-markers-2.0/leaflet.awesome-markers.min.js', array (
 				$this->plugin_name . "-leaflet-filters" 
 		), $this->version, false );
+		//leaflet-omnivore.min.js
+		wp_enqueue_script ( $this->plugin_name . "-omnivorejs", plugin_dir_url ( __FILE__ ) . 'js/leaflet-omnivore/leaflet-omnivore.min.js', array (
+				$this->plugin_name . "-leaflet-filters" 
+		), $this->version, false );
 	}
 	
 
@@ -337,7 +341,13 @@ class Locate_Anything_Public {
 						"scrollWheelZoom" : <?php echo $params["scrollWheelZoom"]?>,
 						"navlist_event" : '<?php echo  $params["navlist_event"]?>',
 						"hide-splashscreen" : '<?php echo $params["hide-splashscreen"]?>',
-						
+						"kml_file" :  '<?php echo $settings["locate-anything-kml-file"]?>',
+						"kml_fillColor" :  '<?php echo $settings["locate-anything-kml_fillColor"]?>',
+						"kml_weight" :  '<?php echo $settings["locate-anything-kml_weight"]?>',
+						"kml_opacity" :  '<?php echo $settings["locate-anything-kml_opacity"]?>',
+						"kml_color" :  '<?php echo $settings["locate-anything-kml_color"]?>',
+						"kml_dashArray" :  '<?php echo $settings["locate-anything-kml_dashArray"]?>',
+						"kml_fillOpacity" :  '<?php echo $settings["locate-anything-kml_fillOpacity"]?>'  
 					};
 
 						/* define instance name*/
