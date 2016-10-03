@@ -89,8 +89,9 @@ L.Control.GoogleAutocomplete = L.Control.extend({
             // If the place has a geometry, then update the map
           
             if (place.geometry.location) {
+                console.log(place.geometry.location);
                 $('leaflet-control-googleautocomplete-qry').removeClass('notfound');
-                map.panTo([place.geometry.location.A, place.geometry.location.F]);
+                map.panTo([place.geometry.location.lat(), place.geometry.location.lng()]);
                 map.setZoom(Me.options.zoomLevel);
             }
         });        
