@@ -9,7 +9,7 @@ function makeInput($type,$fieldname,$object_id,$default='') {?>
 <table id='locate-anything-main-table' style="width: 100%">
 <tr><td id="map-preview" style="width: 100%">
 <!-- Map preview -->
-<iframe scrolling="no" seamless="seamless" name="map_preview" src="<?php echo admin_url()?>?locateAnything_preview&id=preview"></iframe>			 	 
+<iframe scrolling="no" seamless="seamless" name="map_preview" src="<?php echo admin_url()?>?post_type=locateanythingmap&locateAnything_preview&id=preview"></iframe>			 	 
 </td></tr></table>
 
 <h2 class="nav-tab-wrapper">
@@ -177,6 +177,7 @@ function makeInput($type,$fieldname,$object_id,$default='') {?>
 <tr>
 <td colspan="2"><b><?php _e("Filter the markers ","locate-anything");?></b> &nbsp;<input type="button" data-target="map-filters" class="locate-anything-help"></td>
 </tr>
+<?php echo do_action("LocateAnything-general-settings-form-filters",$object->ID)?>
 <tr  id="map-filters">
 <td colspan="2"><span id='filters'></span></td>
 </tr>
