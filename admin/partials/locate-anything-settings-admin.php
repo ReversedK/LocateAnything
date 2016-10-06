@@ -19,7 +19,7 @@
 <h2><?php _e("Map Language","locate-anything")?></h2>
 <table>
 <tr>
-<td><?php _e("License Key");?>:</td>	<td><input type="text" style="max-width:auto" size="50" name="locate-anything-option-license-key" value="<?php echo unserialize(get_option("locate-anything-option-license-key"));?>">
+<td><?php _e("License Key");?>:</td>	<td><input type="text" style="max-width:auto" size="55" name="locate-anything-option-license-key" value="<?php echo unserialize(get_option("locate-anything-option-license-key"));?>"><br>
 	<?php _e(" &nbsp;<a  target='_blank' href='http://www.locate-anything.com/addons/license/license-key/'>Get a License Key for only $4.99!</a> (Removes the 'Powered by LocateAnything' label)","locate-anything")?>
 </td>
 </tr>

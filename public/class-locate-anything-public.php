@@ -128,9 +128,14 @@ class Locate_Anything_Public {
 	/**
 	 * Checks the license key
 	 */
-	public function check_license_key() {
-		$license_key  =unserialize(get_option("locate-anything-option-license-key"));
-		if( hash("sha256",site_url()."-license-lvl1") === $license_key ) return true; else return false;
+	public function check_license_key($type_license) {
+		$license = Locate_Anything_Admin::getLicence($type_license);			
+		$seed = $license["seed"];
+
+		if($type_license === "label") $license_key  =unserialize(get_option("locate-anything-option-license-key"));
+		else  $license_key  = $license['key'];
+
+		if( hash("sha256",site_url().$seed) === $license_key ) return true; else return false;
 	}
 
 	/**
@@ -319,7 +324,7 @@ class Locate_Anything_Public {
 					jQuery(window).load(function(){ 
 						var map_id='<?php echo $map_id?>';
 						<?php
-							if (Locate_Anything_Public::check_license_key()===false) {?>
+							if (Locate_Anything_Public::check_license_key('label')===false) {?>
 								jQuery("#<?php echo $map_container?>").append("<div style='background:grey;opacity:0.6;width:100%;height:1.5em;z-index:1500;position:absolute;bottom:0;text-align:left;padding-left:10px'><a style='cursor:pointer;text-decoration:none;color:#fff;' href='http://www.locate-anything.com' target='_blank'>Powered by LocateAnything</div>");
 						<?php	} ?>
 

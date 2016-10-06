@@ -4,8 +4,8 @@ Donate link: http://www.locate-anything.com/
 Tags:   directory plugin,  geodirectory, google maps, , member directory, buddypress directory, wordpress city directory plugin, store locator, filterable map, custom post type filters, custom post type map, map layout
 
 Requires at least: 4.0.0
-Tested up to: 4.5.6
-Stable tag: 1.1.4
+Tested up to: 4.6.1
+Stable tag: 1.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -78,5 +78,8 @@ See our website for more informations on how to configure the plugin : http://ww
 = 1.1.4 =
 * added KML import function
 * fixed some minor bugs
- 
-
+= 1.1.5 =
+* added hooks
+* fixed Google Places selector bug
+= 1.1.6 =
+* added hooks for compat addons

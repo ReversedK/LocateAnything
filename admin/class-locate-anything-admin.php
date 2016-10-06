@@ -546,6 +546,18 @@ class Locate_Anything_Admin
 		return $t;
 	}
 	/**
+	 * Returns select licences seed
+	 * @param  [int] $id [licence id]
+	 * @return [string]  seed
+	 */
+	public static function getLicence($id) {
+		$licences = array('label'=>"-license-lvl1");
+		$licences = apply_filters("add_seed_licence",$licences);		
+		$license_key  =unserialize(get_option("locate-anything-option-".$licences[$id]."-license"));
+		return array('seed'=>$licences[$id],'key'=>$license_key);
+	}
+
+	/**
 	 * Geocodes address,
 	 * @param  [string] $address
 	 * @return [false | array]  returns false if unable to geocode address
@@ -615,4 +627,6 @@ class Locate_Anything_Admin
 		echo apply_filters("locate_anything_add_filter_choice", '', $_POST["map_id"], $_POST["type"]);
 		die();
 	}
+
+
 }
