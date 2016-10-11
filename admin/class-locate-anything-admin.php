@@ -454,7 +454,7 @@ class Locate_Anything_Admin
 
 			$already_displayed_tags =array();
 			  		
-			 foreach ( $post_types as $posttype ) {
+			 foreach ( $post_types as $posttype =>$postTypeName ) {
 			 	if($posttype=="Users") $posttype = 'user';			 	
 			 	$markups = Locate_Anything_Public::getBasicMarkupList($posttype);
 			 	foreach ($markups as $tag => $nothing) {	
@@ -472,7 +472,8 @@ class Locate_Anything_Admin
 		if (is_array($additional_field_list)) foreach ($additional_field_list as $field) {
 			if (is_null(@$field["field_description"]) || is_null(@$field["field_name"]) || @$field['post_type']!==$post_type) continue;
 ?>
-					<tr><td><b><?php
+					<tr class='basic-markup basic-markup-<?php
+			echo $field['post_type']?>'><td><b><?php
 			echo $field["field_description"] . "(" . $field['post_type'] . ")" ?></b></td><td>|<?php
 			echo $field['post_type'] . "::" . sanitize_key(remove_accents($field["field_description"])) ?>|</td></tr>
 				<?php

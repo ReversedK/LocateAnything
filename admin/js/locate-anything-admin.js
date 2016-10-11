@@ -39,6 +39,7 @@ function manage_tag_visibility(){
     jQuery("#locate-anything-source option:selected").each(function(i,o){
     jQuery(".basic-markup-"+jQuery(o).val()).show();
     
+    
   });
 }
 

@@ -129,12 +129,14 @@ class Locate_Anything_Public {
 	 * Checks the license key
 	 */
 	public function check_license_key($type_license) {
+		// disable check  if localhost
+		if(strpos(site_url(), 'localhost')!==false) return true;
+
+
 		$license = Locate_Anything_Admin::getLicence($type_license);			
 		$seed = $license["seed"];
-
 		if($type_license === "label") $license_key  =unserialize(get_option("locate-anything-option-license-key"));
 		else  $license_key  = $license['key'];
-
 		if( hash("sha256",site_url().$seed) === $license_key ) return true; else return false;
 	}
 
@@ -539,11 +541,7 @@ class Locate_Anything_Public {
 				"small_thumbnail" ,
 				"medium_thumbnail",
 				"full_thumbnail",
-				"author_name",
-				/*"user_name",
-				"user_email",
-	          	"user_login","user_ID",
-	          	"user_firstname","user_lastname","author_avatar"*/
+				"author_name"	
 		);
 		/* Apply locate_anything_basic_markup hook */	
 		if(!$post_type) $post_type = 'all';	

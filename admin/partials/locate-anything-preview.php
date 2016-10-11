@@ -8,7 +8,7 @@ echo do_shortcode("[LocateAnything_map map_id=preview]");
 ?>
 <style>
 html { margin-top:0 !important; }
-#map-container-preview {width:100%;height:100%}
+#map-container-preview {width:100%;height:100%;z-index: 200;position: absolute;}
 <?php if($_POST['locate-anything-tooltip-style']=="squared") 
 				 echo ".leaflet-popup-content-wrapper {border-radius: 0 !important;}\n";
 if( $_POST['locate-anything-marker-size']) 
