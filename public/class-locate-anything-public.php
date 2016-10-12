@@ -169,7 +169,14 @@ class Locate_Anything_Public {
 	 * @return [void]
 	 */
 	public static function outputMapMarkup($atts, $content) {
-		if(!isset($atts["map_id"])) return;		
+		if(!isset($atts["map_id"])) return;	
+
+
+		$plugin_public = new Locate_Anything_Public(null, null);      
+    	$plugin_public->enqueue_scripts();
+        $plugin_public->enqueue_styles();
+        
+
 		$params ["map-width"]=get_post_meta ( $atts ["map_id"], 'locate-anything-map-width', true ) ;
 		$params ["map-height"]=get_post_meta ($atts ["map_id"] , 'locate-anything-map-height', true );		
 
@@ -230,6 +237,11 @@ class Locate_Anything_Public {
 	 */
 	public static function createMap($atts, $content) {
 		if(!isset($atts["map_id"])) return;	
+
+		$plugin_public = new Locate_Anything_Public(null,null);  
+        $plugin_public->enqueue_scripts();
+        $plugin_public->enqueue_styles();
+        
 		extract ( $atts );
 		//$filters = get_post_meta ( $map_id, "locate-anything-filters", true );
 		$layout_id=		get_post_meta ( $map_id, "locate-anything-map-template", true );

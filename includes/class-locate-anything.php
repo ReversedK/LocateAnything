@@ -253,8 +253,11 @@ class Locate_Anything
     private function define_public_hooks() {        
         $plugin_public = new Locate_Anything_Public($this->get_plugin_name(), $this->get_version());
         $plugin_public->setup_shortcodes();
-        $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles');
-        $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts');
+       
+       // loading of styles and scripts has been moved to shortcode methods in order to avoid loading the scripts when not necessary
+
+        //$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles');
+       // $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts');
         
         /* additional hooks*/
         $this->loader->add_action('wp_ajax_getMarkers', $plugin_public, 'getMarkers', 0);

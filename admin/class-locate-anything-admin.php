@@ -89,6 +89,8 @@ class Locate_Anything_Admin
 	 * @since 1.0.0
 	 */
 	public function enqueue_scripts() {
+		$screen = get_current_screen();
+		if($screen->post_type!=="locateanythingmap") return;
 		wp_enqueue_media();
 		wp_enqueue_script($this->plugin_name . "-adminjs", plugin_dir_url(__FILE__) . 'js/locate-anything-admin.js');
 		// leaflet JS
@@ -131,6 +133,8 @@ class Locate_Anything_Admin
 	 * @since 1.0.0
 	 */
 	public function enqueue_styles() {
+		$screen = get_current_screen();
+		if($screen->post_type!=="locateanythingmap") return;
 		wp_enqueue_style($this->plugin_name . "-admincss", plugin_dir_url(__FILE__) . 'css/locate-anything-admin.css', array() , $this->version, 'all');
 		wp_enqueue_style($this->plugin_name . "-annocss", plugin_dir_url(__FILE__) . 'js/anno/anno.css', array() , $this->version, 'all');
 		
