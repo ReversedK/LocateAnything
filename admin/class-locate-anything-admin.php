@@ -94,7 +94,7 @@ class Locate_Anything_Admin
 		if(!is_array($allowed_post_types)) $allowed_post_types=array();
 		$allowed_post_types[]="locateanythingmap";
 		$allowed_post_types[]="locateanythingmarker";
-		if(!in_array($screen->post_type,$allowed_post_types)) return;
+		if(strpos($screen->base,'user')===false && !in_array($screen->post_type,$allowed_post_types)) return;
 
 		wp_enqueue_media();
 		wp_enqueue_script($this->plugin_name . "-adminjs", plugin_dir_url(__FILE__) . 'js/locate-anything-admin.js');
@@ -139,11 +139,13 @@ class Locate_Anything_Admin
 	 */
 	public function enqueue_styles() {
 		$screen = get_current_screen();
+		
 		$allowed_post_types = unserialize (get_option ( 'locate-anything-option-sources' ));		
 		if(!is_array($allowed_post_types)) $allowed_post_types=array();
+		
 		$allowed_post_types[]="locateanythingmap";
 		$allowed_post_types[]="locateanythingmarker";
-		if(!in_array($screen->post_type,$allowed_post_types)) return;
+		if(strpos($screen->base,'user')===false && !in_array($screen->post_type,$allowed_post_types)) return;
 		
 		wp_enqueue_style($this->plugin_name . "-admincss", plugin_dir_url(__FILE__) . 'css/locate-anything-admin.css', array() , $this->version, 'all');
 		wp_enqueue_style($this->plugin_name . "-annocss", plugin_dir_url(__FILE__) . 'js/anno/anno.css', array() , $this->version, 'all');
