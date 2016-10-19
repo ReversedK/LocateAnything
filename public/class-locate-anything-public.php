@@ -130,7 +130,7 @@ class Locate_Anything_Public {
 	 */
 	public function check_license_key($type_license) {
 		// disable check  if localhost
-		if(strpos(site_url(), 'localhost')!==false) return true;
+	//	if(strpos(site_url(), 'localhost')!==false) return true;
 
 
 		$license = Locate_Anything_Admin::getLicence($type_license);			

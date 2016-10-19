@@ -17,4 +17,5 @@ if( $_POST['locate-anything-marker-size'])
 
 				 ?>
 </style><?php
-wp_footer();?>
+wp_footer();
+?>

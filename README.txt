@@ -5,7 +5,7 @@ Tags:   directory plugin,  geodirectory, google maps, , member directory, buddyp
 
 Requires at least: 4.0.0
 Tested up to: 4.6.1
-Stable tag: 1.1.7
+Stable tag: 1.1.71
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,3 +85,7 @@ See our website for more informations on how to configure the plugin : http://ww
 * added hooks for compat addons
 = 1.1.7 =
 * optimized loading of styles and scripts
+= 1.1.71 =
+* bug fix
+= 1.1.72 =
+* Sometimes the preview mode was in conflict with 3rd party plugins. This update should fix that problem

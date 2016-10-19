@@ -90,7 +90,12 @@ class Locate_Anything_Admin
 	 */
 	public function enqueue_scripts() {
 		$screen = get_current_screen();
-		if($screen->post_type!=="locateanythingmap") return;
+		$allowed_post_types = unserialize (get_option ( 'locate-anything-option-sources' ));		
+		if(!is_array($allowed_post_types)) $allowed_post_types=array();
+		$allowed_post_types[]="locateanythingmap";
+		$allowed_post_types[]="locateanythingmarker";
+		if(!in_array($screen->post_type,$allowed_post_types)) return;
+
 		wp_enqueue_media();
 		wp_enqueue_script($this->plugin_name . "-adminjs", plugin_dir_url(__FILE__) . 'js/locate-anything-admin.js');
 		// leaflet JS
@@ -134,7 +139,12 @@ class Locate_Anything_Admin
 	 */
 	public function enqueue_styles() {
 		$screen = get_current_screen();
-		if($screen->post_type!=="locateanythingmap") return;
+		$allowed_post_types = unserialize (get_option ( 'locate-anything-option-sources' ));		
+		if(!is_array($allowed_post_types)) $allowed_post_types=array();
+		$allowed_post_types[]="locateanythingmap";
+		$allowed_post_types[]="locateanythingmarker";
+		if(!in_array($screen->post_type,$allowed_post_types)) return;
+		
 		wp_enqueue_style($this->plugin_name . "-admincss", plugin_dir_url(__FILE__) . 'css/locate-anything-admin.css', array() , $this->version, 'all');
 		wp_enqueue_style($this->plugin_name . "-annocss", plugin_dir_url(__FILE__) . 'js/anno/anno.css', array() , $this->version, 'all');
 		
@@ -177,6 +187,37 @@ class Locate_Anything_Admin
 	}
 
 	/**
+	 * unload all actions before preview, code not very pretty, sorry
+	 */
+	public function clear_hooks_for_preview() {	
+		if(isset($_GET["locateAnything_preview"])){				
+			global $wp_filter; 			    
+			$hooks = array("init","admin_init","wp_enqueue_scripts","wp_enqueue_styles","wp_head","wp_footer");  			
+			$whitelist=array("wp_print_footer_scripts",'wp_print_head_scripts');
+
+			foreach($hooks as $hook)
+				if(is_array($wp_filter[$hook] )) foreach ( $wp_filter[$hook] as $priority => $wp_hooks ) { 					
+					if( is_array( $wp_hooks ) ){ // Check if this is an array
+						foreach ( $wp_hooks as $wp_hook ) {
+							$done = false;	
+							if(!is_object($wp_hook['function']) && !is_array( $wp_hook['function']) && strpos($wp_hook['function'],"Locate_Anything")===false && !in_array($wp_hook['function'],$whitelist)) remove_action( $hook, $wp_hook['function'], $priority ); 							
+							else {               
+								try {if(is_array($wp_hook['function']) && is_string($wp_hook['function'][0]) && strpos($wp_hook['function'][0],"Locate_Anything")===false){
+									remove_action( $hook, array($wp_hook['function'][0],$wp_hook['function'][1]), $priority );
+									$done =true;
+									}
+								} catch(Exception $e) {	$done =false;}
+
+					if(!$done && is_array($wp_hook['function']) && (is_object($wp_hook['function'][0]) && strpos(get_class($wp_hook['function'][0]),"Locate_Anything")===false)) remove_action( $hook, array($wp_hook['function'][0],$wp_hook['function'][1]), $priority );
+							}
+						}
+					}
+				} 
+			}		
+	}
+
+
+	/**
 	 * Loads the preview pane
 	 */
 	public function load_preview() {	
@@ -206,7 +247,7 @@ class Locate_Anything_Admin
 	public static function check_cache_permissions() {
 		$path=plugin_dir_path(dirname(__FILE__)) ."cache";
 		if(!is_writable($path)){if(!@chmod($path, 0777)) {
-			echo '<div class="update-nag"><p>'.__("<b>Error<b> : Please add write permissions on the follwing directory : $path","locate-anything").'</p></div>';
+			echo '<div class="update-nag"><p>'.__("<b>Error<b> : Please add write permissions on the following directory : $path","locate-anything").'</p></div>';
 			}
 		}
 	}

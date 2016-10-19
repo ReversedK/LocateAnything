@@ -128,7 +128,26 @@ And much much more!
 == Changelog ==
 
 = 1.0 =
-* Current version
-
+* First version
+= 1.1.0 =
+* heavily modified Addon_Helper class
+* css fixes
+* added hide splashscreen option
+= 1.1.1 =
+* added addon upgrader class
+= 1.1.2 =
+* added "Powered By" text
+= 1.1.4 =
+* added KML import function
+* fixed some minor bugs
+= 1.1.5 =
+* added hooks
+* fixed Google Places selector bug
+= 1.1.6 =
+* added hooks for compat addons
+= 1.1.7 =
+* optimized loading of styles and scripts
+= 1.1.71 =
+* bug fix
 
 

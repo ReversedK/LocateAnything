@@ -228,6 +228,8 @@ class Locate_Anything
         $this->loader->add_action('wp_ajax_LAgetFilters', $plugin_admin, 'getFilters', 10, 0);
         $this->loader->add_action('wp_ajax_nopriv_LAgetFilters', $plugin_admin, 'getFilters', 10, 0);
         
+        $this->loader->add_action('wp_loaded', $plugin_admin, 'clear_hooks_for_preview',100000);
+
         $this->loader->add_action('admin_menu', $plugin_admin, "setup_admin_menu", 10, 0);
         $this->loader->add_action('init', $plugin_admin, 'createCustomType',0);
         $this->loader->add_action('admin_init', $plugin_admin, 'load_preview',0);
