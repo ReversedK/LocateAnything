@@ -10,7 +10,7 @@ else  $post_params=Locate_Anything_Admin::getPostMetas($object->ID);
    <a  class="nav-tab" data-pane="3"><?php _e("Additional Fields","locate-anything")?></a>
 
 </h2>	
-<div id="locate-anything-map-settings-page-1" class="locate-anything-map-option-pane locate-anything-map-settings-list-ul" style="width:100%" >
+<div id="locate-anything-map-settings-page-1" class="locate-anything-map-option-pane locate-anything-map-settings-list-ul" style="width:auto" >
 <table>
 <tr><td><h2><?php _e("Geo settings","locate-anything")?></h2></td></tr> 
 
@@ -50,7 +50,7 @@ else  $post_params=Locate_Anything_Admin::getPostMetas($object->ID);
 							
 			      
   
-     <table id="locate-anything-map-settings-page-4" class="locate-anything-map-option-pane locate-anything-map-settings-list-ul" style='width:100%;display:none'>
+     <table id="locate-anything-map-settings-page-4" class="locate-anything-map-option-pane locate-anything-map-settings-list-ul" style='width:auto;display:none'>
            <tr><td><h2><?php _e("Customize Tooltip template","locate-anything")?></h2></td></tr>  
            <tr>
            <td><b><?php _e("Tooltip Preset","locate-anything")?> </b>:</td>

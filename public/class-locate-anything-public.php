@@ -130,13 +130,16 @@ class Locate_Anything_Public {
 	 */
 	public function check_license_key($type_license) {
 		// disable check  if localhost
-	//	if(strpos(site_url(), 'localhost')!==false) return true;
-
+		if(strpos(site_url(), 'localhost')!==false) return true;
 
 		$license = Locate_Anything_Admin::getLicence($type_license);			
 		$seed = $license["seed"];
 		if($type_license === "label") $license_key  =unserialize(get_option("locate-anything-option-license-key"));
 		else  $license_key  = $license['key'];
+		
+		// disable check  if CC license key
+		if(substr($license_key, 0,2)==='CC') return true;
+
 		if( hash("sha256",site_url().$seed) === $license_key ) return true; else return false;
 	}
 
@@ -891,8 +894,8 @@ public static function defineDefaultMarker($params){
 				$maxheight=$params["locate-anything-nice-tooltips-img-height"];
 				$maxheight2=$post_params["locate-anything-nice-tooltips-img-height"];
 				if(strlen($maxheight2)>2) $css_maxheight=$maxheight2;else $css_maxheight=$maxheight;
-				$small_thumbnail="<div id='mask' style='max-height:".$css_maxheight."'>".get_the_post_thumbnail ( $id, 'post-thumbnail' )."</div>";
-				} else $small_thumbnail=get_the_post_thumbnail ( $id, 'post-thumbnail' );
+				$small_thumbnail="<div id='mask' style='max-height:".$css_maxheight."'>".get_the_post_thumbnail ( $id, 'thumbnail' )."</div>";
+				} else $small_thumbnail=get_the_post_thumbnail ( $id, 'thumbnail' );
 				
 				
 

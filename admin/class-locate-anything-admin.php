@@ -188,36 +188,55 @@ class Locate_Anything_Admin
 		}
 	}
 
-	/**
-	 * unload all actions before preview, code not very pretty, sorry
-	 */
-	public function clear_hooks_for_preview() {	
-		if(isset($_GET["locateAnything_preview"])){				
-			global $wp_filter; 			    
-			$hooks = array("init","admin_init","wp_enqueue_scripts","wp_enqueue_styles","wp_head","wp_footer");  			
-			$whitelist=array("wp_print_footer_scripts",'wp_print_head_scripts');
 
-			foreach($hooks as $hook)
-				if(is_array($wp_filter[$hook] )) foreach ( $wp_filter[$hook] as $priority => $wp_hooks ) { 					
-					if( is_array( $wp_hooks ) ){ // Check if this is an array
-						foreach ( $wp_hooks as $wp_hook ) {
-							$done = false;	
-							if(!is_object($wp_hook['function']) && !is_array( $wp_hook['function']) && strpos($wp_hook['function'],"Locate_Anything")===false && !in_array($wp_hook['function'],$whitelist)) remove_action( $hook, $wp_hook['function'], $priority ); 							
-							else {               
-								try {if(is_array($wp_hook['function']) && is_string($wp_hook['function'][0]) && strpos($wp_hook['function'][0],"Locate_Anything")===false){
-									remove_action( $hook, array($wp_hook['function'][0],$wp_hook['function'][1]), $priority );
-									$done =true;
-									}
-								} catch(Exception $e) {	$done =false;}
 
-					if(!$done && is_array($wp_hook['function']) && (is_object($wp_hook['function'][0]) && strpos(get_class($wp_hook['function'][0]),"Locate_Anything")===false)) remove_action( $hook, array($wp_hook['function'][0],$wp_hook['function'][1]), $priority );
-							}
-						}
-					}
-				} 
-			}		
+	public function remove_anonymous_object_action( $tag, $class, $method, $priority=null ){
+
+	    if( empty($GLOBALS['wp_filter'][ $tag ]) ){
+	        return;
+	    }
+
+	    foreach ( $GLOBALS['wp_filter'][ $tag ] as $filterPriority => $filter ){
+	       /* if( !($priority===null || $priority==$filterPriority) )
+	            continue;*/
+
+	        foreach ( $filter as $identifier => $function ){
+	        	try {
+	            if( is_array( $function) && !is_a($function['function'],'Closure')
+	                and is_a( $function['function'][0], $class )
+	                and $method === $function['function'][1]
+	            ){
+	                remove_action(
+	                    $tag,
+	                    array ( $function['function'][0], $method ),
+	                    $filterPriority
+	                );
+	            }
+	        }
+	     catch(Exception $e) {	$done =false;}
+	    }
+	}
 	}
 
+
+
+
+
+
+
+
+	/**
+	 * unload all conflicting 3rd party plugin actions before preview
+	 */
+	public function clear_hooks_for_preview() {	
+		if(isset($_GET["locateAnything_preview"])){	
+			// Lifter LMS	
+			Locate_Anything_Admin::remove_anonymous_object_action( 'wp_enqueue_scripts','LLMS_Frontend_Assets', 'enqueue_styles');
+			Locate_Anything_Admin::remove_anonymous_object_action( 'wp_enqueue_scripts','LLMS_Frontend_Assets', 'enqueue_scripts');
+			Locate_Anything_Admin::remove_anonymous_object_action( 'wp_loaded','LLMS_AJAX', 'register_script');
+			Locate_Anything_Admin::remove_anonymous_object_action( 'wp_footer','LLMS_Frontend_Assets', 'wp_footer' );	
+	}
+}
 
 	/**
 	 * Loads the preview pane

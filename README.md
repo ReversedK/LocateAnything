@@ -10,7 +10,7 @@ LocateAnything is a versatile and highly customizable Wordpress plugin aimed at 
 
 **Developer-friendly**
 
-LocateAnything has been built with extensibility in mind : addons using LocateAnything in conjunction with another WP plugin  typically are less than 300 lines of code.  
+LocateAnything has been built on the great library LeafletJs (http://leafletjs.com/) and coded with extensibility in mind : addons using LocateAnything in conjunction with another WP plugin  typically are less than 300 lines of code.  
 
 **Use just any
 taxonomy as a filter**

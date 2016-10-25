@@ -5,7 +5,7 @@ Tags:   directory plugin,  geodirectory, google maps, , member directory, buddyp
 
 Requires at least: 4.0.0
 Tested up to: 4.6.1
-Stable tag: 1.1.71
+Stable tag: 1.1.73
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,7 +20,7 @@ LocateAnything is the ideal tool to create event map, festivals, geodirectories,
 **Some of the features :**
 
 * **Developer-friendly** : 
-LocateAnything has been built with extensibility in mind : addons using LocateAnything
+LocateAnything has been built on the great library LeafletJs (http://leafletjs.com/) and has been coded with extensibility in mind : addons using LocateAnything
 in conjunction with another WP plugin  typically are less than 300 lines of code.  
 * **Use just any taxonomy as a filter** : Easily use any taxonomy (custom taxonomies or regular taxonomies) to filter your maps.
 * **Supports Custom Post Types** : Most of the WordPress plugins only support posts and pages. Not this one!Total support for any custom post type and their taxonomies!

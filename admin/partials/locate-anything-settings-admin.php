@@ -42,10 +42,11 @@
 	<ul>
 		<li>
 <select multiple="multiple"	name="locate-anything-option-sources[]"	id="locate-anything-option-sources">
+
 <?php
-			$args = array ('public' => true);
+			$args = array ('publicly_queryable' => true);
 			$post_types = get_post_types ( $args, 'objects' );
-			
+
 			$selected_items = unserialize (get_option ( 'locate-anything-option-sources' ));
 			if(!is_array($selected_items)) $selected_items = array ();
 			foreach ( $post_types as $post_type ) {				
