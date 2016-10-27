@@ -349,9 +349,12 @@ $navlist_presets=array(
 			</div></td>
 </tr>
 <tr >		
-<td colspan="2" id="templates"><br><b ><?php _e("Default navigation list template","locate-anything")?>&nbsp;<input type="button" data-target="templates" class="locate-anything-help"></b> <br> <textarea  name="locate-anything-default-nav-template" id="locate-anything-default-nav-template"><?php  $ct=esc_attr( get_post_meta( $object->ID, 'locate-anything-default-nav-template', true ) ); if(!$ct) echo $u["navlist"];else echo $ct;?></textarea>
+<td colspan="2" id="templates"><br><b ><?php _e("Default navigation list template","locate-anything")?>&nbsp;<input type="button" data-target="templates" class="locate-anything-help"></b> <br> <textarea style='width:90%;height:20em'  name="locate-anything-default-nav-template" id="locate-anything-default-nav-template"><?php  $ct=esc_attr( get_post_meta( $object->ID, 'locate-anything-default-nav-template', true ) ); if(!$ct) echo $u["navlist"];else echo $ct;?></textarea>
 			  <br/>
-			  <b><?php _e("Default Tooltip template","locate-anything")?>&nbsp;<input type="button" data-target="templates" class="locate-anything-help"> </b> <br> <textarea  name="locate-anything-default-tooltip-template" id="locate-anything-default-tooltip-template"><?php  $ct=esc_attr( get_post_meta( $object->ID, 'locate-anything-default-tooltip-template', true ) ); if(!$ct) echo $u["tooltip"];else echo $ct;?></textarea></td>
+			  <b><?php _e("Default Tooltip template","locate-anything")?>&nbsp;<input type="button" data-target="templates" class="locate-anything-help"> </b> <br> <textarea style='width:90%;height:20em' name="locate-anything-default-tooltip-template" id="locate-anything-default-tooltip-template"><?php  $ct=esc_attr( get_post_meta( $object->ID, 'locate-anything-default-tooltip-template', true ) ); if(!$ct) echo $u["tooltip"];else echo $ct;?>
+			  </textarea>
+
+			  </td>
 
 </tr>
 
@@ -491,10 +494,16 @@ function locate_anything_refresh_filters(){
 
 
 function locate_anything_select_navpreset(e){
-  if(confirm("<?php _e('Do you want to overwrite the current navlist template?','locate-anything')?>")) {jQuery("#locate-anything-default-nav-template").val(jQuery('#locate-anything-navlist-preset :selected').attr("data-template"));refresh_preview();}
+  if(confirm("<?php _e('Do you want to overwrite the current navlist template?','locate-anything')?>")) {
+  	editAreaLoader.setValue('locate-anything-default-nav-template',jQuery('#locate-anything-navlist-preset :selected').attr("data-template") );
+	refresh_textarea('locate-anything-default-nav-template');
+  }
 }
 
 function locate_anything_select_preset(e){
-  if(confirm("<?php _e('Do you want to overwrite the current tooltip template?','locate-anything')?>")) {jQuery("#locate-anything-default-tooltip-template").val(jQuery('#locate-anything-tooltip-preset :selected').attr("data-template"));refresh_preview();}
+  if(confirm("<?php _e('Do you want to overwrite the current tooltip template?','locate-anything')?>")) {
+	editAreaLoader.setValue('locate-anything-default-tooltip-template',jQuery('#locate-anything-tooltip-preset :selected').attr("data-template") );
+	refresh_textarea('locate-anything-default-tooltip-template');
+  }
 }
 </script>

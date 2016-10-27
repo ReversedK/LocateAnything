@@ -1,5 +1,6 @@
 /* DOCUMENT READY */
 jQuery(document).ready(function(){
+
     jQuery("#locate-anything-additional_fields ul li input").blur(function(){jQuery("#locate-anything-option-additional-field-list").val(LA_serializeAdditionalFieldList())})
    
     /* tabbed navigation */
@@ -22,7 +23,31 @@ jQuery(document).ready(function(){
 /* option page events */
   jQuery("#locate-anything-option-sources").change(function(){manage_addi_field_visibility()});
   manage_addi_field_visibility();
+
+
+  setTimeout(function() { 
+        // start editAreas
+        initialize_editArea('locate-anything-default-tooltip-template','refresh_textarea','html'); 
+        initialize_editArea('locate-anything-default-nav-template','','html'); 
+       },2000);
 });
+
+
+function refresh_textarea(editor_id){
+  jQuery("#"+editor_id).text(editAreaLoader.getValue(editor_id));
+  refresh_preview();
+}
+
+function htmlDecode(value) {
+  return jQuery("<textarea/>").html(value).text();
+}
+
+function htmlEncode(value) {
+  return jQuery('<textarea/>').text(value).html();
+}
+
+
+
 
 /* OPTION PAGE : shows/hide additional fields according to the selected source */
 function manage_addi_field_visibility(){
@@ -125,11 +150,28 @@ function formatSelected (item) {
   return $item;
 };
 
+
+function initialize_editArea(editor_id,callback,syntax){
+      var options = {
+              id: editor_id // id of the textarea to transform    
+              ,start_highlight: true  // if start with highlight
+              ,allow_resize: "no"
+              ,allow_toggle: false
+              ,word_wrap: false
+              ,language: "en"
+              ,syntax: syntax  
+              ,min_height : 400 
+              ,toolbar : 'undo, redo'     
+      };
+      if(callback!=='') options.change_callback = callback;
+      editAreaLoader.init(options); 
+}
+
+
 /* sets up the media uploader */
 function initialize_media_uploader(){
       var _custom_media = true,
-  _orig_send_attachment = wp.media.editor.send.attachment;
- 
+  _orig_send_attachment = wp.media.editor.send.attachment; 
   
   jQuery('#locate-anything-kml-file_button').click(function(e) {
     var send_attachment_bkp = wp.media.editor.send.attachment;
@@ -146,9 +188,6 @@ function initialize_media_uploader(){
     wp.media.editor.open(button);
     return false;
   });
-
-
-
 
   jQuery('#locate-anything-marker-type_button').click(function(e) {
     var send_attachment_bkp = wp.media.editor.send.attachment;
@@ -205,7 +244,8 @@ function refresh_layout_code(){
                   }
                   ,success:function(data){
                     jQuery("#layout_editor").html('');
-              jQuery("#layout_editor").append("<textarea style='margin-top:1em;height:450px' name=\"locate-anything-map-template-html-"+jQuery("#locate-anything-map-template option:selected").val()+"\">"+JSON.parse(data)+"</textarea>");
+              jQuery("#layout_editor").append("<textarea style='margin-top:1em;height:450px;width:100%' id=\"map-layout-editor\" name=\"locate-anything-map-template-html-"+jQuery("#locate-anything-map-template option:selected").val()+"\">"+JSON.parse(data)+"</textarea>");
+              initialize_editArea('map-layout-editor','','css'); 
                   }
                 });
 };
@@ -287,6 +327,6 @@ function locate_anything_get_addon_filters(){
 }
 
 function initialize_marker_selector(html_id){
-jQuery("#"+html_id).select2({  templateResult: formatSelect, templateSelection : formatSelected}); 
-jQuery("#locate-anything-marker-symbol").select2({  templateResult: formatSelect2, templateSelection : formatSelected2}); 
+  jQuery("#"+html_id).select2({  templateResult: formatSelect, templateSelection : formatSelected}); 
+  jQuery("#locate-anything-marker-symbol").select2({  templateResult: formatSelect2, templateSelection : formatSelected2}); 
 }

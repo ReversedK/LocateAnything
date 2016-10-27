@@ -130,6 +130,11 @@ class Locate_Anything_Admin
 		// google autocomplete
 		wp_enqueue_script($this->plugin_name . "-googleautojs", plugin_dir_url(__FILE__) . '../public/js/leaflet-google-autocomplete/js/leaflet-google-autocomplete.js', array(
 			$this->plugin_name . "-googleAPI") , $this->version, false);
+		// Edit Area js
+		wp_enqueue_script($this->plugin_name . "-editArea", plugin_dir_url(__FILE__) . '../admin/js/edit_area/edit_area_full.js' , array('jquery') , $this->version, false);
+
+		
+		
 
 	}
 	/**
@@ -163,7 +168,7 @@ class Locate_Anything_Admin
 		wp_enqueue_style($this->plugin_name . "-leaflet-marker-cluster-default", plugin_dir_url(__FILE__) . '../public/js/leaflet.markercluster/MarkerCluster.Default.css', array() , $this->version, 'all');
 		wp_enqueue_style($this->plugin_name . "-leaflet-marker-cluster", plugin_dir_url(__FILE__) . '../public/js/leaflet.markercluster/MarkerCluster.css', array() , $this->version, 'all');
 		// leaflet Google automplete CSS
-		wp_enqueue_style($this->plugin_name . "-googleauto", plugin_dir_url(__FILE__) . '../public/js/leaflet-google-autocomplete/css/leaflet-google-autocomplete.css', array() , $this->version, 'all');
+		wp_enqueue_style($this->plugin_name . "-googleauto", plugin_dir_url(__FILE__) . '../public/js/leaflet-google-autocomplete/css/leaflet-google-autocomplete.css', array() , $this->version, 'all');		
 	}
 	/**
 	 * Adds metaboxes to the post types selected in the options page
