@@ -89,3 +89,5 @@ See our website for more informations on how to configure the plugin : http://ww
 * bug fix
 = 1.1.72 =
 * Sometimes the preview mode was in conflict with 3rd party plugins. This update should fix that problem
+= 1.1.8 =
+Added nice textarea editors
