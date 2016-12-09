@@ -370,8 +370,7 @@ var leaflet_filters_class= function (params){
 	 * @return {void}               :
 	 */
 	this.filter_markers=function(filter_id, property_name) {		
-		var filter_value=this.getFilterValue(filter_id);
-		console.log(filter_id,filter_value);
+		var filter_value=this.getFilterValue(filter_id);		
 		if (filter_value===false) return;	
 			/* remove empty elements from filter, if filter empty return */				
 			 if(jQuery.isArray(filter_value)) {
@@ -391,6 +390,8 @@ var leaflet_filters_class= function (params){
 			this.filtered_markers=this.filtered_markers.filter(function(m){		
 						var found=0;
 						if(m[property_name]===null)	m[property_name]='';				
+						if(jQuery.isArray(m[property_name])) m[property_name]=m[property_name].join(',');
+
 						var array_values_marker=m[property_name].split(",");
 						var values_marker=','+m[property_name]+',';	
 				  				

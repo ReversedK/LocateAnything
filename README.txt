@@ -4,7 +4,7 @@ Donate link: http://www.locate-anything.com/
 Tags:   directory plugin,  geodirectory, google maps, , member directory, buddypress directory, wordpress city directory plugin, store locator, filterable map, custom post type filters, custom post type map, map layout
 
 Requires at least: 4.0.0
-Tested up to: 4.6.1
+Tested up to: 4.7
 Stable tag: 1.1.73
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
