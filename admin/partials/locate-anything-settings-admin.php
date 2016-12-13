@@ -24,7 +24,7 @@
 </td>
 </tr>
 	<tr>
-<td><?php _e("GoogleMaps Key (only if you use GoogleMaps)","locate-anything");?>:</td>	<td><input type="text" name="locate-anything-option-cache-timeout" value="<?php echo unserialize(get_option("locate-anything-option-googlemaps-key"));?>"></td>
+<td><?php _e("GoogleMaps Key (only if you use GoogleMaps)","locate-anything");?>:</td>	<td><input type="text" name="locate-anything-option-googlemaps-key" value="<?php echo unserialize(get_option("locate-anything-option-googlemaps-key"));?>"></td>
 </tr>
 
 <tr>
