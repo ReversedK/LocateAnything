@@ -78,7 +78,7 @@ class Locate_Anything_Admin
 	 * @since 1.0.0
 	 */
 	public static function getGmapsAPIKey() {
-		$key = get_option("locate-anything-option-googlemaps-key");
+		$key = unserialize (get_option("locate-anything-option-googlemaps-key"));
 		if($key===false || empty($key)) $key = Locate_Anything_Admin::$Gmaps_API_key;		
 		return $key;
 	}
