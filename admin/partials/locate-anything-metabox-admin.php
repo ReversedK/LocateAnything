@@ -458,11 +458,12 @@ function locate_anything_refresh_filters(){
 			          			jQuery("#filters").append('<br><input onclick="locate_anything_refresh_template_tags(\''+item+'\')" class="locate-anything-filter-checkbox" type="checkbox" name="locate-anything-filters[]" '+isChecked+' value=\"'+item+'\">Refine by '+item);
 			          			jQuery("#show-filters").append('<div style=""><br><input onclick="locate_anything_manage_selector(\''+item+'\')" '+isCheckedShow+' type=\"checkbox\" name=\"locate-anything-show-filters[]\"  value=\"'+item+'\">'+item+'</div>' );
 
-			          			var isCheckbox='', isSelect='',isTokenize='',isRange='';
+			          			var isCheckbox='', isSelect='',isTokenize='',isRange='',isRadio='',isSelectM='';
 
-			          			if(display_filters[item]=="checkbox")  isCheckbox="selected";else if(display_filters[item]=="select")  isSelect="selected"; else if(display_filters[item]=="tokenize") isTokenize="selected";else if(display_filters[item]=="range") isRange="selected";
+			          			if(display_filters[item]=="radio")  isRadio="selected";else if(display_filters[item]=="checkbox")  isCheckbox="selected";else if(display_filters[item]=="select")  isSelect="selected";else if(display_filters[item]=="selectmultiple")  isSelectM="selected"; else if(display_filters[item]=="tokenize") isTokenize="selected";else if(display_filters[item]=="range") isRange="selected";
+
 			          			if(isCheckedShow.length==0) var displaynone="display:none;";else var displaynone="";
-			          			jQuery("#show-filters").append('<div style="'+displaynone+'" class="hide-if-'+item+' filter-selector-'+item+'"><b> Selector </b> : <select class="locate-anything-display-filter-" id="locate-anything-display-filter-'+item+'" item="'+item+'" name="locate-anything-display-filter-'+item+'"><option '+isCheckbox+' value="checkbox">Checkboxes</option><option '+isSelect+' value="select">Dropdown</option><option '+isTokenize+' value="tokenize">Tokenize</option><option '+isRange+' value="range">Range</option></select></div>');
+			          			jQuery("#show-filters").append('<div style="'+displaynone+'" class="hide-if-'+item+' filter-selector-'+item+'"><b> Selector </b> : <select class="locate-anything-display-filter-" id="locate-anything-display-filter-'+item+'" item="'+item+'" name="locate-anything-display-filter-'+item+'"><option '+isRadio+' value="radio">Radio buttons</option><option '+isCheckbox+' value="checkbox">Checkboxes</option><option '+isSelect+' value="select">Dropdown</option><option '+isSelectM+' value="selectmultiple">Select Multiple</option><option '+isTokenize+' value="tokenize">Tokenize</option><option '+isRange+' value="range">Range</option></select></div>');
 			          			/* adding range options */
 			          			var rangeOptionsVisible;
 			          			if(isRange) rangeOptionsVisible='';else rangeOptionsVisible='style="display:none"';

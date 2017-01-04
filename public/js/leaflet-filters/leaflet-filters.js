@@ -36,7 +36,7 @@ var leaflet_filters_class= function (params){
 		if (jQuery(filter_id).is( "select" ) ) {
 			if(jQuery(filter_id).attr("multiple")) jQuery(filter_id+" option ").each(function(i, selected){ if(jQuery(selected).attr("selected"))  vals.push(jQuery(selected).val());});
 			else vals.push(jQuery(filter_id).val());	
-		} else if (jQuery(filter_id).is("input:checkbox") ) {
+		} else if (jQuery(filter_id).is("input:checkbox,input:radio") ) {
 			jQuery("input[name='"+filter_name+"']:checked").each(function() {vals.push(jQuery(this).val());});
 		} else if(jQuery(filter_id).hasClass("rangeslider")) {
 			vals.push(jQuery("#"+filter_name).slider("values", 0));
@@ -348,9 +348,9 @@ var leaflet_filters_class= function (params){
 		//the slice() operation clones the array and returns the reference to the new array.
 		this.filtered_markers=this.markers.slice();
 
-		/* reorganizes the filters to have the checkboxes first : the checkboxes have a relation OR, the rest AND*/
+		/* reorganizes the filters to have the checkboxes and radios first : they have a relation OR, the rest AND*/
 		for(var i=0;i<this.filters.length;i++){
-			if(jQuery(this.filters[i].html_id).is("input:checkbox")) top.push(this.filters[i]);else bottom.push(this.filters[i])
+			if(jQuery(this.filters[i].html_id).is("input:checkbox,input:radio")) top.push(this.filters[i]);else bottom.push(this.filters[i])
 		}
 		this.filters=new Array();
 		for(var i =0;i<top.length;i++) this.filters.push(top[i]);
@@ -436,7 +436,7 @@ var leaflet_filters_class= function (params){
 		this.filters=list_filters;
 		for (i=0;i<this.filters.length;i++){
 			if(jQuery(this.filters[i].html_id).is("select")) jQuery(this.filters[i].html_id).change(function(){self.update_markers();});
-			else if(jQuery(this.filters[i].html_id).is("input:checkbox")) {
+			else if(jQuery(this.filters[i].html_id).is("input:checkbox,input:radio")) {
 				var filter_name=jQuery(this.filters[i].html_id).attr("name");
 				jQuery("input[name='"+filter_name+"']").click(function(){self.update_markers();});
 			}

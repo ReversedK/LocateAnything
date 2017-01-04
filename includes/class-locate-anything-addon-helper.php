@@ -246,9 +246,11 @@ class Locate_Anything_Addon_Helper
         
         $selected = get_post_meta($map_id, "locate-anything-display-filter-$filter_field", true);
         
-        $f.= Locate_Anything_Tools::Array2Select(array(
+        $f.= Locate_Anything_Tools::Array2Select(array(            
+            "radio"=> "Radio buttons",
             "checkbox" => "Checkboxes",
             "select" => "Dropdown",
+            "selectmultiple" => "Select Multiple",
             "tokenize" => "Tokenize",
             "range" => "Range"
         ) , "locate-anything-display-filter-$filter_field", $selected, "class='locate-anything-display-filter-'  item='$filter_field'");
@@ -266,7 +268,7 @@ class Locate_Anything_Addon_Helper
     public static function create_filter($filter, $name, $map_id, $values) {
         if ($filter) {
             $selector = get_post_meta($map_id, 'locate-anything-display-filter-' . $filter, true);
-            $f = "<li><b>$name</b>";
+            $f = "<li class=\"filter-$selector\"><b>$name</b>";
             switch ($selector) {
                 case "range":
                     $f.= '<br><br><div id="rangedval-' . $filter . '-' . $map_id . '"><span id="rangeval-' . $filter . '-' . $map_id . '"></span></div>  
@@ -274,8 +276,11 @@ class Locate_Anything_Addon_Helper
                     break;
 
                 case "select":
-                    $f.= "<select id='" . $filter . "-$map_id'><option></option>";
-                    break;
+                case "selectmultiple":
+                    if($selector==="selectmultiple") $m="multiple";else $m='';
+                    $f.= "<select $m id='" . $filter . "-$map_id'>";
+                    if($selector==="select") $f.= "<option></option>";
+                break;
 
                 case "tokenize":
                     $f.= "<select id='" . $filter . "-$map_id' multiple class='tokenize'>";
@@ -287,11 +292,13 @@ class Locate_Anything_Addon_Helper
             foreach ($values as $value) {
                 switch ($selector) {
                     case 'checkbox':
-                    if(!empty($value)) $f.= "<input type='checkbox' checked name='" . $filter . "-" . $map_id . "[]' id='" . $filter . "-" . $map_id . "' value='" . esc_attr(stripslashes($value)) . "'>" . stripslashes($value);
+                    case 'radio':
+                    if(!empty($value)) $f.= "<label><input type='$selector'  name='" . $filter . "-" . $map_id . "[]' id='" . $filter . "-" . $map_id . "' value='" . esc_attr(stripslashes($value)) . "'>" . stripslashes($value).'</label>';
                         break;
 
                     case "select":
                     case "tokenize":
+                    case "selectmultiple":
                         $f.= "<option value='" . esc_attr(stripslashes($value)) . "'>" . stripslashes($value) . '</option>';
                         break;
 
@@ -300,6 +307,7 @@ class Locate_Anything_Addon_Helper
                 }
             }
             switch ($selector) {
+                case "selectmultiple":
                 case "select":
                 case "tokenize":
                     $f.= "</select>";
