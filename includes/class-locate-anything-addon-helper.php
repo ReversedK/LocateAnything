@@ -207,7 +207,7 @@ class Locate_Anything_Addon_Helper
        
         return $arr; 
        
-        }, 10 ,4);
+        }, 1000 ,4);
     }
 
     public static function whitelist_filter_tags($arr_filters){
