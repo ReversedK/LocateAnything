@@ -63,7 +63,7 @@ class Locate_Anything_Public {
 		// leaflet Google automplete CSS
 		wp_enqueue_style ( $this->plugin_name . "-googleauto", plugin_dir_url ( __FILE__ ) . 'js/leaflet-google-autocomplete/css/leaflet-google-autocomplete.css', array (), $this->version, 'all' );
 		// Ionicons
-		wp_enqueue_style ( $this->plugin_name . "-ionicons", 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', array (), $this->version, 'all' );
+		wp_enqueue_style ( $this->plugin_name . "-ionicons", 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', array (), $this->version, 'all' );
 		// Awesome markers
 		wp_enqueue_style ( $this->plugin_name . "-awesomemarkers", plugin_dir_url ( __FILE__ ) . 'js/leaflet.awesome-markers-2.0/leaflet.awesome-markers.css', array (), $this->version, 'all' );
 		wp_enqueue_style('jquery-ui-css',plugin_dir_url ( __FILE__ ) ."js/jquery-theme/jquery-ui.css", array (), $this->version, 'all');
@@ -91,7 +91,7 @@ class Locate_Anything_Public {
 				$this->plugin_name . "-leaflet-filters" 
 		), $this->version, false );
 		// leaflet JS
-		wp_enqueue_script ( $this->plugin_name . "-leaflet", 'http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js', array (
+		wp_enqueue_script ( $this->plugin_name . "-leaflet", 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js', array (
 				'jquery' 
 		), $this->version, false );
 		// leaflet-filters JS
