@@ -49,7 +49,8 @@
 
 			$selected_items = unserialize (get_option ( 'locate-anything-option-sources' ));
 			if(!is_array($selected_items)) $selected_items = array ();
-			foreach ( $post_types as $post_type ) {				
+			foreach ( $post_types as $post_type ) {	
+				if($post_type->name == "locateanythingmap")	 continue;		
 				echo '<option value="' . $post_type->name . '"';
 				if (array_search ( $post_type->name, $selected_items ) !== false) echo " selected ";
 				echo '>' . $post_type->labels->name . '</option>';

@@ -638,7 +638,8 @@ class Locate_Anything_Admin
 		// url encode the address
 		$address = urlencode($address);
 		// google map geocode api url
-		$url = "http://maps.google.com/maps/api/geocode/json?sensor=false&address={$address}";
+		$gmaps_key = Locate_Anything_Admin::getGmapsAPIKey();
+		$url = "https://maps.google.com/maps/api/geocode/json?key=$gmaps_key&sensor=false&address={$address}";
 		// get the json response
 		$resp_json = file_get_contents($url);
 		// decode the json
