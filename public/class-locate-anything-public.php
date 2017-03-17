@@ -626,12 +626,13 @@ class Locate_Anything_Public {
 			$map_id = $_REQUEST ["map_id"];
 		
 		/* When in preview mode always disable cache */
-		if (get_option ( "locate-anything-option-enable-cache" ) == 0 && $map_id!=="preview") {
+		$isCacheEnabled = unserialize(get_option ( "locate-anything-option-enable-cache"));
+		if ($isCacheEnabled == 0 && $map_id!=="preview") {
 			/* cache disabled */
 			Locate_Anything_Public::refresh_cache ( $map_id, true );
 		} else {
 			/* cache enabled */
-			$cache_timeout = get_option ( "locate-anything-option-cache-timeout" );
+			$cache_timeout = unserialize(get_option ( "locate-anything-option-cache-timeout"));			
 			if (! $cache_timeout) $cache_timeout = 15;
 			$cache_file = plugin_dir_path ( __FILE__ ) . "../cache/cache-" . $map_id . ".json";
 			$cache_life = 60 * $cache_timeout; // cache timeout, in seconds

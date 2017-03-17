@@ -259,6 +259,10 @@ function refresh_preview(){
        n.value=encodeURIComponent(n.value);
         jQuery('#postToIframe').append('<input type="hidden" name="'+n.name+'" value="'+n.value+'" />');
     });
+    
+    /* Fix pour ACF Pro, Thanks Emmanuel Boutte! :) */
+    jQuery('#acf-form-data').remove();
+
     jQuery('#postToIframe').submit().remove();
 };
 
