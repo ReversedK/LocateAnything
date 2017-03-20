@@ -61,6 +61,20 @@ class Locate_Anything_Admin
 	}
 
 	/**
+	 * Savezs WP root path for use in preview file
+	 * 
+	 *
+	 * @since    1.1.98
+	 * @access   private
+	 */
+
+	public static function 	saveRootPath(){	
+		$f = fopen(plugin_dir_path(dirname(__FILE__)).'/cache/path2root',"w");
+		fwrite($f, realpath(get_home_path())."/wp"."-load.php");
+		fclose($f);	
+	}
+
+	/**
 	 * Register new  mime types
 	 * 
 	 *
@@ -223,15 +237,8 @@ class Locate_Anything_Admin
 	}
 	}
 
-
-
-
-
-
-
-
 	/**
-	 * unload all conflicting 3rd party plugin actions before preview
+	 * DEPRECATED : unload all conflicting 3rd party plugin actions before preview
 	 */
 	public function clear_hooks_for_preview() {	
 		if(isset($_GET["locateAnything_preview"])){	
@@ -244,7 +251,7 @@ class Locate_Anything_Admin
 }
 
 	/**
-	 * Loads the preview pane
+	 * DEPRECATED : Loads the preview pane
 	 */
 	public function load_preview() {	
 		if(isset($_GET["locateAnything_preview"])){	

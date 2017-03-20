@@ -274,14 +274,15 @@ var leaflet_filters_class= function (params){
 			 var kml_handle = omnivore.kml(this.params.kml_file).addTo(this.map);
 			 
 			 kml_handle.on('ready', function() {
-	         this.setStyle({ 
-	        	fillColor: self.params.kml_fillColor,
-	        	weight: self.params.kml_weight,
-	    		opacity: self.params.kml_opacity,
-	    		color: self.params.kml_color,
-	    		dashArray: self.params.kml_dashArray,
-	    		fillOpacity: self.params.kml_fillOpacity
-	    		});
+				 kml_handle.eachLayer(function(layer) { layer.bindPopup(layer.feature.properties.description);});
+		         this.setStyle({ 
+		        	fillColor: self.params.kml_fillColor,
+		        	weight: self.params.kml_weight,
+		    		opacity: self.params.kml_opacity,
+		    		color: self.params.kml_color,
+		    		dashArray: self.params.kml_dashArray,
+		    		fillOpacity: self.params.kml_fillOpacity
+		    		});
         	});
      	}                                                
          

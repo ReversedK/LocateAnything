@@ -228,11 +228,11 @@ class Locate_Anything
         $this->loader->add_action('wp_ajax_LAgetFilters', $plugin_admin, 'getFilters', 10, 0);
         $this->loader->add_action('wp_ajax_nopriv_LAgetFilters', $plugin_admin, 'getFilters', 10, 0);
         
-        $this->loader->add_action('wp_loaded', $plugin_admin, 'clear_hooks_for_preview',100000);
+        //$this->loader->add_action('wp_loaded', $plugin_admin, 'clear_hooks_for_preview',100000);
 
         $this->loader->add_action('admin_menu', $plugin_admin, "setup_admin_menu", 10, 0);
         $this->loader->add_action('init', $plugin_admin, 'createCustomType',0);
-        $this->loader->add_action('admin_init', $plugin_admin, 'load_preview',0);
+        //$this->loader->add_action('admin_init', $plugin_admin, 'load_preview',0);
 
         $this->loader->add_action('add_meta_boxes', $plugin_admin, 'add_post_meta_boxes');
         $this->loader->add_action('add_meta_boxes', $plugin_admin, 'add_admin_meta_boxes',0);
@@ -243,6 +243,8 @@ class Locate_Anything
         $this->loader->add_action('admin_notices', $plugin_admin, 'check_cache_permissions', 10, 2);
         /* filters */
         $this->loader->add_filter('upload_mimes',$plugin_admin, 'add_mime_types', 1, 1);
+
+        $this->loader->add_action('admin_menu',$plugin_admin, 'saveRootPath', 1000000, 0);
     }
     
     /**

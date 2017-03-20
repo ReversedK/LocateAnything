@@ -253,7 +253,11 @@ function refresh_layout_code(){
 /* post datas to preview iframe */
 function refresh_preview(){
   var data=jQuery('#locate-anything-class').find('input, select, textarea').serializeArray();     
-    jQuery('#map-preview').append('<form action="'+ADMIN_URL+'?post_type=locateanythingmap&locateAnything_preview" method="post" target="map_preview" id="postToIframe"></form>');
+   // jQuery('#map-preview').append('<form action="'+ADMIN_URL+'?post_type=locateanythingmap&locateAnything_preview" method="post" target="map_preview" id="postToIframe"></form>');
+    
+   
+    jQuery('#map-preview').append('<form action="'+PARTIAL_DIR+'locate-anything-preview.php" method="post" target="map_preview" id="postToIframe"></form>');
+
     jQuery.each(data,function(index,n){
       //if(n.value.search("'")>-1 || n.value.search('"')>-1)
        n.value=encodeURIComponent(n.value);
