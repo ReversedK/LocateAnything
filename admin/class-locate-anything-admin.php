@@ -71,12 +71,12 @@ class Locate_Anything_Admin
 	public static function saveRootPath(){	
 		$f = fopen(plugin_dir_path(dirname(__FILE__)).'/cache/path2root',"w");
 		$fpath = realpath(get_home_path())."/wp"."-load.php";
-		if(is_file($fpath))fwrite($f, $fpath);
+		if(is_file($fpath)) fwrite($f, $fpath);
 		else {
 			// some plugin change the normal path, tries some prefixes
 			$try_those_prefixes = array("admin","private");
 			foreach ($try_those_prefixes as $prefix) {
-				$fpath = realpath(get_home_path()."/..")."/$prefix/wp"."-load.php";
+				$fpath = realpath(get_home_path())."/$prefix/wp"."-load.php";
 				if(is_file($fpath)) {
 					fwrite($f, $fpath);
 					break;
