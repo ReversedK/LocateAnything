@@ -68,9 +68,22 @@ class Locate_Anything_Admin
 	 * @access   private
 	 */
 
-	public static function 	saveRootPath(){	
+	public static function saveRootPath(){	
 		$f = fopen(plugin_dir_path(dirname(__FILE__)).'/cache/path2root',"w");
-		fwrite($f, realpath(get_home_path())."/wp"."-load.php");
+		$fpath = realpath(get_home_path())."/wp"."-load.php";
+		if(is_file($fpath))fwrite($f, $fpath);
+		else {
+			// some plugin change the normal path, tries some prefixes
+			$try_those_prefixes = array("admin","private");
+			foreach ($try_those_prefixes as $prefix) {
+				$fpath = realpath(get_home_path()."/..")."/$prefix/wp"."-load.php";
+				if(is_file($fpath)) {
+					fwrite($f, $fpath);
+					break;
+				}	
+			}
+			
+		}
 		fclose($f);	
 	}
 
@@ -636,6 +649,10 @@ class Locate_Anything_Admin
 		return array('seed'=>$licences[$id],'key'=>$license_key);
 	}
 
+
+
+
+
 	/**
 	 * Geocodes address,
 	 * @param  [string] $address
@@ -648,7 +665,7 @@ class Locate_Anything_Admin
 		$gmaps_key = Locate_Anything_Admin::getGmapsAPIKey();
 		$url = "https://maps.google.com/maps/api/geocode/json?key=$gmaps_key&sensor=false&address={$address}";
 		// get the json response
-		$resp_json = file_get_contents($url);
+		$resp_json = Locate_Anything_Tools::file_get_contents_curl($url);
 		// decode the json
 		$resp = json_decode($resp_json, true);
 		// response status will be 'OK', if able to geocode given address
