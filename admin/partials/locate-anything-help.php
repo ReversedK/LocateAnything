@@ -88,7 +88,7 @@ var annotations=
 
 "display_only_inbound": new Anno({ 
   target : '#display_only_inbound',
-  content: '<?php _e("If this option is checked the navlist will only show the markers that are located in the bounds of the map. This means that for example if your map is zoomed and centered on NYC and your markers are in SF, the navlist will be empty")?>'
+  content: '<?php _e("If this option is checked the navlist will only show the markers that are located in the bounds of the map. This means that for example if your map is zoomed and centered on NYC and your markers are in SF, the navlist will be empty","locate-anything")?>'
 }),
 "custom-map-provider": new Anno({ 
   target : '#custom-map-provider',
@@ -96,7 +96,7 @@ var annotations=
 }),
 "show-attr-label": new Anno({ 
   target : '#show-attr-label',
-  content: '<?php _e("The attribution label is displayed on the bottom right side of the map. It states the source of the overlay you are using, for example \'OpenStreetMap\'")?>'
+  content: '<?php _e("The attribution label is displayed on the bottom right side of the map. It states the source of the overlay you are using, for example OpenStreetMap","locate-anything")?>'
 }),
 }
 

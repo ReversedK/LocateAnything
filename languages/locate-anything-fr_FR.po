@@ -1,0 +1,895 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: LocateAnything\n"
+"POT-Creation-Date: 2017-06-19 11:59-0300\n"
+"PO-Revision-Date: 2017-06-19 12:04-0300\n"
+"Last-Translator: \n"
+"Language-Team: 4GOA\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../admin/partials/locate-anything-help.php:8
+msgid ""
+"This setting will determine the overlay of the map. .<br/><br/>Each Map "
+"overlay will have a different \"look & feel\". Try them in the preview if "
+"unsure.<br><br>If you want to use a  map overlay that is not in the list, "
+"select \"Custom map overlay\" and enter its URL in the field just below."
+msgstr ""
+"Ce paramètre détermine quel type de carte utiliser. <br/><br/> Chaque type "
+"de carte a un aspect différent. Essayez-les dans l\\'aperçu si vous n\\'êtes "
+"pas sûr. <br><br> Si vous souhaitez utiliser un type de carte qui n\\'est "
+"pas dans la liste, sélectionnez \"type de carte personnalisé\" et entrez son "
+"URL dans le champ juste ci-dessous."
+
+#: ../admin/partials/locate-anything-help.php:12
+msgid ""
+"This setting controls which post type is used to create the markers for this "
+"map.<br/><br/> Please note that only the post types you selected in the "
+"options page are presented here."
+msgstr ""
+"Ce paramètre contrôle le type de publication utilisé pour créer les "
+"marqueurs de cette carte. <br/><br/> Veuillez noter que seuls les types de "
+"publications que vous avez sélectionnés dans la page des options sont "
+"présentés ici."
+
+#: ../admin/partials/locate-anything-help.php:16
+msgid ""
+"<b>Filter the markers</b><br><br><p>This setting lets you filter the markers "
+"received from the post type by choosing which taxonomy terms are allowed. "
+"<br><br> It permits you to display only markers of a specific category, or "
+"tagged with a specific term.<br><br> The effect on the markers displayed is "
+"cumulative meaning that if you select Category \"Night bars\" and post_tag "
+"\"Beer\" (category and post_tag being 2 different taxonomies) your map will "
+"show all the \"Night bars\" (even those that don\\'t serve beer) AND all the "
+"places tagged as \"Beer\" (even those not open at night), along with the "
+"search options to filter them. <br><br> You can preview the result in real "
+"time on the preview map.</p>"
+msgstr ""
+"<b>Filtrer les marqueurs</b><br><br><p>Ce paramètre vous permet de filtrer "
+"les marqueurs,  en fonction du type de publication, en choisissant les "
+"termes autorisés de la taxonomie. <br><br> Il vous permet d\\'afficher "
+"uniquement des marqueurs d\\'une catégorie spécifique ou tagués avec un "
+"terme spécifique. <br><br>Les filtres sur les marqueurs sont cumulatifs. "
+"Cela signifie que si vous sélectionnez la catégorie \"Bars de nuit\" et le "
+"tag \"Bière\" (catégorie et tag étant 2 taxonomies différentes) votre carte "
+"montrera tous les \"bars de nuit\" (même ceux qui ne servent pas de bière) "
+"ET TOUS les endroits tagés avec le mot \"Bière\" (même ceux qui ne sont pas "
+"ouverts la nuit ). <br><br> Vous pouvez prévisualiser le résultat en temps "
+"réel sur la carte d\\'aperçu.</P>"
+
+#: ../admin/partials/locate-anything-help.php:20
+msgid ""
+"<b>Define the filters that will be available for this map</"
+"b><br><br><p><b>Types of filter</b> :<br>Filters using <b>checkboxes</b> are "
+"cumulative (OR operator), this means they will show markers tied to ANY of "
+"the checked terms.<br><br>Filters using <b>Tokenize</b> are \"mutually-"
+"exclusive\"  (AND operator), which means only markers that fit ALL the given "
+"terms will show.<br><br> <b>Range filters</b> will only work with simple "
+"numeric values. If the value is not numeric the markers will be unselected "
+"each time the range is updated.</p>"
+msgstr ""
+"<b>Définissez les filtres disponibles pour cette carte </"
+"b><br><br><p><b>Types de filtre </b>: <br><br> Les filtres utilisant les<b> "
+"cases à cocher </b> sont cumulatifs (opérateur OU). Cela signifie qu\\'ils "
+"afficheront des marqueurs liés à TOUS les termes vérifiés. <br><br> Les "
+"filtres utilisant les <b> cases à cocher </b> sont exclusifs (opérateur "
+"AND). Ce qui signifie que seuls les marqueurs qui correspondent à tous les "
+"termes donnés apparaîtront. <br><br><b> Les filtres de rang </b> ne "
+"fonctionneront qu\\'avec des valeurs numériques simples. Si la valeur n"
+"\\'est pas numérique, les marqueurs seront sélectionnés chaque fois que la "
+"plage sera mise à jour. </P>"
+
+#: ../admin/partials/locate-anything-help.php:24
+msgid ""
+"This setting will determine the tone/color of the map. <br/><br/> Set the "
+"value to black (#000) to disable. <br/><br/>Works only with GoogleMaps"
+msgstr ""
+"Ce paramètre détermine la tonalité / la couleur de la carte. <br/><br/> "
+"Réglez la valeur en noir (#000) pour désactiver cette option. <br/><br/> "
+"Fonctionne uniquement avec GoogleMaps"
+
+#: ../admin/partials/locate-anything-help.php:29
+#, fuzzy, php-format
+msgid ""
+"This setting will determine the width of the map if no predefined layout is "
+"used.<b>Please note</b> that this setting doesn\\'t apply to maps generated "
+"using the [LocateAnything map_id=...] shortcode<br/><br/> Pixels and "
+"% supported."
+msgstr ""
+"Ce paramètre détermine la largeur de la carte si aucune disposition de carte "
+"prédéfinie n\\'est utilisée. <b>Notez</b> que ce paramètre ne s\\'applique "
+"pas aux cartes générées à l\\'aide du code \"[LocateAnything map_id "
+"= ...]\"<br/><br/> Sont pris en charge \"Pixels\" et \"%\"."
+
+#: ../admin/partials/locate-anything-help.php:33
+msgid ""
+"This setting will determine the height of the map if no predefined layout is "
+"used. <b>Please note</b> that this setting doesn\\'t apply to maps generated "
+"using the [LocateAnything map_id=...] shortcode<br/><br/> Pixel is the only "
+"unit supported"
+msgstr ""
+"Ce paramètre détermine la hauteur de la carte si aucune disposition de carte "
+"prédéfinie n\\'est utilisée. <b>Notez</b> que ce paramètre ne s\\'applique "
+"pas aux cartes générées à l\\'aide du code [LocateAnything map_id = ...] <br/"
+"><br/> Seule la taille en pixel est prise en charge"
+
+#: ../admin/partials/locate-anything-help.php:37
+msgid ""
+"This setting will determine the center of the map when it is first "
+"displayed. <br/><br/> You can set it manually (Format : <i>latitude</i>,"
+"<i>longitude</i>), or just drag the preview map to the desired point"
+msgstr ""
+"Ce paramètre détermine le centre de la carte lorsqu\\'elle est affichée pour "
+"la première fois. <br/><br/> Vous pouvez le définir manuellement (Format: "
+"<i>latitude</i> , <i>longitude</i> ), ou plus simplement en glissant la "
+"carte d\\'aperçu vers le point désiré"
+
+#: ../admin/partials/locate-anything-help.php:41
+msgid "This setting will determine the maximum zoom allowed for this map."
+msgstr "Ce paramètre détermine le zoom maximal autorisé pour cette carte."
+
+#: ../admin/partials/locate-anything-help.php:45
+msgid "This setting will determine the minimum zoom allowed for this map."
+msgstr "Ce paramètre détermine le minimum de zoom autorisé pour cette carte."
+
+#: ../admin/partials/locate-anything-help.php:49
+msgid ""
+"This setting will determine the initial zoom for this map. <br/><br/> You "
+"can set it manually or just zoom the preview map to the desired zoom level"
+msgstr ""
+"Ce paramètre détermine le zoom initial pour cette carte.<br><br>Vous pouvez "
+"le définir manuellement ou plus simplement zoomer la carte d’aperçu au "
+"niveau souhaité"
+
+#: ../admin/partials/locate-anything-help.php:53
+msgid ""
+"If this parameter is set to \"yes\" the plugin will try to locate the user "
+"and center the map on his current location"
+msgstr ""
+"Si ce paramètre est défini sur « oui » le plugin va tenter de localiser l"
+"\\’utilisateur et de centrer la carte sur son lieu de connexion"
+
+#: ../admin/partials/locate-anything-help.php:57
+msgid ""
+"Set this parameter to \"yes\" to add a a Google Places searchbox to this map"
+msgstr ""
+"Définissez ce paramètre sur \"oui\" pour ajouter une boîte de recherche "
+"\"Google Places\" à cette carte"
+
+#: ../admin/partials/locate-anything-help.php:61
+msgid ""
+"This setting will determine the maximum number of items in the navigation "
+"list of this map"
+msgstr ""
+"Ce paramètre détermine le nombre maximum d\\'éléments dans la liste de "
+"navigation"
+
+#: ../admin/partials/locate-anything-help.php:65
+msgid ""
+"Here is a list of the fields available for display in the templates. To use "
+"them just copy/paste the corresponding tag in the template editor. <br/><br/"
+"><strong>Please note that those are the global values for this map</strong>. "
+"if you don\\'t see any change after modifying a tooltip template check that "
+"you haven\\'t defined a custom tooltip template on the post, page or user "
+"associated with the marker."
+msgstr ""
+"Voici une liste des champs disponibles pour l\\’affichage dans les modèles. "
+"Pour s\\’en servir, copier/coller simplement la balise correspondante dans l"
+"\\’éditeur de modèle.<br><br><strong>Veuillez prendre note que ce sont les "
+"valeurs globales pour cette carte</strong>. Si vous ne voyez aucun "
+"changement après modification d\\’un modèle, vérifiez que vous avez bien "
+"défini un modèle d\\’info-bulle personnalisée dans l\\'article, la page ou l"
+"\\’utilisateur associé à un marqueur."
+
+#: ../admin/partials/locate-anything-help.php:69
+msgid ""
+"Templates are used to define the appearance of the navigation list items and "
+"the tooltips associated with each marker.Templates support simple HTML and "
+"additional field tags<br/><br/>For example, to display the title, content "
+"and thumbnail of a marker in the tooltips :<br/><code>&lt;b&gt;|title|&lt;/"
+"b&gt;<br/>|small_thumbnail|<br/>|content| </code> "
+msgstr ""
+"Les modèles sont utilisés pour définir l\\’apparence des éléments de la "
+"liste de navigation et des info-bulles associées à chaque marqueur. Les "
+"modèles prennent en charge le HTML simple et les étiquettes de champ "
+"supplémentaires<br><br>Par exemple, pour afficher le titre, le contenu et la "
+"vignette d\\’un marqueur dans les info-bulles :<br><code><b>|title|</b><br>|"
+"small_thumbnail|<br>|content| </code> "
+
+#: ../admin/partials/locate-anything-help.php:73
+msgid ""
+"Create a custom tooltip template if you want the appearance of the tooltip "
+"associated with this marker to be different from the default tooltip "
+"selected for this map.<br> Supports simple HTML and additional field tags<br/"
+"><br/>For example, to display the title, content and thumbnail of a marker "
+"in the tooltips :<br/><code>&lt;b&gt;|title|&lt;/b&gt;<br/>|small_thumbnail|"
+"<br/>|content| </code> "
+msgstr ""
+"Créer un modèle d\\’info-bulle personnalisé si vous souhaitez que l"
+"\\’apparence de l\\’info-bulle associée à ce marqueur soit différente de l"
+"\\’info-bulle par défaut sélectionnée pour cette carte.<br>Prend en charge "
+"le HTML simple et les étiquettes de champ supplémentaires<br><br>Par "
+"exemple, pour afficher le titre, le contenu et la vignette d\\’un marqueur "
+"dans les info-bulles :<br><code><b>|title|</b><br>|small_thumbnail|<br>|"
+"content| </code> "
+
+#: ../admin/partials/locate-anything-help.php:77
+msgid ""
+"A predefined layout is only displayed  when the shortcode [LocateAnything "
+"map_id=...] is used. The layout determines the organization of the different "
+"elements : map, navlist and filters.<br/><br/> LocateAnything proposes "
+"several predefined layouts for your maps. You can use them as-is or modify "
+"them to fit your needs."
+msgstr ""
+"Une disposition prédéfinie est uniquement affichée lorsque le shortcode "
+"[LocateAnything map_id =...] est utilisé. La mise en page détermine l"
+"\\’organisation des différents éléments : carte, liste de navigation et "
+"filtres.<br><br>LocateAnything propose plusieurs mises en page prédéfinies "
+"pour vos cartes. Vous pouvez les utiliser tel quel ou les modifier selon vos "
+"besoins."
+
+#: ../admin/partials/locate-anything-help.php:81
+msgid ""
+"Select the \"Nice Tooltips\" setting in the dropdown menu. You can set the "
+"maximum image height or just leave it blank."
+msgstr ""
+"Sélectionnez le paramètre Nice Tooltips dans le menu déroulant. Vous pouvez "
+"définir la hauteur maximale de l\\'image ou la laisser vide."
+
+#: ../admin/partials/locate-anything-help.php:86
+msgid ""
+"You can use an image from Wordpress media library as a marker icon. "
+"<br><b>Warning</b> : The image will NOT be resized. Please make sure its "
+"size is adequate."
+msgstr ""
+"Vous pouvez utiliser une image de la bibliothèque multimédia Wordpress comme "
+"icône de marqueur. <br> <b> Attention </ b>: L\\'image NE SERA PAS "
+"redimensionnée. Assurez-vous que sa taille est adéquate."
+
+#: ../admin/partials/locate-anything-help.php:91
+msgid ""
+"If this option is checked the navlist will only show the markers that are "
+"located in the bounds of the map. This means that for example if your map is "
+"zoomed and centered on NYC and your markers are in SF, the navlist will be "
+"empty"
+msgstr ""
+"Si cette option est cochée, la liste de navigation ne montrera que les "
+"marqueurs situés dans les limites de la carte. Cela signifie que, par "
+"exemple, si votre carte est zoomée et centrée sur NYC et que vos marqueurs "
+"sont en SF, la liste de navigation sera vide"
+
+#: ../admin/partials/locate-anything-help.php:95
+msgid ""
+"You can specify here the URL for the custom map provider. A non-exhaustive "
+"list of compatible providers can be found  on  the excellent <a target="
+"\\'_blank\\' href=\\'http://leaflet-extras.github.io/leaflet-providers/"
+"preview/index.html\\'>leaflet-providers</a> page."
+msgstr ""
+"Vous pouvez spécifier ici l'URL du map provider.  Une liste non-exhaustive "
+"de providers compatibles peut etre trouvée <a target=\\'_blank\\' href="
+"\\'http://leaflet-extras.github.io/leaflet-providers/preview/index.html"
+"\\'>ici</a>."
+
+#: ../admin/partials/locate-anything-help.php:99
+msgid ""
+"The attribution label is displayed on the bottom right side of the map. It "
+"states the source of the overlay you are using, for example OpenStreetMap"
+msgstr ""
+"L\\'étiquette d\\'attribution s\\'affiche en bas à droite de la carte. Il "
+"indique la source du calque que vous utilisez, par exemple OpenStreetMap"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:16
+msgid "Map settings"
+msgstr "Paramètres de la carte"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:17
+msgid "Filters"
+msgstr "Filtres"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:18
+msgid "Markers settings"
+msgstr "Paramètres des marqueurs"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:19
+msgid "Tooltip & Nav List"
+msgstr "Info-bulle et liste de navigation"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:20
+msgid "Map Layouts"
+msgstr "Disposition de la carte"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:22
+msgid "Tools & Shortcodes"
+msgstr "Outils & Shortcodes"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:30
+msgid "General settings"
+msgstr "Paramètres généraux"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:34
+msgid "Map Overlay"
+msgstr "Type de carte"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:41
+msgid ""
+"<b>Important : </b> if you choose GoogleMaps you MUST enter a GoogleMaps API "
+"key in the <a href='"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:45
+msgid "Show attribution label"
+msgstr "Afficher l'étiquette d'attribution"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:47
+#: ../admin/partials/locate-anything-metabox-admin.php:97
+#: ../admin/partials/locate-anything-metabox-admin.php:106
+#: ../admin/partials/locate-anything-metabox-admin.php:115
+#: ../admin/partials/locate-anything-metabox-admin.php:127
+#: ../admin/partials/locate-anything-metabox-admin.php:135
+#: ../admin/partials/locate-anything-settings-admin.php:93
+msgid "yes"
+msgstr "oui"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:48
+#: ../admin/partials/locate-anything-metabox-admin.php:98
+#: ../admin/partials/locate-anything-metabox-admin.php:107
+#: ../admin/partials/locate-anything-metabox-admin.php:116
+#: ../admin/partials/locate-anything-metabox-admin.php:128
+#: ../admin/partials/locate-anything-metabox-admin.php:136
+#: ../admin/partials/locate-anything-settings-admin.php:93
+msgid "no"
+msgstr "non"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:57
+msgid "Map hue (GoogleMaps only)"
+msgstr "Teinte de la carte (GoogleMaps seulement) "
+
+#: ../admin/partials/locate-anything-metabox-admin.php:64
+msgid "Map width"
+msgstr "Largeur de carte"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:68
+msgid "Map height"
+msgstr "Hauteur de carte"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:72
+msgid "Default start position"
+msgstr "Position de départ par défaut"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:76
+msgid "Max zoom"
+msgstr "Zoom maximum"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:83
+msgid "Min zoom"
+msgstr "Zoom minimum"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:88
+msgid "Initial zoom"
+msgstr "Zoom initial"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:95
+msgid "Zoom using mousewheel"
+msgstr "Zoom à l'aide de la roue de la souris"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:104
+msgid "Enable user geolocation"
+msgstr "Activer la géolocalisation des utilisateurs"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:113
+msgid "Enable Google Places searchbox"
+msgstr "Activer la boîte de recherche Google Places"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:120
+msgid "Max number of results displayed in the list"
+msgstr "Nombre maximum de résultats affichés dans la liste"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:125
+msgid "Refresh list as you go"
+msgstr "Actualisez la liste au fur et à mesure"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:133
+msgid "Hide loader screen"
+msgstr "Masquer l'écran de chargement"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:142
+msgid "Remove the 'Powered by LocateAnything' label"
+msgstr "Supprimez l'étiquette Powered by LocateAnything"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:143
+msgid ""
+" &nbsp;<a target='_blank' href='http://www.locate-anything.com/addons/"
+"license/license-key/'>Get a License Key for only $4.99!</a>"
+msgstr ""
+" &nbsp;<a target='_blank' href='http://www.locate-anything.com/addons/"
+"license/license-key/'>Obtenez une licence pour $4.99 seulement !</a>"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:151
+msgid "Choose a post type"
+msgstr "Choisissez un type de publication"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:154
+msgid "Post Type"
+msgstr "Type de publication"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:176
+msgid "Filter the markers (optional)"
+msgstr "Filtrer les marqueurs (facultatif)"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:178
+msgid "Filter the markers "
+msgstr "Filtrer les marqueurs "
+
+#: ../admin/partials/locate-anything-metabox-admin.php:185
+msgid "How is this map filterable ?"
+msgstr "Comment cette carte peut-elle être filtrée?"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:189
+msgid "Make this map filterable by"
+msgstr "Cette carte sera filtrable par"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:195
+msgid "Choose the default marker icon"
+msgstr "Choisissez l'icône du marqueur par défaut"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:197
+#: ../admin/partials/locate-anything-metabox-post.php:100
+msgid "Choose an icon"
+msgstr "Choisissez un icône"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:211
+#: ../admin/partials/locate-anything-metabox-post.php:113
+msgid "Add an icon from the media library"
+msgstr "Ajouter un icône à partir de la bibliothèque de médias"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:214
+#: ../admin/partials/locate-anything-metabox-post.php:116
+msgid "Add"
+msgstr "Ajouter"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:222
+#: ../admin/partials/locate-anything-metabox-post.php:124
+msgid "Create an icon"
+msgstr "Créer un icône"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:227
+#: ../admin/partials/locate-anything-metabox-post.php:128
+msgid "Symbol"
+msgstr "Symbole"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:233
+#: ../admin/partials/locate-anything-metabox-post.php:134
+msgid "Symbol color"
+msgstr "Couleur du symbole"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:235
+#: ../admin/partials/locate-anything-metabox-post.php:136
+msgid "Marker color"
+msgstr "Couleur du marqueur"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:245
+msgid "Choose the global icon size for AwesomeMarkers"
+msgstr "Choisissez la taille d'icône globale pour les marqueurs"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:246
+msgid "Icon size"
+msgstr "Taille des icônes"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:250
+msgid "Load a KML file (beta)"
+msgstr "Charger un KML"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:252
+msgid "KML Style Options"
+msgstr "Style KML"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:267
+msgid "Select file"
+msgstr "Sélectionnez un fichier"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:275
+msgid "Shortcodes"
+msgstr "Shortcodes (codes courts)"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:278
+msgid "Display the map with a predefined layout"
+msgstr "Afficher la carte avec une mise en page prédéfinie"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:279
+msgid "Display the map separately"
+msgstr "Afficher la carte séparément"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:280
+msgid "Display the filters separately"
+msgstr "Afficher les filtres séparément"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:281
+msgid "Display the navigation list separately"
+msgstr "Afficher la liste de navigation séparément"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:285
+msgid "Cache"
+msgstr "Cache"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:287
+msgid ""
+"The cache is currently disabled. You can activate it in the options page"
+msgstr ""
+"Le cache est actuellement désactivé. Vous pouvez l'activer dans la page "
+"d'options"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:288
+msgid "Refresh cache for this map"
+msgstr "Actualiser le cache de cette carte"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:288
+msgid "Status"
+msgstr "Status"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:288
+msgid "ready"
+msgstr "prêt"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:295
+msgid "Navlist Settings"
+msgstr "Paramètres de la liste de navigation"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:296
+msgid "Event"
+msgstr "Evénement"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:297
+msgid "Tooltips Settings"
+msgstr "Paramètres des info-bulles"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:299
+msgid "Tooltip style"
+msgstr "Style d'info-bulle"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:300
+msgid "Rounded corners"
+msgstr "Coins arrondis"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:300
+msgid "Squared corners"
+msgstr "Coins carrés"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:303
+#: ../admin/partials/locate-anything-metabox-post.php:56
+msgid "Tooltip Preset"
+msgstr "Preset info-bulle"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:323
+msgid "Navlist Preset"
+msgstr "Liste de navigation par défaut"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:341
+#: ../admin/partials/locate-anything-metabox-post.php:73
+msgid "Nice Tooltips settings"
+msgstr "Paramètres Nice Tooltips"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:341
+#: ../admin/partials/locate-anything-metabox-post.php:73
+msgid "Main image max-height"
+msgstr "Hauteur maximale de l'image principale"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:343
+msgid "Templates"
+msgstr "Modèles"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:346
+#: ../admin/partials/locate-anything-metabox-post.php:86
+msgid "Available fields"
+msgstr "Champs disponibles"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:352
+msgid "Default navigation list template"
+msgstr "Modèle de liste de navigation par défaut"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:354
+msgid "Default Tooltip template"
+msgstr "Modèle d'info-bulle par défaut"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:367
+#: ../admin/partials/locate-anything-metabox-admin.php:370
+msgid "Map Layout"
+msgstr "Disposition de la carte"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:498
+msgid "Do you want to overwrite the current navlist template?"
+msgstr "Voulez-vous écraser le modèle actuel de liste de navigation ?"
+
+#: ../admin/partials/locate-anything-metabox-admin.php:505
+#: ../admin/partials/locate-anything-metabox-post.php:174
+msgid "Do you want to overwrite the current tooltip template?"
+msgstr "Voulez-vous écraser le modèle d\\'info-bulle actuel ?"
+
+#: ../admin/partials/locate-anything-metabox-post.php:7
+#: ../admin/partials/locate-anything-metabox-post.php:15
+msgid "Geo settings"
+msgstr "Paramètres de géolocalisation"
+
+#: ../admin/partials/locate-anything-metabox-post.php:8
+msgid "Marker"
+msgstr "Marqueurs"
+
+#: ../admin/partials/locate-anything-metabox-post.php:9
+msgid "Tooltip"
+msgstr "Info-bulle"
+
+#: ../admin/partials/locate-anything-metabox-post.php:10
+#: ../admin/partials/locate-anything-settings-admin.php:63
+msgid "Additional Fields"
+msgstr "Champs supplémentaires"
+
+#: ../admin/partials/locate-anything-metabox-post.php:18
+msgid "Street name"
+msgstr "Nom de la voie"
+
+#: ../admin/partials/locate-anything-metabox-post.php:23
+msgid "Number"
+msgstr "Numéro de voie"
+
+#: ../admin/partials/locate-anything-metabox-post.php:27
+msgid "City"
+msgstr "Ville"
+
+#: ../admin/partials/locate-anything-metabox-post.php:31
+msgid "Zip code"
+msgstr "Code postal"
+
+#: ../admin/partials/locate-anything-metabox-post.php:35
+msgid "State / Province"
+msgstr "Région"
+
+#: ../admin/partials/locate-anything-metabox-post.php:39
+msgid "Country"
+msgstr "Pays"
+
+#: ../admin/partials/locate-anything-metabox-post.php:45
+msgid "Latitude"
+msgstr "Latitude"
+
+#: ../admin/partials/locate-anything-metabox-post.php:46
+msgid "Longitude"
+msgstr "Longitude"
+
+#: ../admin/partials/locate-anything-metabox-post.php:54
+msgid "Customize Tooltip template"
+msgstr "Personnalisation des infos-bulles"
+
+#: ../admin/partials/locate-anything-metabox-post.php:78
+msgid "Custom HTML template"
+msgstr "Modèle HTML personnalisé"
+
+#: ../admin/partials/locate-anything-metabox-post.php:87
+msgid ""
+"Here is a list of the additional fields available for display in the "
+"template. To use them just copy/paste the corresponding tag in the template "
+"editor"
+msgstr ""
+"Voici la liste des champs supplémentaires disponibles pour l'affichage dans "
+"le modèle. Pour les utiliser, il suffit de copier / coller la balise "
+"correspondante dans l'éditeur de modèle"
+
+#: ../admin/partials/locate-anything-metabox-post.php:97
+msgid "Choose a marker icon"
+msgstr "Choisissez un icône de marqueur"
+
+#: ../admin/partials/locate-anything-metabox-post.php:104
+msgid "Use default marker"
+msgstr "Utiliser le marqueur par défaut"
+
+#: ../admin/partials/locate-anything-metabox-post.php:151
+msgid "Additional fields"
+msgstr "Champs supplémentaires"
+
+#: ../admin/partials/locate-anything-settings-admin.php:18
+msgid "Default settings"
+msgstr "Paramètres par défaut"
+
+#: ../admin/partials/locate-anything-settings-admin.php:19
+msgid "Map Language"
+msgstr "Langue de la carte"
+
+#: ../admin/partials/locate-anything-settings-admin.php:22
+msgid "License Key"
+msgstr "Numéro de licence"
+
+#: ../admin/partials/locate-anything-settings-admin.php:23
+msgid ""
+" &nbsp;<a  target='_blank' href='http://www.locate-anything.com/addons/"
+"license/license-key/'>Get a License Key for only $4.99!</a> (Removes the "
+"'Powered by LocateAnything' label)"
+msgstr ""
+" &nbsp;<a  target='_blank' href='http://www.locate-anything.com/addons/"
+"license/license-key/'>Obtenez ubn numero de licence pour seulement $4.99!</"
+"a> (cache le label 'Powered by LocateAnything')"
+
+#: ../admin/partials/locate-anything-settings-admin.php:27
+msgid "GoogleMaps Key (only if you use GoogleMaps)"
+msgstr "Clef GoogleMaps (si vous utilisez GoogleMaps)"
+
+#: ../admin/partials/locate-anything-settings-admin.php:31
+msgid "Map Language (GoogleMaps only)"
+msgstr "Langue de la carte (Seulement pour GoogleMaps)"
+
+#: ../admin/partials/locate-anything-settings-admin.php:41
+msgid "What do you want to localize?"
+msgstr "Que voulez-vous localiser ?"
+
+#: ../admin/partials/locate-anything-settings-admin.php:64
+msgid ""
+"Additional fields are useful when you need to display a specific information "
+"that will vary from marker to marker. For example, if your map is about "
+"Restaurants, you could create an additional field \"opening hours\" to store "
+"the opening hours of the place. <br/> You can add as many additional field "
+"as you want. They will appear in the marker's page."
+msgstr ""
+"Les champs supplémentaires sont utiles lorsque vous devez afficher une "
+"information spécifique qui varie d’un marqueur à un autre. Par exemple, si "
+"votre carte porte sur les Restaurants, vous pouvez créer un champ "
+"supplémentaire « horaires » pour stocker les horaires d’ouverture du lieu."
+"<br>Vous pouvez ajouter autant de champs supplémentaires que vous le "
+"souhaitez. Ils apparaîtront dans la page du marqueur."
+
+#: ../admin/partials/locate-anything-settings-admin.php:73
+msgid "Additional fields for"
+msgstr "Champs supplémentaires pour"
+
+#: ../admin/partials/locate-anything-settings-admin.php:82
+msgid "Add a field"
+msgstr "Ajouter un champ"
+
+#: ../admin/partials/locate-anything-settings-admin.php:90
+msgid "Cache settings"
+msgstr "Paramètres du cache"
+
+#: ../admin/partials/locate-anything-settings-admin.php:92
+msgid "Cache timeout (minutes)"
+msgstr "Timeout du cache (minutes)"
+
+#: ../admin/partials/locate-anything-settings-admin.php:93
+msgid "Enable cache"
+msgstr "Activer le cache"
+
+#: ../public/class-locate-anything-public.php:784
+msgid "Preview not available yet."
+msgstr "L'aperçu n'est pas encore disponible."
+
+#~ msgid "Tools"
+#~ msgstr "Outils"
+
+#~ msgid "Custom map overlay"
+#~ msgstr "Personnaliser le type de carte"
+
+#~ msgid "Add New"
+#~ msgstr "Ajouter"
+
+#~ msgid "LocateAnything Maps"
+#~ msgstr "Cartes LocateAnything"
+
+#~ msgid "Map"
+#~ msgstr "Carte"
+
+#~ msgid "Add New Map"
+#~ msgstr "Ajouter"
+
+#~ msgid "Edit Map"
+#~ msgstr "Editer"
+
+#~ msgid "New Map"
+#~ msgstr "Nouveau"
+
+#~ msgid "All Map"
+#~ msgstr "Toutes les cartes"
+
+#~ msgid "View Map"
+#~ msgstr "Voir la carte"
+
+#~ msgid "Search Maps"
+#~ msgstr "Chercher une carte"
+
+#~ msgid "No map found"
+#~ msgstr "Carte non trouvée"
+
+#~ msgid "No map found in Trash"
+#~ msgstr "Corbeille vide"
+
+#~ msgid "Marker Categories"
+#~ msgstr "Catégories des marqueurs"
+
+#~ msgid "Marker Category"
+#~ msgstr "Catégorie des marquers"
+
+#~ msgid "Search Categories"
+#~ msgstr "Chercher une catégorie"
+
+#~ msgid "All Categories"
+#~ msgstr "Toutes les catégories"
+
+#~ msgid "Parent Category"
+#~ msgstr "Catégorie parent"
+
+#~ msgid "Edit Category"
+#~ msgstr "Editer la catégorie"
+
+#~ msgid "Update Category"
+#~ msgstr "Mette à jour la catégorie"
+
+#~ msgid "Add New Category"
+#~ msgstr "Ajouter une nouvelle catégorie"
+
+#~ msgid "New Category Name"
+#~ msgstr "Nom de la nouvelle catégorie"
+
+#~ msgid "Categories"
+#~ msgstr "Catégories"
+
+#~ msgid "Marker Tags"
+#~ msgstr "Etiquettes des marqueurs"
+
+#~ msgid "Tags"
+#~ msgstr "Etiquettes"
+
+#~ msgid "Search Tags"
+#~ msgstr "Rechercher une étiquette"
+
+#~ msgid "All Tags"
+#~ msgstr "Toutes les étiquettes"
+
+#~ msgid "Parent Tag"
+#~ msgstr "Etiquette parent"
+
+#~ msgid "Edit Tag"
+#~ msgstr "Editer l'étiquette"
+
+#~ msgid "Update Tag"
+#~ msgstr "Mettre à jour l\\'étiquette"
+
+#~ msgid "Add New Tag"
+#~ msgstr "Ajouter une nouvelle étiquette"
+
+#~ msgid "New Tag Name"
+#~ msgstr "Nom de la nouvell étiquette"
+
+#~ msgid "LocateAnything Markers"
+#~ msgstr "Marqueurs LocateAnything"
+
+#~ msgid "Add New Marker"
+#~ msgstr "Ajouter un nouveau marqueur"
+
+#~ msgid "Edit Marker"
+#~ msgstr "Editer le marqueur"
+
+#~ msgid "New Marker"
+#~ msgstr "Nouveau marqueur"
+
+#~ msgid "All Marker"
+#~ msgstr "Tous les marqueurs"
+
+#~ msgid "View Marker"
+#~ msgstr "Voir les marqueurs"
+
+#~ msgid "Search Markers"
+#~ msgstr "Chercher un marqueur"
+
+#~ msgid "No Marker found"
+#~ msgstr "Marqueur non trouvé"
+
+#~ msgid "Refine by"
+#~ msgstr "Filtrer par"
+
+#~ msgid "Refine by locateanythingmarkercategory"
+#~ msgstr "Filtrer par catégorie"
+
+#~ msgid "add_new"
+#~ msgstr "Ajouter"

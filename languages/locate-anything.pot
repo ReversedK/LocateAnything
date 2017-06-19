@@ -63,7 +63,6 @@ msgid ""
 msgstr ""
 
 #: ../admin/partials/locate-anything-help.php:29
-#, php-format
 msgid ""
 "This setting will determine the width of the map if no predefined layout is "
 "used.<b>Please note</b> that this setting doesn\\'t apply to maps generated "
@@ -564,6 +563,233 @@ msgstr ""
 msgid "Enable cache"
 msgstr ""
 
+#: ../admin/partials/locate-anything-settings-admin.php:125
+msgid "Refresh list as you go"
+msgstr ""
+
 #: ../public/class-locate-anything-public.php:716
 msgid "Preview not available yet."
+msgstr ""
+
+#: ../admin/partials/locate-anything-settings-admin.php:45
+msgid "Show attribution label"
+msgstr ""
+
+#: ../admin/partials/locate-anything-help.php:99
+msgid ""
+"The attribution label is displayed on the bottom right side of the map. It states the source of the overlay you are using, for example OpenStreetMap"
+msgstr ""
+
+#: ../admin/partials/locate-anything-help.php:91
+msgid ""
+"If this option is checked the navlist will only show the markers that are located"
+" in the bounds of the map. This means that for example if your map is zoomed and centered"
+" on NYC and your markers are in SF, the navlist will be empty"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:133
+msgid "Hide loader screen"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:142
+msgid "Remove the 'Powered by LocateAnything' label"
+msgstr ""
+
+#: ../admin/partials/locate-anything-metabox-admin.php:143
+msgid " &nbsp;<a target='_blank' href='http://www.locate-anything.com/addons/license/license-key/'>Get a License Key for only $4.99!</a>"
+msgstr ""
+
+#: ../admin/partials/locate-anything-help.php:81
+msgid ""
+"Select the \"Nice Tooltips\" setting in the dropdown menu. You can set the maximum image height or just leave it blank."
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:387
+msgid ""
+"Add New"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:385
+msgid ""
+"LocateAnything Maps"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:386
+msgid ""
+"Map"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:388
+msgid ""
+"Add New Map"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:389
+msgid ""
+"Edit Map"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:390
+msgid ""
+"New Map"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:391
+msgid ""
+"All Map"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:392
+msgid ""
+"View Map"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:393
+msgid ""
+"Search Maps"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:394
+msgid ""
+"No map found"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:395
+msgid ""
+"No map found in Trash"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:423
+msgid ""
+"Marker Categories"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:423b
+msgid ""
+"Marker Category"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:424
+msgid ""
+"Search Categories"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:425
+msgid ""
+"All Categories"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:426
+msgid ""
+"Parent Category"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:427
+msgid ""
+"Edit Category"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:428
+msgid ""
+"Update Category"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:429
+msgid ""
+"Add New Category"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:430
+msgid ""
+"New Category Name"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:431
+msgid ""
+"Categories"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:449
+msgid ""
+"Marker Tags"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:449
+msgid ""
+"Tags"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:450
+msgid ""
+"Search Tags"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:451
+msgid ""
+"All Tags"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:452
+msgid ""
+"Parent Tag"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:453
+msgid ""
+"Edit Tag"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:454
+msgid ""
+"Update Tag"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:455
+msgid ""
+"Add New Tag"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:456
+msgid ""
+"New Tag Name"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:475
+msgid ""
+"LocateAnything Markers"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:476
+msgid ""
+"Add New Marker"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:478
+msgid ""
+"Edit Marker"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:479
+msgid ""
+"New Marker"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:480
+msgid ""
+"All Marker"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:481
+msgid ""
+"View Marker"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:482
+msgid ""
+"Search Markers"
+msgstr ""
+
+#: ../admin/class-locate-anything-admin.php:483
+msgid ""
+"No Marker found"
 msgstr ""
