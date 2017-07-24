@@ -667,7 +667,7 @@ class Locate_Anything_Admin
 		// get the json response
 		$resp_json = Locate_Anything_Tools::file_get_contents_curl($url);
 		// decode the json
-		$resp = json_decode($resp_json, true);
+		$resp = json_decode($resp_json, true);		
 		// response status will be 'OK', if able to geocode given address
 		if ($resp['status'] == 'OK') {
 			// get the important data
