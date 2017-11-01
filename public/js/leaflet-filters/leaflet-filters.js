@@ -321,7 +321,7 @@ var leaflet_filters_class= function (params){
 	 */
 	this.setUpCluster=function (){	
 		var self=this;
-		this.markerCluster=L.markerClusterGroup({  chunkedLoading: true});
+		this.markerCluster=L.markerClusterGroup({ chunkedLoading: true});
 	};
 
 
